@@ -294,6 +294,19 @@
   <a href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="bg-white text-teal-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-teal-100 hover:text-teal-900 transition text-lg">免費諮詢</a>
 </section>
 
+<!-- 輪播圖區塊 -->
+<div class="max-w-4xl mx-auto mt-8 relative">
+  <div id="carousel" class="overflow-hidden rounded-lg shadow-lg">
+    <div class="flex transition-transform duration-500" id="carousel-inner">
+      <img src="images/banner-1.jpg" class="w-full flex-shrink-0" alt="輪播圖1">
+      <img src="images/banner-2.jpg" class="w-full flex-shrink-0" alt="輪播圖2">
+      <img src="images/banner-3.jpg" class="w-full flex-shrink-0" alt="輪播圖3">
+      <img src="images/banner-4.jpg" class="w-full flex-shrink-0" alt="輪播圖4">
+      <img src="images/banner-5.jpg" class="w-full flex-shrink-0" alt="輪播圖5">
+      <img src="images/banner-6.jpg" class="w-full flex-shrink-0" alt="輪播圖6">
+      <img src="images/banner-7.jpg" class="w-full flex-shrink-0" alt="輪播圖7">
+    </div>
+  </div>
   <!-- 左右箭頭 -->
   <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100 transition">
     <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
@@ -375,6 +388,28 @@
 <!-- 浮動按鈕群組：LINE + 回到頂部 -->
 <div id="floating-btn-group" style="position:fixed;right:18px;bottom:18px;z-index:60;display:none;display:flex;flex-direction:column;gap:14px;align-items:flex-end;">
   <!-- LINE 諮詢 -->
+  <!-- 蝦皮連結 -->
+  <a href="https://shopee.tw/wetoptec" target="_blank" rel="noopener noreferrer" aria-label="前往蝦皮賣場" id="floating-shopee-btn" style="text-decoration:none;position:relative;">
+    <div style="background:#ff5722;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(255,87,34,.25);transition:.35s;">
+      <!-- Shopee SVG Icon -->
+      <svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect width="48" height="48" rx="12" fill="#ff5722"/>
+        <path d="M24 14c-2.5 0-4.5 2-4.5 4.5V19h-3v11c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V19h-3v-.5C28.5 16 26.5 14 24 14Zm0 2c1.38 0 2.5 1.12 2.5 2.5V19h-5v-.5C21.5 17.12 22.62 16 24 16Zm-5 5h10v9c0 .55-.45 1-1 1H20c-.55 0-1-.45-1-1v-9Z" fill="#fff"/>
+      </svg>
+    </div>
+    <div style="position:absolute;right:66px;top:50%;transform:translateY(-50%) translateY(4px);background:#fff;color:#b53a17;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:.3s;white-space:nowrap;" class="line-tooltip">蝦皮賣場</div>
+  </a>
+  <!-- Facebook 連結 -->
+  <a href="https://www.facebook.com/WetopTW?locale=zh_TW" target="_blank" rel="noopener noreferrer" aria-label="前往 Facebook 粉專" id="floating-fb-btn" style="text-decoration:none;position:relative;">
+    <div style="background:#1877f3;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(24,119,243,.25);transition:.35s;">
+      <!-- Facebook SVG Icon -->
+      <svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect width="48" height="48" rx="12" fill="#1877f3"/>
+        <path d="M29 24h-3v10h-4V24h-2v-4h2v-2c0-2.21 1.79-4 4-4h3v4h-3c-.55 0-1 .45-1 1v1h4l-1 4Z" fill="#fff"/>
+      </svg>
+    </div>
+    <div style="position:absolute;right:66px;top:50%;transform:translateY(-50%) translateY(4px);background:#fff;color:#1877f3;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:.3s;white-space:nowrap;" class="line-tooltip">Facebook 粉專</div>
+  </a>
   <a href="https://line.me/R/ti/p/@wetop" target="_blank" rel="noopener noreferrer" aria-label="加入 LINE 與我們諮詢" id="floating-line-btn" data-ga-category="CTA" data-ga-action="click" data-ga-label="line_floating"
      style="text-decoration:none;position:relative;">
     <div style="background:#06c755;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(6,199,85,.45);transition:.35s;">
