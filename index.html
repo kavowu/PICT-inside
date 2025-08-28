@@ -234,6 +234,28 @@
 
 <!-- 首頁內容 -->
 <div id="home-content">
+<!-- 輪播圖區塊（移到最上方） -->
+<div class="max-w-4xl mx-auto mt-8 relative">
+  <div id="carousel" class="overflow-hidden rounded-lg shadow-lg">
+    <div class="flex transition-transform duration-500" id="carousel-inner">
+      <img src="images/banner-1.jpg" class="w-full flex-shrink-0" alt="輪播圖1">
+      <img src="images/banner-2.jpg" class="w-full flex-shrink-0" alt="輪播圖2">
+      <img src="images/banner-3.jpg" class="w-full flex-shrink-0" alt="輪播圖3">
+      <img src="images/banner-4.jpg" class="w-full flex-shrink-0" alt="輪播圖4">
+      <img src="images/banner-5.jpg" class="w-full flex-shrink-0" alt="輪播圖5">
+      <img src="images/banner-6.jpg" class="w-full flex-shrink-0" alt="輪播圖6">
+      <img src="images/banner-7.jpg" class="w-full flex-shrink-0" alt="輪播圖7">
+    </div>
+  </div>
+  <!-- 左右箭頭 -->
+  <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+  </button>
+  <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+  </button>
+</div>
+
 <!-- Hero 主視覺區塊 -->
 <section class="relative bg-gradient-to-br from-teal-600 via-cyan-500 to-green-300 text-white py-8 px-2 rounded-3xl shadow-xl max-w-4xl mx-auto mt-6 mb-8 overflow-hidden flex flex-col items-center gap-4">
   <div class="flex flex-col w-full items-center z-10">
@@ -302,7 +324,7 @@
   <div>
   <!-- 使用現有 banner 圖作為暫時 poster，避免 404 -->
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:18px;">
-  <iframe id="yt-embed-1" src="https://www.youtube.com/embed/h98yn0du2so?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;"></iframe>
+  <iframe id="yt-embed-1" src="https://www.youtube.com/embed/8-ffZkVpjXE?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;"></iframe>
 <!-- 已有 enablejsapi=1 -->
       </div>
     <p class="mt-2 text-center text-sm text-gray-600"></p>
