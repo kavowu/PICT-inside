@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>測試方法概述｜WETOP 驗證效能基礎</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  /* 全站 hero 樣式 */
+  .hero{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;border-radius:16px;padding:56px 24px;text-align:center;box-shadow:0 12px 28px rgba(0,0,0,.08);margin-bottom:4px;max-width:1200px;margin-left:auto;margin-right:auto}
+  .hero h1{font-size:clamp(1.9rem,1.3rem + 1.9vw,2.6rem);letter-spacing:.9px;margin-bottom:12px;margin-top:0;font-weight:700;line-height:1.25}
+  .hero p{margin:0;opacity:.95;font-size:20px;line-height:1.75}
+  .container { max-width: 1100px; margin: 0 auto; }
+    :root {
+      --primary: #0f766e;
+      --accent: #10b981;
+      --light-bg: #f9fafb;
+      --card-bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--light-bg); color: var(--text); line-height: 1.8; }
+
+
+  .container { max-width: 1100px; margin: 0 auto; }
+    section {
+      background: var(--card-bg); border-radius: 16px;
+      padding: 40px; margin-bottom: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+    h3 {
+      font-size: 20px; color: #334155; margin-top: 30px;
+    }
+    p { margin-bottom: 16px; }
+    ul { padding-left: 25px; margin-top: 10px; }
+    li { margin-bottom: 8px; }
+
+    .highlight {
+      background-color: #ecfdf5;
+      border-left: 6px solid var(--accent);
+      padding: 15px 20px;
+      font-weight: bold;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #f0fdfa;
+    }
+
+    footer {
+      background-color: #e5e7eb;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    @media (max-width: 768px) {
+  /* header h1 已移除，統一用 .hero h1 控制 */
+      section { padding: 30px 20px; }
+      table th, table td { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <h1>測試方法概述</h1>
+      <p>評估空氣淨化效能，不只看數字，更要看方法</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <section>
+  <h2 class="section-title">測試方法總覽</h2>
+      <p>在評估空氣淨化技術的效能時，<strong>「測試方法」的重要性往往高於單純的數值表現</strong>。根據污染物導入方式，測試可分為兩大類：連續式測定與批次式測定。</p>
+      <p>以下是兩種測試方法的比較總表：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>連續式測定</th>
+            <th>批次式測定</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>測試對象</td>
+            <td>元件或材料</td>
+            <td>完整產品（如淨化器）</td>
+          </tr>
+          <tr>
+            <td>污染供應</td>
+            <td>持續注入</td>
+            <td>一次性固定注入</td>
+          </tr>
+          <tr>
+            <td>模擬環境</td>
+            <td>不等同實際使用情境</td>
+            <td>高度模擬居家或商業空間</td>
+          </tr>
+          <tr>
+            <td>效能評估</td>
+            <td>著重材料效率與反應機制</td>
+            <td>著重空間整體降濃速度與體感效果</td>
+          </tr>
+          <tr>
+            <td>測試嚴苛程度</td>
+            <td>實驗室壓力測試</td>
+            <td>更貼近真實使用情境</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight">✅ 一般使用者與企業採購者更應關注「批次式測定」的真實應用表現</div>
+
+      <p>因為你真正想知道的不是濾材怎麼吸附，而是：</p>
+      <ul>
+        <li>這台機器實際多久能讓空氣變乾淨？</li>
+        <li>我聞到的異味多久會消失？</li>
+      </ul>
+
+      <p>因此，<strong>批次式測定已成為 CNS 16098、JEM、AHAM 等標準主流方法</strong>。</p>
+    </section>
+
+    <section>
+  <h2 class="section-title">WETOP 的雙軌測試優勢</h2>
+      <ul>
+        <li><strong>初期研發階段：</strong>採連續式測定 → 驗證材料反應效率與穩定性</li>
+        <li><strong>產品驗證階段：</strong>使用批次式測定 → 模擬實際空間（如 10 坪密閉房間）進行驗證</li>
+      </ul>
+
+      <div class="highlight">✅ WETOP 採用「雙軌驗證法」：技術 + 使用者效能雙雙驗證</div>
+    </section>
+
+    <section>
+  <h2 class="section-title">結語與建議</h2>
+      <p>空氣淨化設備的效能不能只看漂亮的數字，而要看其背後的測試邏輯與情境真實性。</p>
+
+      <ul>
+        <li>🔬 <strong>連續式測定</strong> = 顯微鏡分析材料能力</li>
+        <li>📷 <strong>批次式測定</strong> = 實景攝影機，展現實際表現</li>
+      </ul>
+
+      <div class="highlight">📌 建議：選購空氣淨化器，請參考「批次式測試」的去除曲線與濃度變化圖（注意起始濃度）</div>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 WETOP 空氣淨化技術驗證｜雙軌測試，實證效能
+  </footer>

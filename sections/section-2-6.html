@@ -1,0 +1,260 @@
+<style>
+  :root {
+    --primary: #0f766e;
+    --secondary: #e0f7f6;
+    --background: #f8fafc;
+    --text: #1f2937;
+    --highlight: #fef3c7;
+  }
+
+  .section-2-6-container * {
+    box-sizing: border-box;
+  }
+
+  .section-2-6-container {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 20px;
+    font-size: 17px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-2-6-container .header {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .section-2-6-container .header h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .section-2-6-container .header p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin: 0;
+  }
+
+  .section-2-6-container .main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-2-6-container .section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+
+  .section-2-6-container .section:hover {
+    transform: translateY(-3px);
+  }
+
+  .section-2-6-container .pdf-images-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+  }
+
+  .section-2-6-container .pdf-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .section-2-6-container .description-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .section-2-6-container .description-section:hover {
+    transform: translateY(-3px);
+  }
+
+  .section-2-6-container h2 {
+    color: var(--primary);
+    font-size: 30px;
+    border-left: 6px solid var(--primary);
+    padding-left: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .section-2-6-container .highlight-box {
+    background-color: var(--secondary);
+    border-left: 5px solid var(--primary);
+    padding: 20px 25px;
+    margin: 25px 0;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+
+  .section-2-6-container .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .section-2-6-container .feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .section-2-6-container .feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .section-2-6-container .feature-card h3 {
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+
+  .section-2-6-container .cta-section {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .section-2-6-container .cta-button {
+    background: white;
+    color: var(--primary);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  .section-2-6-container .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .section-2-6-container .header h1 {
+      font-size: 32px;
+    }
+
+    .section-2-6-container .description-section {
+      padding: 30px 20px;
+    }
+
+    .section-2-6-container .feature-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="section-2-6-container">
+  <div class="header">
+    <h1>PICT 產品宣傳資料</h1>
+    <p>專業環境淨化解決方案，打造健康潔淨的生活與工作環境</p>
+  </div>
+
+  <div class="main">
+    <!-- PDF圖片展示區域 -->
+    <div class="pdf-images-container">
+      <img src="images/pict_manual_images/PICT 三折廣告頁2_pages-to-jpg-0001.jpg" alt="PICT產品宣傳第1頁" class="pdf-image">
+      <img src="images/pict_manual_images/PICT 三折廣告頁2_pages-to-jpg-0002.jpg" alt="PICT產品宣傳第2頁" class="pdf-image">
+    </div>
+
+    <!-- 產品特色說明區域 -->
+    <div class="description-section">
+      <h2>PICT 產品宣傳重點</h2>
+      
+      <div class="highlight-box">
+        <strong>專業環境淨化解決方案：</strong><br>
+        PICT光水離子化技術為您提供全方位的環境淨化服務，從產品設計到應用實施，為不同場域打造最適合的淨化解決方案。
+      </div>
+
+      <div class="feature-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin: 30px 0;">
+        <div class="feature-card">
+          <h3>🏢 多元應用場域</h3>
+          <p>適用於辦公室、醫療機構、食品加工、居家環境等各種場所，提供客製化的環境淨化解決方案。</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔬 科學驗證技術</h3>
+          <p>經過嚴格的科學測試與驗證，確保淨化效果的可靠性與安全性，為用戶提供值得信賴的產品。</p>
+        </div>
+        <div class="feature-card">
+          <h3>💡 創新設計理念</h3>
+          <p>結合先進的光催化技術與人性化設計，打造既美觀又實用的環境淨化設備。</p>
+        </div>
+        <div class="feature-card">
+          <h3>🌱 環保永續發展</h3>
+          <p>採用環保材料與節能設計，在提供優異淨化效果的同時，也為環境永續發展盡一份心力。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDF下載區域 -->
+    <div class="description-section">
+      <h2>📄 下載完整宣傳資料</h2>
+      
+      <div class="highlight-box">
+        <strong>獲取完整PDF文件：</strong><br>
+        下載原始PDF檔案，方便離線閱讀、列印或分享給客戶。完整的PICT產品宣傳資料包含詳細的產品介紹、應用案例和聯絡資訊。
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="https://drive.google.com/file/d/1k0vU4u4kNiwJFNxZ3aYYe98DtjR_DRNk/view?usp=drive_link" target="_blank" rel="noopener" 
+           style="background: linear-gradient(135deg, #0f766e, #0d9488); color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);"
+           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(15, 118, 110, 0.4)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(15, 118, 110, 0.3)';">
+          📥 下載 PDF 宣傳資料（Google 雲端）
+        </a>
+      </div>
+
+      <div style="text-align: center; color: #64748b; font-size: 14px;">
+        檔案大小：約 5.9MB | 格式：PDF | 頁數：2頁
+      </div>
+    </div>
+
+    <!-- CTA區域 -->
+    <div class="cta-section">
+      <h2 style="color: white; border: none; padding: 0; margin-bottom: 20px;">了解更多 PICT 產品</h2>
+      <p style="font-size: 18px; margin-bottom: 30px;">體驗仿自然淨化技術，為您打造健康潔淨的生活環境</p>
+  <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2')" class="cta-button">
+        查看產品規格
+      </a>
+    </div>
+  </div>
+</div>
+

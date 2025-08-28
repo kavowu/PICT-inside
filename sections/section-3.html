@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>產品購物｜WETOP 環境淨化器</title>
+  <meta name="description" content="選擇適合你空間的環境淨化方案。移動式環境淨化器支援線上購買，固定式與除味箱支援專人規劃與安裝。">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- 使用全站既有 style.css 統一字體與標題系統 -->
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* 蝦皮、MOMO品牌色按鈕 */
+    .card-actions-design .btn-buy.shopee {
+      background: linear-gradient(90deg,#ff5722 80%,#ff7a00);
+      color: #fff;
+      border: none;
+    }
+    .card-actions-design .btn-buy.shopee:hover {
+      background: linear-gradient(90deg,#ff7a00 80%,#ff5722);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(255,87,34,.18);
+    }
+    .card-actions-design .btn-buy.momo {
+      background: linear-gradient(90deg,#ff4c9b 80%,#ff73b4);
+      color: #fff;
+      border: none;
+    }
+    .card-actions-design .btn-buy.momo:hover {
+      background: linear-gradient(90deg,#ff73b4 80%,#ff4c9b);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(255,76,155,.18);
+    }
+    /* 商品卡底部行動按鈕區塊調整 */
+    .card-actions-design {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+      gap: 0;
+      background: #f8fdfa;
+      border-radius: 20px;
+      padding: 16px 14px 14px 14px;
+      box-shadow: 0 4px 18px rgba(13,148,136,.10);
+      border: 1.5px solid #e0f7f6;
+      min-height: 110px;
+    }
+    /* 情境導覽圖片縮小並置中 */
+    .usecase-img {
+      width: 88%;
+      max-width: 320px;
+      min-width: 180px;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 18px auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(13,148,136,.10);
+      background: #f6f6f6;
+      transition: box-shadow .18s, transform .13s;
+    }
+    .usecase-card:hover .usecase-img {
+      box-shadow: 0 8px 32px rgba(13,148,136,.18),0 2px 8px rgba(0,0,0,.08);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .usecase-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(13,148,136,.07);
+  padding: 28px 18px 22px 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow .18s, transform .13s;
+  height: 100%;
+    }
+    .usecase-card:hover {
+      box-shadow: 0 8px 32px rgba(13,148,136,.13),0 2px 8px rgba(0,0,0,.08);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .usecase-scroller {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin: 0 0 8px 0;
+    }
+    @media (max-width: 900px) {
+      .usecase-scroller {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      .usecase-scroller {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+    .usecase-body {
+      text-align: center;
+      width: 100%;
+    }
+    .usecase-body h3 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #0f766e;
+      margin: 0 0 8px 0;
+      letter-spacing: .7px;
+    }
+    .usecase-body p {
+      font-size: 1.05rem;
+      color: #475569;
+      margin: 0 0 12px 0;
+      line-height: 1.7;
+      letter-spacing: .1px;
+    }
+    .usecase-body .chip.go-category {
+      background: linear-gradient(90deg,#fef3c7 80%,#fde68a);
+      color: #b45309;
+      border: 2px solid #fbbf24;
+      font-size: 1.13rem;
+      font-weight: 900;
+      letter-spacing: .8px;
+      box-shadow: 0 2px 8px rgba(251,191,36,.13);
+      margin-top: 10px;
+      padding: 10px 28px;
+      border-radius: 999px;
+      transition: background .18s, color .18s, border-color .18s, box-shadow .18s, transform .13s;
+    }
+    .usecase-body .chip.go-category:hover {
+      background: linear-gradient(90deg,#fde68a 80%,#fef3c7);
+      color: #a16207;
+      border-color: #f59e42;
+      transform: scale(1.06);
+      box-shadow: 0 8px 24px rgba(251,191,36,.18);
+    }
+    /* 推薦按鈕凸顯 */
+    .usecase-body .chip.go-category {
+      background: var(--highlight, #fef3c7);
+      color: #b45309;
+      border: 2px solid #fbbf24;
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: .7px;
+      box-shadow: 0 2px 8px rgba(251,191,36,.13);
+      margin-top: 8px;
+    }
+    .card-actions-design .actions-row.buy-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: stretch;
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+    .card-actions-design .btn-buy {
+      font-size: 0.88rem;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      min-width: 80px;
+      flex: 1 1 90px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .card-actions-design .actions-row.detail-row {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+    }
+    .card-actions-design .btn-detail {
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      margin: 0 auto;
+      max-width: 260px;
+    }
+    /* 商品卡底部行動按鈕設計強化 */
+    .card-actions-design {
+      margin-top: 1.1rem;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      background: #f8fdfa;
+      border-radius: 20px;
+      padding: 16px 14px 14px 14px;
+      box-shadow: 0 4px 18px rgba(13,148,136,.10);
+      border: 1.5px solid #e0f7f6;
+    }
+    .card-actions-design .btn,
+    .card-actions-design .btn-primary,
+    .card-actions-design .btn-outline {
+      min-width: 128px;
+      border-radius: 999px;
+      font-weight: 700;
+  font-size: 1rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(13,148,136,.10);
+      margin: 0 6px;
+      padding: 13px 0 13px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: background .18s, color .18s, border-color .18s, box-shadow .18s, transform .13s;
+      cursor: pointer;
+      border: none;
+    }
+    .card-actions-design .btn-primary {
+      background: linear-gradient(90deg,#0f766e 80%,#0d9488);
+      color: #fff;
+      border: none;
+      box-shadow: 0 2px 8px rgba(13,148,136,.10);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-actions-design .btn-primary:hover {
+      background: linear-gradient(90deg,#0d9488 80%,#0f766e);
+      color: #fff;
+      transform: translateY(-2px) scale(1.06);
+      box-shadow: 0 8px 24px rgba(13,148,136,.18);
+    }
+    .card-actions-design .btn-outline {
+      background: #fff;
+      color: #0f766e;
+      border: 2px solid #0f766e;
+      box-shadow: 0 1.5px 6px rgba(13,148,136,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-actions-design .btn-outline:hover {
+      background: #e0f7f6;
+      color: #0d9488;
+      border-color: #0d9488;
+      transform: translateY(-2px) scale(1.06);
+      box-shadow: 0 8px 24px rgba(13,148,136,.18);
+    }
+    /* icon for button */
+    .card-actions-design .btn .icon,
+    .card-actions-design .btn-primary .icon,
+    .card-actions-design .btn-outline .icon {
+      display: inline-block;
+      width: 1.15em;
+      height: 1.15em;
+      margin-right: 2px;
+      vertical-align: middle;
+    }
+    /* 商品目錄下方子分類 chips 美化 */
+    .subchips{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 24px 0;justify-content:center}
+    .subchips .chip{background:#fff;color:#0f766e;border:2px solid #0f766e;border-radius:999px;padding:8px 26px;font-size:1.07rem;font-weight:600;letter-spacing:.6px;cursor:pointer;box-shadow:0 1.5px 6px rgba(13,148,136,.06);transition:background .18s,color .18s,border-color .18s,box-shadow .18s,transform .13s;outline:none;margin:0}
+    .subchips .chip.active,.subchips .chip:focus-visible{background:linear-gradient(90deg,#0f766e 80%,#0d9488);color:#fff;border-color:#0d9488;box-shadow:0 4px 16px rgba(13,148,136,.13);transform:translateY(-2px) scale(1.04)}
+    .subchips .chip:hover:not(.active){background:#e0f7f6;color:#0d9488;border-color:#0d9488}
+    @media (max-width:700px){.subchips{gap:8px}.subchips .chip{padding:7px 14px;font-size:.98rem}}
+
+    /* 商品目錄 tabs 美化 */
+    .tabs{display:flex;gap:22px;background:#f0fdfa;border-radius:16px;padding:14px 18px 10px 18px;box-shadow:0 2px 10px rgba(13,148,136,.07);margin-bottom:24px;justify-content:center;flex-wrap:wrap}
+    .tab{background:#fff;color:#0f766e;border:none;border-radius:999px;padding:9px 28px;font-size:1.08rem;font-weight:600;letter-spacing:.7px;cursor:pointer;box-shadow:0 1.5px 6px rgba(13,148,136,.06);transition:background .18s,color .18s,box-shadow .18s,transform .15s;outline:none;margin:0}
+    .tab.active,.tab:focus-visible{background:linear-gradient(90deg,#0f766e 80%,#0d9488);color:#fff;box-shadow:0 4px 16px rgba(13,148,136,.13);transform:translateY(-2px) scale(1.04)}
+    .tab:hover:not(.active){background:#e0f7f6;color:#0d9488}
+    @media (max-width:700px){.tabs{gap:10px;padding:10px 6px}.tab{padding:8px 16px;font-size:1rem}}
+
+    /* 商品目錄區塊商品卡設計強化 + 最小網格保底 */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .grid .card,.grid .product-card{background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(13,148,136,.08),0 1.5px 6px rgba(0,0,0,.04);border:2px solid #e0f7f6;padding:22px 18px 18px 18px;transition:box-shadow .22s,border-color .22s,transform .18s;cursor:pointer;position:relative;overflow:hidden}
+    .grid .card:hover,.grid .product-card:hover{box-shadow:0 8px 32px rgba(13,148,136,.16),0 2px 8px rgba(0,0,0,.08);border-color:#0f766e;transform:translateY(-3px) scale(1.025)}
+    .grid .card:active,.grid .product-card:active{box-shadow:0 2px 8px rgba(13,148,136,.10);border-color:#0d9488;transform:scale(0.98)}
+    .grid .card .card-title,.grid .product-card .card-title{color:#0f766e;font-size:1.13rem;font-weight:700;margin-bottom:8px;letter-spacing:.7px}
+    .grid .card .card-desc,.grid .product-card .card-desc{color:#475569;font-size:1rem;margin-bottom:10px}
+    .grid .card .card-link,.grid .product-card .card-link{display:inline-block;color:#0d9488;font-weight:600;font-size:.98rem;margin-top:8px;text-decoration:underline;letter-spacing:.3px;transition:color .18s}
+    .grid .card .card-link:hover,.grid .product-card .card-link:hover{color:#0f766e}
+    .card-media img{
+      width:100%;
+      height:160px;
+      object-fit:contain;
+      display:block;
+      border-radius:10px;
+      background:#f6f6f6;
+    }
+    .badge{position:absolute;top:12px;left:12px;background:#0f766e;color:#fff;border-radius:999px;padding:6px 10px;font-size:.8rem;font-weight:700}
+
+    /* 站內 header 一列橫向排版，寬度與主內容一致 */
+    .site-header{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.04);margin:0 auto 32px auto;border-radius:12px;max-width:1200px;padding:0 24px}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:24px}
+    .site-nav{display:flex;gap:22px}
+    .site-nav a{color:#0f766e;text-decoration:none;font-weight:500;font-size:1.08rem;letter-spacing:.5px;padding:6px 0;transition:color .18s}
+    .site-nav a:hover{color:#0d9488}
+    @media (max-width:800px){.site-header{max-width:100%;padding:0 10px}.header-inner{gap:10px}.site-nav{gap:12px}}
+
+    /* 主體樣式 */
+    .epe-container{max-width:1200px;margin:0 auto;padding:20px}
+    .section{background:#fff;border-radius:12px;padding:32px 24px;box-shadow:0 8px 24px rgba(0,0,0,.06);margin-top:24px}
+    h2.section-title{color:#0f766e;font-size:28px;margin:0 0 12px;border-left:6px solid #0f766e;padding-left:14px;letter-spacing:.7px;}
+    h3{color:#0f766e;font-size:20px;margin:18px 0 8px;font-weight:700;line-height:1.25;}
+
+    /* Hero 區塊 */
+    /* FAQ 標題顏色強化 */
+    #faq details summary {
+      color: #0f766e;
+      background: #e0f7f6;
+      font-weight: 900;
+      font-size: 1.08rem;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      margin-bottom: 6px;
+      outline: none;
+      transition: background .18s, color .18s;
+    }
+    #faq details[open] summary {
+      background: #d1fae5;
+      color: #0d9488;
+    }
+    #faq details p {
+      margin: 10px 0 14px 0;
+      color: #334155;
+      font-size: 1.01rem;
+      line-height: 1.7;
+    }
+  .hero{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;border-radius:16px;padding:56px 24px;text-align:center;box-shadow:0 12px 28px rgba(0,0,0,.08);margin-bottom:4px;max-width:1200px;margin-left:auto;margin-right:auto}
+    .hero h1{font-size:clamp(1.9rem,1.3rem + 1.9vw,2.6rem);letter-spacing:.9px;margin-bottom:12px;margin-top:0;font-weight:700;line-height:1.25}
+    .hero p{margin:0;opacity:.95;font-size:20px;line-height:1.75}
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="container">
+      <h1>找到你的空氣解決方案！</h1>
+      <p>從居家到商辦，從移動到固定式，WETOP 為不同場域打造精準的環境淨化方案。</p>
+    </div>
+  </div>
+
+  <!-- 全站主導航列由外層統一控制，S3 專屬導航已移除 -->
+
+  <section class="epe-container">
+    <!-- Use Case / 情境導覽 -->
+    <section id="use-cases" class="section usecases">
+      <h2 class="section-title">情境導覽</h2>
+      <div class="usecase-scroller">
+        <article class="usecase-card" data-target="3-2">
+          <img src="images/S3/下雨霉味_0.jpg" alt="居家防霉與過敏" class="usecase-img">
+          <div class="usecase-body">
+            <h3>居家防霉 / 過敏</h3>
+            <p>長時間居家、濕度高的環境，建議選擇移動式機種快速見效。</p>
+            <button class="chip go-category" data-category="3-2">推薦：移動式</button>
+          </div>
+        </article>
+        <article class="usecase-card" data-target="3-1">
+          <img src="images/S3/室內空氣品質_0.jpg" alt="辦公室除味與病菌控制" class="usecase-img">
+          <div class="usecase-body">
+            <h3>辦公室除味 / 病菌控制</h3>
+            <p>穩定、低噪音與長時段運轉，適合固定式系列。</p>
+            <button class="chip go-category" data-category="3-1">推薦：固定式</button>
+          </div>
+        </article>
+        <article class="usecase-card" data-target="3-3">
+          <img src="images/S3/尾氣.jpg" alt="餐飲後場與異味源" class="usecase-img">
+    
+          <div class="usecase-body">
+            <h3>餐飲後場 / 異味源</h3>
+            <p>針對特定污染源與油煙氣味，建議除味箱系列。</p>
+            <button class="chip go-category" data-category="3-3">推薦：除味箱</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Catalog / 商品目錄 -->
+    <section id="catalog" class="section catalog">
+      <div class="catalog-head">
+        <h2 class="section-title">商品目錄</h2>
+        <div class="tabs" id="categoryTabs" role="tablist" aria-label="產品分類">
+          <button class="tab active" data-filter="3-2" role="tab" aria-selected="true">移動式機型</button>
+          <button class="tab" data-filter="3-1" role="tab">固定式機型</button>
+          <button class="tab" data-filter="3-3" role="tab">除味箱系列</button>
+        </div>
+      </div>
+
+      <!-- 子分類 Chips -->
+      <div class="subchips" id="subchips"></div>
+
+      <!-- 商品牆 -->
+      <div class="grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+      <h2 class="section-title">常見問題</h2>
+      <details>
+        <summary>有人覺得Wetop環境淨化器產生的味道就是臭氧味，請問這種產品安全嗎？</summary>
+        <p>臭氧濃度超過0.003ppm，人就可以聞到味道，且對於味道濃度的感覺並不是線性，因此不能直接以是否有味道來定義產品是否安全？一般自然界的室外環境本來就有臭氧存在，只是濃度高低的問題(一般戶外自然的環境約在0.02~0.05 ppm)。依台灣IAQ室內空氣品質管理法，臭氧濃度不得大於0.06ppm (8小時內算術平均值)，Wetop環境淨化器擁有動態控制淨化因子濃度的專利，產生的臭氧數值都經過計算，如正確使用，都會在安全範圍內，並取得相關產品安規認證及第三方測試確認，消費者可以安心使用。</p>
+      </details>
+      <details>
+        <summary>固定式與除味箱是否提供安裝？</summary>
+        <p>提供。這兩類產品建議由專業人員勘場後規劃，確保最佳效果與安全。</p>
+      </details>
+      <details>
+        <summary>若不確定哪個型號適合？</summary>
+        <p>先用上方「情境導覽」快速篩選，或點選商品卡的「查看詳情」聯絡我們取得建議。</p>
+      </details>
+      <details>
+        <summary>Wetop環境淨化器產生的淨化因子對家裡的寵物有何影響？</summary>
+        <p>長期使用Wetop環境淨化器淨化室內環境，因為淨化因子都控制在安全使用的濃度範圍內，最終會使室內空氣接近於室外森林瀑布邊的新鮮自然空氣，這種呼吸的環境對大多數的動物都是有益的；但是如果遇到的寵物，習慣生存的環境並非如此時，飼主可能就要小心使用。</p>
+      </details>
+      <details>
+        <summary>是否可以先試用這個產品? 哪邊有試用的地方?</summary>
+        <p>可以親至新竹縣竹北市文興路一段360 號泉康科技體驗產品。</p>
+      </details>
+      <details>
+        <summary>如果家裡已經有空氣清淨機了，我還需要再買這一台嗎?</summary>
+        <p>空氣清淨機用來處理顆粒污染物的效果非常好，但是對於環境中的去異味及微生物污染物的改善效果有限，因為很多的污染物是存在於物體表面(如三手菸、甲醛及黴菌問題等等)，尤其是過敏家庭，建議可以認真比較。</p>
+      </details>      
+    </section>
+  </section>
+
+  <!-- 產品互動腳本：資料 + 模組化 SPA 框架 -->
+  <script>
+/** === 產品資料 === */
+if (!window.PRODUCTS) window.PRODUCTS = [
+  /* ---------- 3-1 固定式（不顯示購買） ---------- */
+  // ...existing code...
+  {
+    id:"dml", cat:"3-1", sub:"3-1-2",
+    title:"DML 系列",
+    desc:"長方形主體，裝於空間四周高處，與裝潢融合。",
+    img:"images/S3/DML.jpg",
+    specs:["DC 12V","即插即用","多機種涵蓋 20–450 m³","安裝彈性高"],
+    variants:[
+      { model:"DML1", power:"9W",  size:"85×100×275 mm", voltage:"DC 12V", range:"20–70 m³" },
+      { model:"DML2", power:"10W", size:"85×100×275 mm", voltage:"DC 12V", range:"60–100 m³" },
+      { model:"DML3", power:"13W", size:"85×100×480 mm", voltage:"DC 12V", range:"90–200 m³" },
+      { model:"DML4", power:"20W", size:"85×100×480 mm", voltage:"DC 12V", range:"200–450 m³" },
+    ],
+    badges:["商務場域"], purchasable:false
+  },
+  // ...existing code...
+  {
+    id:"dfl", cat:"3-1", sub:"3-1-4",
+    title:"DFL 系列",
+    desc:"循環扇 × PICT，提升空氣流動並主動淨化。",
+    img:"images/S3/圖片1.jpg",
+    specs:["DC 24V","天花板模組","提升風場循環","長時運轉"],
+    variants:[
+      { model:"DFL1", power:"6+4W", size:"600×600×182 mm", voltage:"DC 24V", range:"20–70 m³" },
+      { model:"DFL2", power:"7+4W", size:"600×600×182 mm", voltage:"DC 24V", range:"60–100 m³" },
+    ],
+    badges:["循環扇整合"], purchasable:false
+  },
+  {
+    id:"phl", cat:"3-1", sub:"3-1-5",
+    title:"PHL 系列（風管模組）",
+    desc:"直接固定於風管內，隨空調風量主動淨化。",
+    img:"images/S3/PHL_0.jpg",
+    variants:[
+      { model:"PHL1", power:"6W",  size:"Ø65 × L121 mm", voltage:"DC 12V", flow:"2–7 m³/min",  range:"20–70 m³" },
+      { model:"PHL2", power:"7W",  size:"Ø65 × L153 mm", voltage:"DC 12V", flow:"5–14 m³/min", range:"60–100 m³" },
+      { model:"PHL3", power:"10W", size:"Ø65 × L215 mm", voltage:"DC 12V", flow:"7–35 m³/min", range:"90–200 m³" },
+      { model:"PHL4", power:"17W", size:"Ø65 × L360 mm", voltage:"DC 12V", flow:"20–70 m³/min",range:"200–450 m³" },
+    ],
+    badges:["風管型"], purchasable:false
+  },
+
+  /* ---------- 3-2 移動式（可購買，導到蝦皮） ---------- */
+  {
+    id:"purarea", cat:"3-2", sub:"3-2-1",
+    title:"Purarea",
+    img:"images/S3/Purarea正面.png",
+    badges:["便攜"], purchasable:true,
+    momoUrl:"https://www.momoshop.com.tw/goods/GoodsDetail.jsp?i_code=14141106&Area=search&mdiv=403&oid=1_6&cid=index&kw=wetop"
+  },
+  {
+    id:"r1s", cat:"3-2", sub:"3-2-2",
+    title:"R1S 系列",
+    img:"images/S3/R1S-1x1.jpg",
+    badges:["大空間"], purchasable:true,
+    momoUrl:"https://www.momoshop.com.tw/goods/GoodsDetail.jsp?i_code=9035663&Area=search&mdiv=403&oid=1_3&cid=index&kw=wetop"
+  },
+  {
+    id:"c300plus", cat:"3-2", sub:"3-2-3",
+    title:"C300Plus",
+    img:"images/S3/C300Plus.png",
+    badges:["靜音","熱銷"], purchasable:true,
+    momoUrl:"https://www.momoshop.com.tw/goods/GoodsDetail.jsp?i_code=11001943&Area=search&mdiv=403&oid=1_4&cid=index&kw=wetop"
+  },
+  {
+    id:"bp1v2", cat:"3-2", sub:"3-2-4",
+    title:"BP1V2",
+    desc:"密閉空間即時除味/除菌。",
+    img:"images/S3/BP1V2-1x1_0.jpg",
+    badges:["除味"], purchasable:false
+  },
+
+
+  /* ---------- 3-3 除味箱系列（不顯示購買） ---------- */
+  {
+    id:"odorbox", cat:"3-3", sub:"3-3",
+    title:"除味箱系列",
+    desc:"餐飲後場、垃圾間、實驗室等異味治理。",
+    img:"images/S3/除味箱.jpg",
+    variants:[
+      { model:"DOMLXX", size:"700×535×681 mm", resistance:"<150 Pa", note:"依現場接管/配電/自控施工" }
+    ],
+    badges:["異味源"], purchasable:false
+  },
+
+];
+
+/** === 子分類（依原分群） === */
+if (!window.SUBCATS) window.SUBCATS = {
+  "3-1":[
+  // {code:"3-1-1",label:"DAL"},
+    {code:"3-1-2",label:"DML"},
+  // {code:"3-1-3",label:"DLL"},
+    {code:"3-1-4",label:"DFL"},
+    {code:"3-1-5",label:"PHL"},
+  ],
+  "3-2":[
+    {code:"3-2-1",label:"Purarea"},
+    {code:"3-2-2",label:"R1S"},
+    {code:"3-2-3",label:"C300Plus"},
+    {code:"3-2-4",label:"BP1V2"},
+
+  ],
+  "3-3":[{code:"3-3",label:"除味箱系列"}],
+};
+  </script>
+
+  <!-- 模組化 SPA 版：_pict_cleanup / pictInitWithWait -->
+  <script>
+(function (global, doc) {
+  // 支援 hash #catalog?cat=3-1 直接切換分類
+  function parseHashCategory() {
+    if (!location.hash) return null;
+    let hash = location.hash;
+    // 容錯：若有多個 #，只取最後一個
+    if (hash.indexOf('#') !== hash.lastIndexOf('#')) {
+      hash = '#' + hash.split('#').pop();
+    }
+    const m = hash.match(/^#catalog\?cat=(3-1|3-2|3-3)(?:&sub=([\w-]+))?/);
+    if (!m) return null;
+    return {cat: m[1], sub: m[2]||""};
+  }
+  "use strict";
+
+  /** 可調參數（也可透過 init 傳入覆寫） */
+  const DEFAULTS = {
+    productGridSel: "#productGrid",
+    categoryTabsSel: "#categoryTabs",
+    subchipsSel: "#subchips",
+    shopUrl: "https://shopee.tw/wetoptec?utm_source=site&utm_medium=button&utm_campaign=shop",
+    storageKey: "wetop.catalog.selection.v1",
+    defaultCat: "3-2",
+  };
+
+  /** 工具：HTML 轉義 */
+  const escapeHTML = (str="") => str.replace(/[&<>"']/g, s => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[s]));
+
+  /** === Catalog 模組工廠（閉包封裝 DOM/狀態/事件） === */
+  function createCatalogModule(options = {}) {
+    const cfg = { ...DEFAULTS, ...options };
+
+    const products = Array.isArray(cfg.products) ? cfg.products : (global.PRODUCTS || []);
+    const subcats  = cfg.subcats || (global.SUBCATS || {});
+
+    let productGrid, categoryTabs, subchips;
+    let currentCat = cfg.defaultCat;
+    let bound = false;
+
+    const onTabClick = (e) => {
+      const tab = e.target.closest(".tab");
+      if (!tab || tab.classList.contains("active")) return;
+      // 清除 chips selection，避免 chips active 狀態殘留
+      try { localStorage.removeItem(cfg.storageKey); } catch {}
+      categoryTabs.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+      tab.classList.add("active");
+      currentCat = tab.dataset.filter || cfg.defaultCat;
+      renderSubchips(currentCat, "");
+      renderProducts({ cat: currentCat, sub: "" });
+      saveSelection();
+      productGrid.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+
+    const onChipClick = (e) => {
+      const chip = e.target.closest(".chip");
+      if (!chip || chip.classList.contains("active")) return;
+      subchips.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+      chip.classList.add("active");
+      renderProducts({ cat: currentCat, sub: chip.dataset.sub });
+      saveSelection();
+    };
+
+    const onVisibility = () => {
+      if (doc.visibilityState !== "visible") return;
+      // 重新從網址取得 cat/sub，確保 chips 狀態正確
+      const url = new URL(location.href);
+      let cat = url.searchParams.get("cat");
+      let sub = url.searchParams.get("sub");
+      if (!cat || !(cat in subcats)) cat = cfg.defaultCat;
+      const validSubs = ["", ...(subcats[cat]||[]).map(s=>s.code)];
+      if (!validSubs.includes(sub||"")) sub = "";
+      currentCat = cat;
+      // 同步 tabs 的 active 樣式
+      categoryTabs.querySelectorAll(".tab").forEach(t=>{
+        t.classList.toggle("active", t.dataset.filter === currentCat);
+      });
+      renderSubchips(currentCat, sub);
+      renderProducts({ cat: currentCat, sub });
+    };
+
+    const onPageShow = (e) => {
+      if (!e.persisted) return;
+      // 重新從網址取得 cat/sub，確保 chips 狀態正確
+      const url = new URL(location.href);
+      let cat = url.searchParams.get("cat");
+      let sub = url.searchParams.get("sub");
+      if (!cat || !(cat in subcats)) cat = cfg.defaultCat;
+      const validSubs = ["", ...(subcats[cat]||[]).map(s=>s.code)];
+      if (!validSubs.includes(sub||"")) sub = "";
+      currentCat = cat;
+      // 同步 tabs 的 active 樣式
+      categoryTabs.querySelectorAll(".tab").forEach(t=>{
+        t.classList.toggle("active", t.dataset.filter === currentCat);
+      });
+      renderSubchips(currentCat, sub);
+      renderProducts({ cat: currentCat, sub });
+    };
+
+    const getInitialSelection = () => {
+  const url = new URL(location.href);
+  let cat = url.searchParams.get("cat");
+  let sub = url.searchParams.get("sub");
+  // chips sub 參數自動過濾 hash 與多餘內容
+  if (sub && typeof sub === 'string') {
+    sub = sub.split('#')[0].replace(/[^\w\-]/g, '');
+  }
+  // 若 search 沒有，再從 hash 裡解析
+  if (!cat && location.hash) {
+    const m = location.hash.match(/cat=(3-1|3-2|3-3)/);
+    if (m) cat = m[1];
+    const m2 = location.hash.match(/sub=([\w-]*)/);
+    if (m2) sub = m2[1];
+  }
+  // 如果網址沒有 cat，預設顯示全部分類（3-2）
+  if (!cat) cat = cfg.defaultCat;
+  if (!(cat in subcats)) cat = cfg.defaultCat;
+  const validSubs = ["", ...(subcats[cat]||[]).map(s=>s.code)];
+  // sub 無效、空字串、或等於 cat（如 sub=3-3），都視為顯示該分類全部商品
+  if (!sub || sub === cat || !validSubs.includes(sub)) sub = null;
+  return { cat, sub };
+    };
+
+    const saveSelection = () => {
+      const data = { cat: currentCat, sub: getActiveSub() };
+      try { localStorage.setItem(cfg.storageKey, JSON.stringify(data)); } catch {}
+      const url = new URL(location.href);
+      url.searchParams.set("cat", data.cat);
+      url.searchParams.set("sub", data.sub || "");
+      history.replaceState(null, "", url);
+    };
+
+    const getActiveSub = () => {
+      const activeChip = subchips.querySelector(".chip.active");
+      return activeChip ? activeChip.dataset.sub : "";
+    };
+
+    const renderSubchips = (cat, preferredSub = "") => {
+      subchips.innerHTML = "";
+      const frag = doc.createDocumentFragment();
+
+      let scrollToFixedAll = false;
+      let scrollToMoveAll = false;
+      if (cat === "3-1" || cat === "3-2") {
+        const allBtn = doc.createElement("button");
+        allBtn.className = "chip" + (preferredSub === "" ? " active" : "");
+        allBtn.type = "button";
+        allBtn.dataset.sub = "";
+        allBtn.textContent = "全部";
+        // 加上專屬 id 並判斷是否要自動捲動
+        if(cat === "3-1") {
+          allBtn.id = "chip-fixed-all";
+          if (preferredSub === "" && window.location.hash === '#catalog?cat=3-1') scrollToFixedAll = true;
+        }
+        if(cat === "3-2") {
+          allBtn.id = "chip-move-all";
+          if (preferredSub === "" && window.location.hash === '#catalog?cat=3-2') scrollToMoveAll = true;
+        }
+        frag.appendChild(allBtn);
+      }
+
+      const list = subcats[cat] || [];
+      // 若 preferredSub 為商品唯一 id，找出對應 sub code
+      let activeSubCode = preferredSub;
+      if (preferredSub && !list.some(s=>s.code===preferredSub)) {
+        // 嘗試用商品 id 對應 sub code
+        const p = (global.PRODUCTS||[]).find(p=>p.id===preferredSub && p.cat===cat);
+        if(p) activeSubCode = p.sub;
+      }
+      list.forEach((s, idx) => {
+        const shouldActive = activeSubCode
+          ? (activeSubCode === s.code)
+          : (cat === "3-3" && idx === 0);
+        const btn = doc.createElement("button");
+        btn.className = "chip" + (shouldActive ? " active" : "");
+        btn.type = "button";
+        btn.dataset.sub = s.code;
+        btn.textContent = s.label;
+        frag.appendChild(btn);
+      });
+
+      subchips.appendChild(frag);
+
+      // 若為固定式全部，chips產生後自動捲動到 chip-fixed-all
+      if(scrollToFixedAll) {
+        setTimeout(()=>{
+          const chip = doc.getElementById('chip-fixed-all');
+          if(chip) chip.scrollIntoView({behavior:'smooth', block:'center'});
+        }, 120);
+      }
+      if(scrollToMoveAll) {
+        setTimeout(()=>{
+          const chip = doc.getElementById('chip-move-all');
+          if(chip) chip.scrollIntoView({behavior:'smooth', block:'center'});
+        }, 120);
+      }
+    };
+
+    const renderVariants = (p) => {
+      if (!p.variants || !p.variants.length) return "";
+      const items = p.variants.map(v=>{
+        const parts = [
+          v.model ? `型號 ${escapeHTML(v.model)}` : "",
+          v.power ? `功率 ${escapeHTML(v.power)}` : "",
+          v.size ? `尺寸 ${escapeHTML(v.size)}` : "",
+          v.voltage ? `${escapeHTML(v.voltage)}` : "",
+          v.flow ? `風量 ${escapeHTML(v.flow)}` : "",
+          v.range ? `適用 ${escapeHTML(v.range)}` : "",
+          v.resistance ? `阻力 ${escapeHTML(v.resistance)}` : "",
+          v.note ? `${escapeHTML(v.note)}` : "",
+        ].filter(Boolean).join(" ｜ ");
+        return `<li style="margin:.4rem 0">${parts}</li>`;
+      }).join("");
+      return `
+        <details class="card-more" style="margin-top:.5rem;border:1px solid #e7f4f2;border-radius:10px;padding:.5rem .75rem;background:#fff">
+          <summary style="cursor:pointer;font-weight:700;color:#0f766e;outline:none">更多規格（系列型號）</summary>
+          <ul class="variant-list" style="margin:.6rem 0 0 1rem;color:#475569;font-size:.9rem">${items}</ul>
+        </details>`;
+    };
+
+    const renderCard = (p) => {
+      // 支援多個 badges，確保同時顯示所有標籤
+      // 多個 badge 橫向排列於左上角，避免覆蓋商品圖主要區域
+      let badge = "";
+      if (Array.isArray(p.badges) && p.badges.length) {
+        badge = `<div style="position:absolute;top:12px;left:12px;display:flex;flex-direction:row;gap:8px;z-index:2;">`
+          + p.badges.map(b => `<span class="badge" style="position:static;">${b}</span>`).join("")
+          + `</div>`;
+      }
+      const specList = (p.specs && p.specs.length)
+        ? `<ul class="card-specs" style="margin:.25rem 0 0 1rem;color:#475569;font-size:.92rem;line-height:1.6">
+             ${p.specs.slice(0,4).map(s=>`<li>${escapeHTML(s)}</li>`).join("")}
+           </ul>` : "";
+      const more = renderVariants(p);
+
+      let actions = "";
+      if (p.purchasable) {
+        actions += `<div class="actions-row buy-row">
+          <button class="btn btn-primary btn-buy shopee" data-action="buy" aria-label="前往蝦皮購買 ${escapeHTML(p.title)}">
+            <span class="icon" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:4px;">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 3h2l.4 2M7 13h7.5a1 1 0 0 0 .98-.8l1.38-6.9A1 1 0 0 0 15.88 4H5.21" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1" fill="#fff"/><circle cx="15.5" cy="17" r="1" fill="#fff"/></svg>
+            </span>蝦皮</button>
+          ${(p.id==="c300plus"||p.id==="r1s"||p.id==="purarea") && p.momoUrl ? `
+          <a class="btn btn-primary btn-buy momo" href="${p.momoUrl}" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:4px;">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>MOMO</a>` : ""}
+        </div>`;
+        actions += `<div class="actions-row detail-row">
+          <button class="btn btn-outline btn-detail" data-action="detail">
+            <span class="icon" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:4px;">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#0f766e" stroke-width="1.5"/><path d="M10 6v4l2 2" stroke="#0f766e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>查看詳情</button>
+        </div>`;
+      } else {
+        // 固定式、除味箱、BP1V2 改為『聯絡我們』
+        const contactIds = ["bp1v2", "odorbox", "dml", "dfl", "phl"];
+        const btnText = contactIds.includes(p.id) ? "聯絡我們" : "查看詳情";
+        actions = `<div class="actions-row detail-row">
+          <button class="btn btn-outline btn-detail" data-action="detail" data-contact="${contactIds.includes(p.id) ? 'true' : 'false'}">
+            <span class="icon" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:4px;">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#0f766e" stroke-width="1.5"/><path d="M10 6v4l2 2" stroke="#0f766e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>${btnText}</button>
+        </div>`;
+      }
+
+  const idAttr = ['purarea','r1s','c300plus','bp1v2','dml','dfl','phl','odorbox'].includes(p.id) ? ` id="${p.id}"` : '';
+        return `
+          <article class="card" data-cat="${p.cat}" data-sub="${p.sub}"${idAttr}><!-- card-id:${p.id} -->
+            <div class="card-media"> 
+                ${badge}
+                <img src="${p.img}" alt="${escapeHTML(p.title)}"> 
+            </div>
+            <div class="card-body"> 
+              <h3 class="card-title">${escapeHTML(p.title)}</h3>
+              <p class="card-desc">${escapeHTML(p.desc)}</p>
+              ${specList}
+              ${more}
+              <div class="card-actions card-actions-design">${actions}</div>
+            </div>
+          </article>`;
+    };
+
+    const renderProducts = ({cat, sub} = {}) => {
+      if (sub === undefined) sub = getActiveSub();
+      let items;
+      // 若 sub 為商品 id（唯一 sub 代碼），直接顯示該商品
+      if (sub && products.some(p => p.id === sub)) {
+        items = products.filter(p => p.id === sub);
+      } else if (!sub) {
+        items = products.filter(p => p.cat === cat);
+      } else {
+        // 支援除味箱 chips 也能用 sub=3-3 對應 odorbox
+        if (cat === '3-3' && sub === '3-3') {
+          items = products.filter(p => p.cat === '3-3');
+        } else {
+          items = products.filter(p => p.cat === cat && p.sub === sub);
+        }
+        // 若找不到，嘗試用 sub 代碼找商品 id
+        if (!items.length && products.some(p => p.id === sub)) {
+          items = products.filter(p => p.id === sub);
+        }
+      }
+      if (!items.length) {
+        productGrid.innerHTML = `<div style=\"grid-column:1/-1;padding:40px;text-align:center;color:#64748b\">此分類暫無商品。</div>`;
+        return;
+      }
+      productGrid.innerHTML = items.map(renderCard).join("");
+
+      // 自動滑動到指定商品卡（如網址帶 scroll=xxx）
+      let scrollId = null;
+      // 支援 hash/search 混用（#sections/section-3.html?cat=3-3&scroll=odorbox）
+      if (location.hash && location.hash.includes('scroll=')) {
+        // 解析 hash 內的 search 參數
+        const hash = location.hash;
+        const m = hash.match(/[?&]scroll=([\w-]+)/);
+        if (m) scrollId = m[1];
+      }
+      if (!scrollId) {
+        const url = new URL(location.href);
+        scrollId = url.searchParams.get('scroll');
+      }
+      if(scrollId) {
+        // 多次重試與 MutationObserver 保證滑動
+        let tried = 0, maxTries = 10;
+        function tryScroll() {
+          const target = document.getElementById(scrollId);
+          if(target) {
+            target.scrollIntoView({behavior:'smooth', block:'center'});
+            return true;
+          }
+          if(++tried < maxTries) setTimeout(tryScroll, 120);
+          return false;
+        }
+        if(!tryScroll()) {
+          // 若多次重試仍未出現，啟用 MutationObserver
+          const grid = document.getElementById('productGrid');
+          if(grid) {
+            const observer = new MutationObserver(()=>{
+              const target = document.getElementById(scrollId);
+              if(target) {
+                target.scrollIntoView({behavior:'smooth', block:'center'});
+                observer.disconnect();
+              }
+            });
+            observer.observe(grid, {childList:true, subtree:true});
+          }
+        }
+      }
+
+      productGrid.querySelectorAll("[data-action='buy']").forEach(btn=>{
+        btn.addEventListener("click",()=> global.open(cfg.shopUrl, "_blank", "noopener"));
+      });
+      productGrid.querySelectorAll("[data-action='detail']").forEach(btn=>{
+        const card = btn.closest(".card");
+        const sub = card ? card.getAttribute("data-sub") : "";
+        const isContact = btn.dataset.contact === 'true';
+        if(isContact){
+          btn.addEventListener("click",()=>{
+            // 建立彈跳視窗
+            let modal = document.getElementById('contact-modal');
+            if(!modal){
+              modal = document.createElement('div');
+              modal.id = 'contact-modal';
+              modal.style.position = 'fixed';
+              modal.style.top = '0';
+              modal.style.left = '0';
+              modal.style.width = '100vw';
+              modal.style.height = '100vh';
+              modal.style.background = 'rgba(0,0,0,0.45)';
+              modal.style.zIndex = '9999';
+              modal.style.display = 'flex';
+              modal.style.alignItems = 'center';
+              modal.style.justifyContent = 'center';
+              modal.innerHTML = `<div style="background:#fff;max-width:520px;width:95vw;padding:32px 18px 18px 18px;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.18);position:relative;overflow:auto;max-height:90vh;">
+                <button id="close-contact-modal" style="position:absolute;top:10px;right:16px;font-size:1.6rem;background:none;border:none;color:#888;cursor:pointer;">&times;</button>
+                <div id="contact-modal-content">載入中...</div>
+              </div>`;
+              document.body.appendChild(modal);
+              document.getElementById('close-contact-modal').onclick = ()=>modal.remove();
+            }else{
+              modal.style.display = 'flex';
+            }
+            // 載入 section-6.html 表單內容
+            fetch('sections/section-6.html').then(r=>r.text()).then(html=>{
+              // 只取 form 區塊
+              const temp = document.createElement('div');
+              temp.innerHTML = html;
+              const form = temp.querySelector('form');
+              document.getElementById('contact-modal-content').innerHTML = form ? form.outerHTML : '載入失敗';
+              // 綁定送出事件，送出後顯示感謝頁
+              const modalForm = document.getElementById('contact-modal-content').querySelector('form');
+              if(modalForm){
+                modalForm.addEventListener('submit',function(e){
+                  e.preventDefault();
+                  const formData = new FormData(modalForm);
+                  fetch(modalForm.action,{
+                    method:'POST',
+                    body:formData,
+                    headers:{'Accept':'application/json'}
+                  }).then(()=>{
+                    document.getElementById('contact-modal-content').innerHTML = `
+                      <div style="text-align:center;padding:32px 0 18px 0;">
+                        <svg width="64" height="64" fill="none" viewBox="0 0 24 24" style="margin:0 auto 12px auto;"><circle cx="12" cy="12" r="10" fill="#e0f7f6"/><path d="M8 12.5l2.5 2.5 5-5" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <h2 style="font-size:1.5rem;color:#0f766e;font-weight:700;margin-bottom:10px;">感謝您的留言！</h2>
+                        <p style="color:#334155;font-size:1.08rem;">我們已收到您的訊息，將盡快與您聯繫。</p>
+                        <button id="close-contact-modal2" style="margin-top:24px;background:#0f766e;color:#fff;font-size:1.08rem;padding:10px 32px;border-radius:999px;border:none;cursor:pointer;">返回</button>
+                      </div>
+                    `;
+                    document.getElementById('close-contact-modal2').onclick = ()=>{
+                      document.getElementById('contact-modal').remove();
+                    };
+                  });
+                });
+              }
+            });
+          });
+        }else if(sub==="3-2-1"){
+          btn.addEventListener("click",()=>loadContent('sections/section-3-2-1.html#purarea'));
+        }else if(sub==="3-2-2"){
+          btn.addEventListener("click",()=>loadContent('sections/section-3-2-2.html#r1s1r'));
+        }else if(sub==="3-2-3"){
+          btn.addEventListener("click",()=>loadContent('sections/section-3-2-3.html#c300plus'));
+        }else{
+          btn.addEventListener("click",()=> alert("這裡可連到產品內頁或彈出聯絡表單。"));
+        }
+      });
+    };
+
+    const init = () => {
+      productGrid  = doc.querySelector(cfg.productGridSel);
+      categoryTabs = doc.querySelector(cfg.categoryTabsSel);
+      subchips     = doc.querySelector(cfg.subchipsSel);
+      if (!productGrid || !categoryTabs || !subchips) return false;
+
+      const { cat, sub } = getInitialSelection();
+      currentCat = cat;
+
+      // 同步 tabs 的 active 樣式
+      categoryTabs.querySelectorAll(".tab").forEach(t=>{
+        t.classList.toggle("active", t.dataset.filter === currentCat);
+      });
+
+      renderSubchips(currentCat, sub);
+      renderProducts({ cat: currentCat, sub });
+
+      if (!bound) {
+        categoryTabs.addEventListener("click", onTabClick);
+        subchips.addEventListener("click", onChipClick);
+        doc.addEventListener("visibilitychange", onVisibility);
+        global.addEventListener("pageshow", onPageShow);
+        // 情境導覽快速切換
+        doc.querySelectorAll(".go-category").forEach(btn=>{
+          btn.addEventListener("click", ()=>{
+            const cat = btn.dataset.category;
+            const targetTab = [...categoryTabs.querySelectorAll(".tab")].find(t=>t.dataset.filter===cat);
+            if (targetTab) targetTab.click();
+          });
+        });
+        bound = true;
+      }
+      return true;
+    };
+
+    const cleanup = () => {
+      if (!bound) return;
+      categoryTabs.removeEventListener("click", onTabClick);
+      subchips.removeEventListener("click", onChipClick);
+      doc.removeEventListener("visibilitychange", onVisibility);
+      global.removeEventListener("pageshow", onPageShow);
+      bound = false;
+    };
+
+    const refresh = () => {
+      const sub = getActiveSub();
+      renderSubchips(currentCat, sub);
+      renderProducts({ cat: currentCat, sub });
+    };
+
+    return { init, cleanup, refresh };
+  }
+
+  /** === SPA 友善：等待節點就緒並單例管理 === */
+  function pictInitWithWait(retry = 0, opts = {}) {
+    if (global._pict_instance) {
+      try { global._pict_instance.cleanup(); } catch(e) {}
+      global._pict_instance = null;
+    }
+    const ok = !!(doc.querySelector(opts?.productGridSel || DEFAULTS.productGridSel)
+               && doc.querySelector(opts?.categoryTabsSel || DEFAULTS.categoryTabsSel)
+               && doc.querySelector(opts?.subchipsSel || DEFAULTS.subchipsSel));
+    if (!ok) {
+      if (retry < 40) return setTimeout(()=>pictInitWithWait(retry+1, opts), 50);
+      return;
+    }
+    const app = createCatalogModule(opts);
+    if (app.init()) global._pict_instance = app;
+  }
+
+  // 對外保留 cleanup（與你原本 API 相容）
+  if (global._pict_cleanup) { try { global._pict_cleanup(); } catch(e) {} }
+  global._pict_cleanup = () => { if (global._pict_instance) global._pict_instance.cleanup(); };
+
+  // 啟動
+  const boot = () => {
+    const hashCat = parseHashCategory();
+    if (hashCat) {
+      pictInitWithWait(0, hashCat);
+    } else {
+      pictInitWithWait(0, { cat: null, sub: null });
+    }
+  };
+  if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", boot);
+  else boot();
+
+  // SPA: hash 變化或瀏覽器前進/後退時自動切換 chips 目錄
+  function handleCatalogNavChange() {
+    const catInfo = parseHashCategory();
+    if (catInfo && window._pict_instance) {
+      window._pict_instance.cleanup();
+      pictInitWithWait(0, catInfo);
+    } else if (window._pict_instance) {
+      window._pict_instance.cleanup();
+      pictInitWithWait(0, { cat: null, sub: null });
+    }
+  }
+  window.addEventListener('hashchange', handleCatalogNavChange);
+  window.addEventListener('popstate', handleCatalogNavChange);
+
+})(window, document);
+  </script>
+</body>
+</html>
+

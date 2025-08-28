@@ -1,0 +1,378 @@
+<style>
+  :root {
+    --primary: #0f766e;
+    --secondary: #e0f7f6;
+    --background: #f8fafc;
+    --text: #1f2937;
+    --highlight: #fef3c7;
+  }
+
+  .section-3-container * {
+    box-sizing: border-box;
+  }
+
+  .section-3-container {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 20px;
+    font-size: 17px;
+         max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-3-container .header {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .section-3-container .header h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .section-3-container .header p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin: 0;
+  }
+
+  .section-3-container .main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-3-container .section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .section-3-container .section:hover {
+    transform: translateY(-3px);
+  }
+
+  .section-3-container h2, h2, .section h2, h2.section-title {
+    color: var(--primary);
+    font-size: 2rem;
+    border-left: 6px solid var(--primary);
+    padding-left: 16px;
+    margin-top: 0;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    background: none;
+  }
+
+  /* 讓總結區塊標題與說明往上靠近 */
+  /* 優化總結區塊排版，置中且間距更緊湊 */
+  .section-3-container .section.summary-section {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .section-3-container .section.summary-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .section-3-container .section.summary-section p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #334155;
+  }
+  .section-3-container .section.summary-section ul {
+    margin: 0 auto 18px auto;
+    padding-left: 0;
+    display: inline-block;
+    text-align: left;
+  }
+  .section-3-container .section.summary-section li {
+    margin-bottom: 6px;
+    font-size: 17px;
+  }
+
+  .section-3-container h3 {
+    font-size: 22px;
+    color: #334155;
+    margin-top: 30px;
+  }
+
+  .section-3-container ul {
+    padding-left: 25px;
+    margin-top: 15px;
+  }
+
+  .section-3-container li {
+    margin-bottom: 8px;
+  }
+
+  .section-3-container .highlight-box {
+    background-color: var(--secondary);
+    border-left: 5px solid var(--primary);
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+
+  .section-3-container .question-box {
+    background-color: #fef7cd;
+    border-left: 5px solid #f59e0b;
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+  }
+
+  .section-3-container .question-box h4 {
+    color: #92400e;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .section-3-container .problem-box {
+    background-color: #fef2f2;
+    border-left: 5px solid #ef4444;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+  }
+
+  .section-3-container .solution-box {
+    background-color: #f0fdf4;
+    border-left: 5px solid #22c55e;
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+  }
+
+  .section-3-container .solution-box h4 {
+    color: #166534;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .section-3-container .feature-grid {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 每列兩張卡片 */
+  gap: 20px; /* 卡片之間的間距 */
+  margin: 2rem 0;
+  }
+
+  .section-3-container .feature-card {
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .section-3-container .feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .section-3-container .feature-card h5 {
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .section-3-container .cta-button {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  .section-3-container .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .section-3-container .header h1 {
+      font-size: 32px;
+    }
+
+    .section-3-container .section {
+      padding: 30px 20px;
+    }
+
+    .section-3-container .feature-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* === 統一與 3-2-3 相同 CTA 樣式 === */
+  .section-3-container .cta {background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;text-align:center;border-radius:12px;padding:42px 24px;margin:60px 0 30px;box-shadow:0 12px 28px rgba(0,0,0,.10)}
+  .section-3-container .cta h2 {border:none;padding:0;margin:0 0 20px;font-size:30px;color:#fff;letter-spacing:.5px}
+  .section-3-container .btn {display:inline-block;background:#fff;color:var(--primary);text-decoration:none;padding:14px 26px;border-radius:12px;font-weight:700;margin:6px 10px;font-size:18px;letter-spacing:.5px;transition:.25s;box-shadow:0 4px 14px rgba(255,255,255,.25)}
+  .section-3-container .btn:hover {transform:translateY(-3px);box-shadow:0 10px 24px rgba(255,255,255,.35)}
+  .section-3-container .btn:active {transform:translateY(-1px)}
+  .section-3-container .btn.outline {background:rgba(255,255,255,.15);color:#fff;backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,.5);box-shadow:none}
+  .section-3-container .btn.outline:hover {background:rgba(255,255,255,.28)}
+  .section-3-container .btn.line {background:#06c755;color:#fff;box-shadow:0 4px 14px rgba(6,199,85,.35)}
+  .section-3-container .btn.line:hover {box-shadow:0 10px 24px rgba(6,199,85,.45)}
+  .section-3-container .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media (max-width:768px){
+    .section-3-container .cta {padding:36px 18px;margin:50px 0 24px}
+    .section-3-container .cta h2 {font-size:24px}
+    .section-3-container .btn {display:block;width:100%;max-width:320px;margin:10px auto;font-size:17px;padding:14px 20px}
+  }
+</style>
+
+<div class="section-3-container">
+  <div class="header">
+    <h1>選購空氣淨化器前，你應該問的 6 大關鍵問題</h1>
+    <p>在選擇空氣淨化設備時，市面上技術五花八門，從濾網式（被動式）清淨機到負離子、電漿、臭氧等主動式技術</p>
+  </div>
+
+  <div class="main">
+    <!-- 問題概述 -->
+    <div class="section">
+      <h2>關鍵問題概述</h2>
+      <p>但關鍵問題是：<strong>這些技術真的有效嗎？能解決你的空氣污染問題嗎？它們的安全性有科學驗證嗎？</strong></p>
+      
+      <div class="question-box">
+        <h4>💡 了解WETOP解決方案</h4>
+        <p>WETOP PICT技術提供科學驗證的空氣淨化解決方案，解決傳統技術的限制與問題。</p>
+      </div>
+    </div>
+
+    <!-- 被動式清淨機的三大問題 -->
+    <div class="section">
+      <h2>三問被動式清淨機廠商（濾網技術）</h2>
+      
+      <h3>❓ 除了濾網表面髒污，如何證明淨化有效？</h3>
+      <div class="problem-box">
+        <p>許多空氣清淨機只能吸附<strong>空氣中的污染物</strong>，卻無法分解它們。濾網變髒只是<strong>暫時捕捉了污染物</strong>，但無法證明空氣真正變乾淨，甚至可能滋生細菌。</p>
+      </div>
+
+      <h3>💧 水氣對淨化能力的影響？</h3>
+      <div class="problem-box">
+        <p>濕度影響濾網的<strong>吸附能力</strong>，甚至導致<strong>細菌滋生</strong>，影響空氣品質。例如浴室、廚房等高濕度環境，傳統濾網的效果通常大幅下降。</p>
+      </div>
+
+      <h3>🚿 可否解決浴廁間產生的異味問題？</h3>
+      <div class="problem-box">
+        <p>大多數 HEPA 濾網技術<strong>無法處理化學污染物</strong>，如異味、甲醛、油煙、VOCs（揮發性有機物）。</p>
+      </div>
+    </div>
+
+    <!-- WETOP PICT技術解決方案 -->
+    <div class="section">
+      <h2>WETOP PICT 技術解決濾網問題</h2>
+      
+      <div class="solution-box">
+        <h4>🔧 主動分解污染物</h4>
+        <p>主動釋放淨化因子，直接分解空氣與物體表面的<strong>污染物</strong>，而不是只是「吸住」它們。經台灣經濟部專案測試，並應用於<strong>桃園機場、馬偕醫院</strong>，證實<strong>長期有效</strong>。</p>
+      </div>
+
+      <div class="solution-box">
+        <h4>💧 不受濕度影響</h4>
+        <p>不受<strong>濕度影響</strong>，能在任何環境下運作，包括高濕度地區。主動分解<strong>細菌與化學污染物</strong>，避免因濾網潮濕導致的<strong>二次污染</strong>。</p>
+      </div>
+    </div>
+
+    <!-- 主動式技術的三大問題 -->
+    <div class="section">
+      <h2>三問主動式技術廠商（負離子、電漿、臭氧）</h2>
+      
+      <h3>⚠️ 是否產生有害副產物？</h3>
+      <div class="problem-box">
+        <p>許多主動式技術會產生<strong>臭氧、氮氧化物</strong>等有害物質，長期使用可能對人體造成傷害。</p>
+      </div>
+
+      <h3>🔬 安全性是否經過科學驗證？</h3>
+      <div class="problem-box">
+        <p>缺乏<strong>長期安全性研究</strong>，特別是對兒童、老人、孕婦等敏感族群的影響評估。</p>
+      </div>
+
+      <h3>📊 效果是否有第三方驗證？</h3>
+      <div class="problem-box">
+        <p>許多廠商只提供<strong>實驗室數據</strong>，缺乏實際使用環境的效果驗證。</p>
+      </div>
+    </div>
+
+    <!-- WETOP技術優勢 -->
+    <div class="section">
+      <h2>為什麼選擇 WETOP PICT 技術？</h2>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h5>🔬 科學驗證</h5>
+          <p>經台灣經濟部專案測試，證實<strong>長期有效且安全</strong>，是唯一完整揭露反應機制的主動式淨化技術。</p>
+        </div>
+        
+        <div class="feature-card">
+          <h5>🌟 全方位淨化</h5>
+          <p>不僅處理懸浮顆粒，還能分解<strong>異味、甲醛、油煙等化學污染物</strong>，提供全面空氣解決方案。</p>
+        </div>
+        
+        <div class="feature-card">
+          <h5>🛡️ 安全無副作用</h5>
+          <p>不產生<strong>氮氧化物等有害物質</strong>，精準控制臭氧濃度在安全範圍內，<strong>保障使用者健康</strong>。</p>
+        </div>
+        
+        <div class="feature-card">
+          <h5>🌿 適應各種環境</h5>
+          <p>不受<strong>濕度影響</strong>，適用於浴廁、廚房等高濕度場域，確保空氣真正清新。</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        ✅ WETOP PICT技術是經過科學驗證、安全有效的空氣淨化解決方案，解決傳統技術的所有限制
+      </div>
+
+      <div style="text-align: center;">
+
+    <!-- 總結 -->
+    <div class="section summary-section">
+      <h2>選購建議總結</h2>
+      <p>在選購空氣淨化器時，請務必詢問以上6大關鍵問題：</p>
+      <ul>
+        <li><strong>被動式技術</strong>：淨化效果證明、濕度影響、化學污染物處理能力</li>
+        <li><strong>主動式技術</strong>：副產物安全性、科學驗證、第三方效果驗證</li>
+      </ul>
+      <div class="highlight-box">
+        💡 只有能夠清楚回答這些問題的技術，才是真正值得信賴的空氣淨化解決方案
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA 區塊（統一 3-2-3 樣式） -->
+<div class="section-3-container">
+  <section class="cta" aria-labelledby="cta-title-2-3" aria-describedby="cta-desc-2-3">
+    <h2 id="cta-title-2-3">現在就用更有效的方式守住你的生活空氣</h2>
+    <p id="cta-desc-2-3" class="sr-only">選擇以下操作：前往購買、加入 LINE 諮詢專人，或下載技術手冊 PDF。</p>
+    <a class="btn" href="https://shopee.tw/wetoptec" target="_blank" rel="noopener noreferrer" aria-label="前往 Shopee 官方購買頁 (新分頁開啟)" data-ga-category="CTA" data-ga-action="click" data-ga-label="buy_shopee_section_2_3">點選購買</a>
+    <a class="btn line" href="https://line.me/R/ti/p/@wetop" target="_blank" rel="noopener noreferrer" aria-label="加入 LINE 與我們即時諮詢 (新分頁開啟)" data-ga-category="CTA" data-ga-action="click" data-ga-label="line_consult_section_2_3">加入 LINE 諮詢</a>
+    <a class="btn outline" href="/upload/pict-manual.pdf" download="WETOP-PICT-技術手冊.pdf" aria-label="下載 WETOP PICT 技術手冊 PDF" data-ga-category="CTA" data-ga-action="download" data-ga-label="download_manual_section_2_3">下載技術手冊</a>
+  </section>
+</div>
+
+

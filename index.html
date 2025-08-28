@@ -1,0 +1,942 @@
+<!-- pict_nav_full_dropdown2.html 已更名為 index.html，內容完全相同。 -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PICT-Inside 光離子催化技術</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 在 <head> 裡連結 CSS -->
+<link rel="stylesheet" href="style.css" />
+  <style>
+    /* ====== 頁首（導覽列）字體強化 ====== */
+    body {font-feature-settings:'palt' 1;}
+    header nav a.nav-link {position:relative;letter-spacing:.5px;font-weight:600;font-size:.95rem;line-height:1.2;padding:.75rem 1rem;transition:color .25s,opacity .25s;}
+    header nav a.nav-link::after {content:"";position:absolute;left:50%;bottom:10px;transform:translateX(-50%) scaleX(0);transform-origin:center;border-radius:2px;height:2px;width:60%;background:#0f766e;transition:transform .35s ease,background .35s;}
+    header nav a.nav-link:hover::after,header nav a.nav-link:focus-visible::after {transform:translateX(-50%) scaleX(1);}    
+    header nav a.nav-link:hover {color:#0d9488;}
+    header nav a.nav-link:focus-visible {outline:2px solid #0d9488;outline-offset:2px;border-radius:4px;}
+  /* 停用所有 active 視覺：不改變文字顏色、不顯示底線 */
+  header nav a.nav-link.active {color:inherit;}
+  header nav a.nav-link.active::after {transform:translateX(-50%) scaleX(0);background:transparent;}
+  /* 保持 active 無常駐樣式，但仍允許 hover 顯示效果 */
+  header nav a.nav-link.active:hover {color:#0d9488;}
+  header nav a.nav-link.active:hover::after {transform:translateX(-50%) scaleX(1);background:#0d9488;}
+  header nav a.nav-link.no-active-color.active {color:inherit;}
+  header nav a.nav-link.no-active-color.active::after {transform:translateX(-50%) scaleX(0);}
+    /* 漢堡按鈕更易見 */
+    #mobile-menu-button {padding:6px;border-radius:8px;transition:background .25s;}
+    #mobile-menu-button:hover {background:#f1f5f9;}
+    #mobile-menu-button:focus-visible {outline:2px solid #0d9488;outline-offset:2px;}
+
+    /* 下拉選單項目字體與行距 */
+    header .group div a {font-size:.86rem;letter-spacing:.3px;}
+    header .group div a:hover {background:#f1f5f9;}
+
+    /* ====== Footer 字體層次 ====== */
+    footer h3 {position:relative;font-weight:700;letter-spacing:1px;font-size:1.05rem;margin-bottom:.85rem;color:#0f766e;}
+  footer h3::after {content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);height:3px;width:88px;max-width:60%;border-radius:2px;background:linear-gradient(90deg,#0f766e,#0d9488);} 
+  /* 指定需全寬延伸的 footer 標題 */
+  footer h3.full-underline::after {left:0;transform:none;width:100%;max-width:none;}
+    @media (min-width:768px){footer h3::after{left:0;transform:none}}
+  footer p,footer li,footer a {font-size:.87rem;letter-spacing:.35px;line-height:1.55;}
+  footer a {position:relative;display:inline-block;padding:2px 6px;border-radius:6px;transition:color .25s,background .25s,transform .25s;font-weight:500;}
+  footer a:hover {color:#0d9488;background:rgba(13,148,136,.08);transform:translateX(3px);}   
+    footer a:focus-visible {outline:2px solid #0d9488;outline-offset:2px;}
+    footer .brand-block h3 {font-size:1.15rem;letter-spacing:1.5px;}
+    footer .brand-block h3 span {display:block;font-size:.65rem;font-weight:500;letter-spacing:2px;margin-top:2px;color:#0d9488;}
+    footer .legal {font-size:.7rem;letter-spacing:.4px;opacity:.7;}
+
+    /* ====== 浮動按鈕細緻化 ====== */
+    #floating-btn-group a, #floating-btn-group button {font-family:'Noto Sans TC',system-ui,sans-serif;}
+    #floating-btn-group #floating-line-btn div:hover {transform:translateY(-4px);} 
+    #floating-btn-group #back-to-top-btn:hover {filter:brightness(1.07);} 
+
+    /* 深色模式預備（若未來啟用 body.dark） */
+    body.dark footer {background:#0f172a;color:#e2e8f0;}
+    body.dark footer h3 {color:#38bdf8;}
+    body.dark header nav a.nav-link {color:#e2e8f0;}
+    body.dark header nav a.nav-link:hover {color:#38bdf8;}
+  /* 免費諮詢固定白字 */
+  a.consult-btn {color:#fff !important;}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+
+<!-- 導覽列 -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo 區 -->
+      <a href="javascript:void(0)" onclick="showHomePage()" class="flex-shrink-0">
+        <img src="images/logo.png" alt="PICT-Inside Logo" class="h-16 w-auto object-contain" />
+      </a>
+
+      <!-- 漢堡按鈕 (Mobile) -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-600 hover:text-green-600 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+      </div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+
+</script>
+      <!-- 導覽選單 -->
+      <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-700 items-center">
+        
+        <!-- 關於PICT -->
+        <div class="relative group">
+          <a id="nav-about" href="javascript:void(0)" onclick="loadContent('sections/section-1.html#section-1')" class="nav-link px-4 py-6 hover:text-green-600 inline-block">關於我們</a>
+          <div class="absolute left-0 top-full mt-0 w-64 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#main')" class="block px-4 py-2 hover:bg-gray-100 font-semibold">環境淨化器</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#aircon-law')" class="block px-6 py-2 hover:bg-gray-100 text-sm">空調工程與法規</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#safety')" class="block px-6 py-2 hover:bg-gray-100 text-sm">安全濃度控制</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#idea')" class="block px-6 py-2 hover:bg-gray-100 text-sm">環境醫生理念</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#safety-effect')" class="block px-6 py-2 hover:bg-gray-100 text-sm">WETOP 如何確保安全與效能</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#compare')" class="block px-6 py-2 hover:bg-gray-100 text-sm">環境醫療分類與對比</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#places')" class="block px-6 py-2 hover:bg-gray-100 text-sm">適用場域</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#visual')" class="block px-6 py-2 hover:bg-gray-100 text-sm">可視化改善</a>
+          </div>
+        </div>
+
+        <!-- 空氣與淨化技術 -->
+        <div class="relative group">
+          <a id="nav-tech" href="javascript:void(0)" onclick="loadContent('sections/section-2.html')" class="nav-link px-4 py-6 hover:text-green-600 inline-block">空氣與淨化技術</a>
+          <div class="absolute left-0 top-full mt-0 w-64 bg-white border rounded shadow-md 
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                      transition duration-200 z-50">
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-2-1.html')" class="block px-4 py-2 hover:bg-gray-100">技術彙整</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-2-2.html')" class="block px-4 py-2 hover:bg-gray-100">PICT 技術</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-2-3.html')" class="block px-4 py-2 hover:bg-gray-100">六大選購問題</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-2-4.html')" class="block px-4 py-2 hover:bg-gray-100">無耗材優勢</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-2-5.html')" class="block px-4 py-2 hover:bg-gray-100">技術手冊</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-2-6.html')" class="block px-4 py-2 hover:bg-gray-100">宣傳頁</a>
+          </div>
+        </div>
+
+        <!-- PICT產品 -->
+        <div class="relative group">
+          <a id="nav-products" href="javascript:void(0)" onclick="localStorage.removeItem('wetop.catalog.selection.v1');loadContent('sections/section-3.html?cat=3-2')" class="nav-link px-4 py-6 hover:text-green-600 inline-block">PICT產品</a>
+          <div class="absolute left-0 top-full mt-0 w-64 bg-white border rounded shadow-md 
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                      transition duration-200 z-50">
+            <span class="block px-4 py-2 font-semibold" style="opacity:0.5;cursor:default;">固定式機型</span>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-1&sub=3-1-2&scroll=dml')" class="block px-6 py-2 hover:bg-gray-100 text-sm">DML</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-1&sub=3-1-4&scroll=dfl')" class="block px-6 py-2 hover:bg-gray-100 text-sm">DFL</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-1&sub=3-1-5&scroll=phl')" class="block px-6 py-2 hover:bg-gray-100 text-sm">PHL</a>
+            <span class="block px-4 py-2 font-semibold" style="opacity:0.5;cursor:default;">移動式機型</span>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-1&scroll=purarea')" class="block px-6 py-2 hover:bg-gray-100 text-sm">Purarea</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-2&scroll=r1s')" class="block px-6 py-2 hover:bg-gray-100 text-sm">R1S 系列</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-3&scroll=c300plus')" class="block px-6 py-2 hover:bg-gray-100 text-sm">C300Plus</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-4&scroll=bp1v2')" class="block px-6 py-2 hover:bg-gray-100 text-sm">BP1V2</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-3&sub=3-3&scroll=odorbox')" class="block px-4 py-2 hover:bg-gray-100">除味箱</a>
+          </div>
+        </div>
+
+        <!-- 測試與驗證 -->
+        <div class="relative group">
+          <a id="nav-tests" href="javascript:void(0)" onclick="loadContent('sections/section-4.html')" class="nav-link px-4 py-6 hover:text-green-600 inline-block">測試與驗證</a>
+          <div class="absolute left-0 top-full mt-0 w-64 bg-white border rounded shadow-md 
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                      transition duration-200 z-50">
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-4-1.html')" class="block px-4 py-2 hover:bg-gray-100">測定方法概述</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-4-2.html')" class="block px-4 py-2 hover:bg-gray-100">連續式測定法</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-4-3.html')" class="block px-4 py-2 hover:bg-gray-100">批次式測定法</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-4-4.html')" class="block px-4 py-2 hover:bg-gray-100">異味檢測</a>
+          </div>
+        </div>
+
+        <!-- 應用工程 -->
+        <div class="relative group">
+          <a id="nav-engineering" href="javascript:void(0)" onclick="loadContent('sections/section-5.html')" class="nav-link px-4 py-6 hover:text-green-600 inline-block">應用工程</a>
+          <div class="absolute left-0 top-full mt-0 w-64 bg-white border rounded shadow-md 
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                      transition duration-200 z-50">
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-5-2.html')" class="block px-4 py-2 hover:bg-gray-100">學術成果的專業價值體現</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-5-3.html')" class="block px-4 py-2 hover:bg-gray-100">去異味工程</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-5-4.html')" class="block px-4 py-2 hover:bg-gray-100">防疫與病菌滅活</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-5-5.html')" class="block px-4 py-2 hover:bg-gray-100">防霉工程案例</a>
+          </div>
+        </div>
+
+        <!-- 聯絡我們 -->
+  <a id="nav-contact" href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="nav-link px-4 py-6 hover:text-green-600 inline-block">聯絡我們</a>
+      </nav>
+
+      <!-- 行動呼籲按鈕 -->
+      <div class="hidden md:flex items-center space-x-4">
+  <a href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="consult-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition" data-ga-category="NAV" data-ga-action="click" data-ga-label="consult_desktop">
+          免費諮詢
+        </a>
+      </div>
+    </div>
+  </div>
+
+   <!-- 📱 手機版下拉選單 -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+    <nav class="px-4 py-4 space-y-2 text-gray-700 text-sm">
+      <div>
+        <button class="w-full text-left font-semibold py-2 group flex justify-between items-center">
+          關於我們
+          <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="pl-4 space-y-1 mt-2">
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#main')" class="block py-1 font-semibold">環境淨化器</a>
+          <div class="pl-6 space-y-1 mt-1">
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#aircon-law')" class="block py-1">空調工程與法規</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#safety')" class="block py-1">安全濃度控制</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#idea')" class="block py-1">環境醫生理念</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#safety-effect')" class="block py-1">WETOP 如何確保安全與效能</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#compare')" class="block py-1">環境醫療分類與對比</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#places')" class="block py-1">適用場域</a>
+            <a href="javascript:void(0)" onclick="loadContent('sections/section-1-1.html#visual')" class="block py-1">可視化改善</a>
+          </div>
+        </div>
+      </div>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-2.html')" class="block py-2 font-semibold">空氣與淨化技術</a>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html')" class="block py-2 font-semibold">PICT產品</a>
+      <div class="pl-4 space-y-1 mt-2">
+  <span class="block py-1 font-semibold" style="opacity:0.5;cursor:default;">固定式機型</span>
+        <div class="pl-6 space-y-1 mt-1">
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-1&sub=3-1-2&scroll=dml')" class="block py-1">DML</a>
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-1&sub=3-1-4&scroll=dfl')" class="block py-1">DFL</a>
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-1&sub=3-1-5&scroll=phl')" class="block py-1">PHL</a>
+        </div>
+  <span class="block py-1 font-semibold" style="opacity:0.5;cursor:default;">移動式機型</span>
+        <div class="pl-6 space-y-1 mt-1">
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-1')" class="block py-1">Purarea</a>
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-2&scroll=r1s')" class="block py-1">R1S 系列</a>
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-3&scroll=c300plus')" class="block py-1">C300Plus</a>
+          <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-2&sub=3-2-4&scroll=bp1v2')" class="block py-1">BP1V2</a>
+        </div>
+  <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html?cat=3-3&scroll=odorbox')" class="block py-1">除味箱</a>
+      </div>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-4.html')" class="block py-2 font-semibold">測試與驗證</a>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-5.html')" class="block py-2 font-semibold">應用工程</a>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="block py-2 font-semibold">聯絡我們</a>
+  <a href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="consult-btn block bg-green-600 text-white text-center py-2 rounded" data-ga-category="NAV" data-ga-action="click" data-ga-label="consult_mobile">免費諮詢</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 動態內容區域 -->
+<div id="dynamic-content" class="hidden"></div>
+
+<!-- 首頁內容 -->
+<div id="home-content">
+<!-- Hero 主視覺區塊 -->
+<section class="relative bg-gradient-to-br from-teal-600 via-cyan-500 to-green-300 text-white py-8 px-2 rounded-3xl shadow-xl max-w-4xl mx-auto mt-6 mb-8 overflow-hidden flex flex-col items-center gap-4">
+  <div class="flex flex-col w-full items-center z-10">
+  <h1 class="text-3xl md:text-4xl font-extrabold mb-1 drop-shadow-lg text-center">PICT-Inside 光離子催化技術</h1>
+  <p class="text-lg md:text-xl font-medium mb-4 opacity-90 text-center">淨化空氣，守護健康，國際認證的環境淨化新標竿</p>
+    <div class="flex justify-center w-full mb-4">
+      <img src="images/banner-1.jpg" alt="PICT Hero" class="rounded-2xl shadow-2xl w-full max-w-[420px] border-4 border-white/30 mt-1" style="object-fit:cover;aspect-ratio:2.36/1;max-width:100%;height:auto;" />
+    </div>
+    <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html')" class="inline-block bg-white text-teal-700 font-bold px-6 py-2 rounded-full shadow-lg hover:bg-teal-100 hover:text-teal-900 transition text-base mt-1">立即了解產品</a>
+  </div>
+  <div class="absolute right-0 bottom-0 w-64 h-64 bg-white/10 rounded-full blur-2xl z-0"></div>
+</section>
+
+<!-- 品牌亮點卡片區塊 -->
+<section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 px-2">
+  <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-teal-400 hover:scale-105 transition">
+    <div class="text-4xl mb-3 text-teal-600">🔬</div>
+    <h3 class="font-bold text-lg mb-2">國際認證技術</h3>
+    <p class="text-gray-600">通過中科院、工研院及台科大測試認證，效能與安全雙重保證。</p>
+  </div>
+  <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-cyan-400 hover:scale-105 transition">
+    <div class="text-4xl mb-3 text-cyan-600">🌱</div>
+    <h3 class="font-bold text-lg mb-2">無耗材低碳</h3>
+    <p class="text-gray-600">創新光離子催化，無需更換濾網，環保又省心。</p>
+  </div>
+  <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-green-400 hover:scale-105 transition">
+    <div class="text-4xl mb-3 text-green-600">💡</div>
+    <h3 class="font-bold text-lg mb-2">全方位空氣守護</h3>
+    <p class="text-gray-600">有效去除甲醛、VOC、細菌病毒，守護全家健康。</p>
+  </div>
+</section>
+
+<!-- CTA 行動呼籲區塊 -->
+<section class="max-w-4xl mx-auto bg-gradient-to-r from-teal-500 via-cyan-400 to-green-300 text-white rounded-2xl shadow-xl py-10 px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+  <div class="text-2xl md:text-3xl font-bold mb-2 md:mb-0">立即諮詢，專人為您解答空氣淨化疑問！</div>
+  <a href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="bg-white text-teal-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-teal-100 hover:text-teal-900 transition text-lg">免費諮詢</a>
+</section>
+
+<!-- 輪播圖區塊 -->
+<div class="max-w-4xl mx-auto mt-8 relative">
+  <div id="carousel" class="overflow-hidden rounded-lg shadow-lg">
+    <div class="flex transition-transform duration-500" id="carousel-inner">
+      <img src="images/banner-1.jpg" class="w-full flex-shrink-0" alt="輪播圖1">
+      <img src="images/banner-2.jpg" class="w-full flex-shrink-0" alt="輪播圖2">
+      <img src="images/banner-3.jpg" class="w-full flex-shrink-0" alt="輪播圖3">
+      <img src="images/banner-4.jpg" class="w-full flex-shrink-0" alt="輪播圖4">
+      <img src="images/banner-5.jpg" class="w-full flex-shrink-0" alt="輪播圖5">
+      <img src="images/banner-6.jpg" class="w-full flex-shrink-0" alt="輪播圖6">
+      <img src="images/banner-7.jpg" class="w-full flex-shrink-0" alt="輪播圖7">
+    </div>
+  </div>
+  <!-- 左右箭頭 -->
+  <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+  </button>
+  <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+  </button>
+</div>
+
+
+</section>
+
+<!-- 多段影片區塊 -->
+<section class="max-w-4xl mx-auto py-12 flex flex-col gap-12">
+  <div>
+  <!-- 使用現有 banner 圖作為暫時 poster，避免 404 -->
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:18px;">
+  <iframe id="yt-embed-1" src="https://www.youtube.com/embed/h98yn0du2so?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;"></iframe>
+<!-- 已有 enablejsapi=1 -->
+      </div>
+    <p class="mt-2 text-center text-sm text-gray-600"></p>
+  </div>
+  <div>
+  <div>
+  <!-- 修正實際檔名為 movie2_poster.jpg.png -->
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:18px;">
+  <iframe src="https://www.youtube.com/embed/Dwjurvh4olM?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;"></iframe>
+    </div>
+    <p class="mt-2 text-center text-sm text-gray-600"></p>
+  </div>
+  <div>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:18px;">
+  <iframe src="https://www.youtube.com/embed/FtAktryfHIw?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;"></iframe>
+  </div>
+</section>
+</section>
+
+<!-- Placeholder Section for Testing Navigation -->
+  <img src="images/image.png" alt="首頁圖片" class="mx-auto mt-8 rounded-lg shadow w-full max-w-4xl h-auto object-contain" style="aspect-ratio: 16/9;" />
+</div>
+<!-- 首頁內容結束 -->
+<footer class="bg-gray-100 text-gray-700 py-10 mt-16">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:justify-between items-center md:items-start gap-8">
+
+    <!-- 公司資訊 -->
+    <div class="text-center md:text-left md:flex-1 brand-block">
+      <h3 class="font-bold mb-2">泉康科技有限公司 <span>PICT INSIDE</span></h3>
+      <p class="text-sm leading-relaxed">
+        地址：新竹縣竹北市文興路一段360號<br>
+        No. 360, Sec. 1, Wenxing Rd., Zhubei City, Hsinchu County 30272, Taiwan (R.O.C.)<br>
+        電話：03-6685878
+      </p>
+    </div>
+
+    <!-- 快速連結置中 -->
+    <div class="text-center md:flex-1">
+      <h3 class="font-bold mb-2 full-underline">快速連結</h3>
+      <div class="grid grid-cols-2 gap-6 text-sm justify-center text-center">
+        <ul class="space-y-1">
+          <li><a href="javascript:void(0)" onclick="loadContent('sections/section-1.html#section-1')" class="hover:text-green-600">關於我們</a></li>
+          <li><a href="#section-2-1" class="hover:text-green-600">空氣與淨化技術</a></li>
+          <li><a href="#section-3-1" class="hover:text-green-600">PICT產品</a></li>
+        </ul>
+        <ul class="space-y-1">
+          <li><a href="#section-4-1" class="hover:text-green-600">測試與驗證</a></li>
+          <li><a href="#section-5-1" class="hover:text-green-600">應用工程</a></li>
+          <li><a href="#contact" class="hover:text-green-600">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center text-gray-500 mt-6 legal">
+    &copy; 2025 泉康科技有限公司 - PICT Inside All Rights Reserved.
+  </div>
+</footer>
+
+<!-- 浮動按鈕群組：LINE + 回到頂部 -->
+<div id="floating-btn-group" style="position:fixed;right:18px;bottom:18px;z-index:60;display:none;display:flex;flex-direction:column;gap:14px;align-items:flex-end;">
+  <!-- LINE 諮詢 -->
+  <a href="https://line.me/R/ti/p/@wetop" target="_blank" rel="noopener noreferrer" aria-label="加入 LINE 與我們諮詢" id="floating-line-btn" data-ga-category="CTA" data-ga-action="click" data-ga-label="line_floating"
+     style="text-decoration:none;position:relative;">
+    <div style="background:#06c755;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(6,199,85,.45);transition:.35s;">
+      <!-- LINE SVG Icon -->
+      <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path fill="#fff" d="M18 4C9.715 4 3 9.916 3 16.964c0 4.19 2.735 7.91 6.884 10.084.25.135.4.39.38.664l-.27 3.156c-.04.47.45.8.88.59l4.2-2.035a.86.86 0 0 1 .62-.05c.68.13 1.38.2 2.08.2 8.285 0 15-5.916 15-12.964C33 9.916 26.285 4 18 4Z"/>
+        <path fill="#06c755" d="M12.9 14.05h-1.8a.3.3 0 0 0-.3.3v6.3c0 .165.135.3.3.3h1.8c.165 0 .3-.135.3-.3v-6.3a.3.3 0 0 0-.3-.3Zm8.7 0h-1.8a.3.3 0 0 0-.3.3v3.69l-2.79-3.93a.3.3 0 0 0-.24-.12h-1.8a.3.3 0 0 0-.3.3v6.3c0 .165.135.3.3.3h1.8c.165 0 .3-.135.3-.3v-3.69l2.79 3.93c.057.082.15.12.24.12h1.8c.165 0 .3-.135.3-.3v-6.3a.3.3 0 0 0-.3-.3Zm5.7 0h-4.2a.3.3 0 0 0-.3.3v1.2c0 .165.135.3.3.3h1.05v4.5c0 .165.135.3.3.3h1.8c.165 0 .3-.135.3-.3v-4.5H27a.3.3 0 0 0 .3-.3v-1.2a.3.3 0 0 0-.3-.3Z"/>
+      </svg>
+    </div>
+  <div style="position:absolute;right:66px;top:50%;transform:translateY(-50%) translateY(4px);background:#fff;color:#064e3b;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:.3s;white-space:nowrap;" class="line-tooltip">LINE 諮詢｜掃碼加入</div>
+  </a>
+  <!-- 回到頂部 -->
+  <button id="back-to-top-btn" type="button" aria-label="回到頂部" data-ga-category="NAV" data-ga-action="click" data-ga-label="back_to_top"
+    style="background:#0f766e;width:52px;height:52px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 22px rgba(15,118,110,.45);transition:.35s;">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15l7-7 7 7"/><path d="M12 8v13"/></svg>
+  </button>
+</div>
+
+
+<div id="thank-you-popup" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
+  <div class="bg-white p-8 rounded-xl shadow-lg text-center max-w-sm mx-auto">
+    <h2 class="text-2xl text-green-700 font-bold mb-2">感謝您的聯絡！</h2>
+    <p class="text-gray-600">我們已收到您的訊息，將盡快與您聯繫。</p>
+    <button id="close-popup-btn" class="mt-6 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+      關閉
+    </button>
+  </div>
+</div>
+
+
+<!-- 輪播圖 JS -->
+<script>
+ // 函式：初始化聯絡表單的功能 (這是新增的)
+  function initializeContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return; // 如果頁面沒表單，就退出
+
+    const submitButton = document.getElementById('submit-button');
+    const thankYouPopup = document.getElementById('thank-you-popup');
+    const closePopupButton = document.getElementById('close-popup-btn');
+
+    if (!submitButton || !thankYouPopup || !closePopupButton) {
+      console.error("錯誤：找不到送出按鈕或彈出視窗。");
+      return;
+    }
+
+    if (contactForm.dataset.initialized === 'true') return; // 防止重複綁定
+    contactForm.dataset.initialized = 'true';
+
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // 阻止跳轉
+      const formData = new FormData(contactForm);
+      const originalButtonText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = '傳送中...';
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          thankYouPopup.classList.remove('hidden');
+          if(!thankYouPopup.classList.contains('flex')){
+            thankYouPopup.classList.add('flex');
+          }
+          contactForm.reset();
+        } else {
+          return response.json().then(data => { throw new Error(data.message || '發生錯誤'); });
+        }
+      })
+      .catch(error => {
+        alert('提交失敗：' + error.message);
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      });
+    });
+
+    closePopupButton.addEventListener('click', function() {
+  thankYouPopup.classList.add('hidden');
+  thankYouPopup.classList.remove('flex');
+    });
+  }
+
+  // 函式：載入子頁面內容 (這是修改過的)
+  function loadContent(sectionFile) {
+    // 只有切換到非首頁時才清空首頁影片 src
+    if (sectionFile && !sectionFile.includes('index.html')) {
+      document.querySelectorAll('#home-content iframe[src*="youtube.com/embed/"]').forEach(function(iframe) {
+        if (!iframe.dataset.origSrc) iframe.dataset.origSrc = iframe.src;
+        iframe.src = '';
+      });
+    }
+    const dynamicContent = document.getElementById('dynamic-content');
+    const homeContent = document.getElementById('home-content');
+    dynamicContent.innerHTML = '<div class="text-center py-20">載入中...</div>';
+    dynamicContent.classList.remove('hidden');
+    homeContent.classList.add('hidden');
+    // chips hash 處理：section-3.html 保留 chips hash，其他 section 過濾 chips 參數
+    // 若網址同時有 search (?cat=...) 和 hash (#sections/section-3.html...)，自動清除 search 參數
+    if (window.location.search && window.location.hash && window.location.hash.includes('section-3.html')) {
+      const cleanUrl = window.location.pathname + window.location.hash;
+      history.replaceState({}, '', cleanUrl);
+    }
+  // chips 導航跳轉時強制清除 chips selection，避免 localStorage 污染 chips active 狀態
+  try { localStorage.removeItem('wetop.catalog.selection.v1'); } catch {}
+    let file = sectionFile, hash = '';
+    if (sectionFile.includes('#')) {
+      [file, hash] = sectionFile.split('#');
+    }
+    // 支援 ?scroll=purarea 直接捲動
+    let scrollTarget = null;
+  if (file.includes('scroll=purarea')) scrollTarget = 'purarea';
+  else if (file.includes('scroll=r1s')) scrollTarget = 'r1s';
+  else if (file.includes('scroll=c300plus')) scrollTarget = 'c300plus';
+  else if (file.includes('scroll=bp1v2')) scrollTarget = 'bp1v2';
+  else if (file.includes('scroll=dml')) scrollTarget = 'dml';
+  else if (file.includes('scroll=dfl')) scrollTarget = 'dfl';
+  else if (file.includes('scroll=phl')) scrollTarget = 'phl';
+    // 修正 chips 雙 hash 問題：section-3.html 若 hash 內還有 #catalog?cat=...，只保留最後一個 hash
+    if (file.includes('section-3') && hash && hash.includes('#catalog?cat=')) {
+      hash = hash.slice(hash.lastIndexOf('#') + 1);
+    }
+    if (!file.includes('section-3')) {
+      // 只允許單純 hash（如 #section-1），不允許 ?cat=...&sub=...
+      file = file.split('?')[0];
+      if (hash && hash.includes('?cat=')) hash = hash.split('?')[0];
+      // 主動清除網址上的 ?cat=...&sub=... 參數
+      const cleanUrl = window.location.pathname + (hash ? '#' + hash : '');
+      if (window.location.search.includes('cat=') || window.location.search.includes('sub=')) {
+        history.replaceState({}, '', cleanUrl);
+      }
+    }
+  fetch(file)
+      .then(response => {
+        if (!response.ok) throw new Error('網路回應錯誤');
+        return response.text();
+      })
+      .then(html => {
+        dynamicContent.innerHTML = html;
+        // 解析並手動執行插入內容中的 <script>（包含 inline 與 JSON-LD）
+        const scriptNodes = [...dynamicContent.querySelectorAll('script')];
+        scriptNodes.forEach(oldS => {
+          if (!oldS.src && /window\.PRODUCTS\s*=/.test(oldS.textContent) && window.PRODUCTS) return;
+          if (oldS.type && oldS.type === 'module') return;
+          const newS = document.createElement('script');
+          [...oldS.attributes].forEach(attr => newS.setAttribute(attr.name, attr.value));
+          if(!oldS.src) newS.textContent = oldS.textContent;
+          if(newS.type === 'application/ld+json') document.head.appendChild(newS); else document.body.appendChild(newS);
+        });
+        window.scrollTo(0, 0);
+        initializeContactForm();
+  if (window.createAllYTPlayers) setTimeout(createAllYTPlayers, 100);
+        history.pushState({sectionFile: sectionFile}, '', '#' + sectionFile);
+        setActiveNav(sectionFile);
+        // 新增：載入完自動捲動到 hash 錨點，並預留 header 高度
+        if(hash) {
+          setTimeout(() => {
+            // 固定式 chips 全部專屬跳轉
+            if (file.includes('section-3.html') && hash.startsWith('catalog?cat=3-1')) {
+              const chip = document.getElementById('chip-fixed-all');
+              if (chip) {
+                chip.scrollIntoView({behavior: 'smooth', block: 'center'});
+                chip.focus && chip.focus();
+                return;
+              }
+            }
+            // 其他 hash 錨點
+            const el = document.getElementById(hash);
+            if(el) {
+              const header = document.querySelector('header');
+              const headerHeight = header ? header.offsetHeight : 0;
+              const rect = el.getBoundingClientRect();
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              const top = rect.top + scrollTop - headerHeight - 8;
+              window.scrollTo({top, behavior: 'smooth'});
+            }
+          }, 120);
+        }
+      // chips: 若載入 section-3.html，強制觸發 hashchange 以刷新 chips 狀態
+      if (file.includes('section-3.html')) {
+        setTimeout(() => {
+          window.dispatchEvent(new Event('hashchange'));
+          // 若有 scroll=purarea/r1s/c300plus/bp1v2，chips active 後自動捲動（用 MutationObserver 確保卡片出現才滑動）
+          if(scrollTarget) {
+            let tryCount = 0;
+            const tryScroll = () => {
+              const el = document.getElementById(scrollTarget);
+              console.log('[chips scroll debug]', {scrollTarget, el, tryCount});
+              if(el) {
+                window.scrollTo(0,0);
+                setTimeout(()=>{
+                  // 先滑到元素頂部，再手動往下補 header 高度
+                  // 直接滑動到商品目錄標題（section-title）
+                  // 滑動到 chips 區塊（.subchips）頂部，並加 offset 讓 chips 完整顯示
+                  const chips = document.querySelector('.subchips');
+                  if (chips) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const rect = chips.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    // offset: header 高度 + 16px
+                    const top = rect.top + scrollTop - headerHeight - 16;
+                    window.scrollTo({top, behavior: 'smooth'});
+                  } else {
+                    el.scrollIntoView({behavior:'smooth',block:'start'});
+                  }
+                }, 80);
+                return true;
+              }
+              if (++tryCount < 10) {
+                setTimeout(tryScroll, 120);
+              }
+              return false;
+            };
+            tryScroll();
+          }
+        }, 180);
+      }
+    })
+    .catch(error => {
+      console.error('載入內容時發生錯誤:', error);
+      dynamicContent.innerHTML = '<div class="text-center py-20 text-red-600">內容載入失敗。</div>';
+    });
+  }
+
+  // 函式：顯示首頁 (這是您原本的)
+  function showHomePage() {
+    // 回首頁時自動還原首頁影片 src
+    document.querySelectorAll('#home-content iframe[data-orig-src]').forEach(function(iframe) {
+      if (iframe.src !== iframe.dataset.origSrc) iframe.src = iframe.dataset.origSrc;
+    });
+    const dynamicContent = document.getElementById('dynamic-content');
+    const homeContent = document.getElementById('home-content');
+    dynamicContent.classList.add('hidden');
+    dynamicContent.innerHTML = '';
+    homeContent.classList.remove('hidden');
+    window.scrollTo(0, 0);
+    setActiveNav(null); // 回首頁取消 active
+    // 清空 hash，避免 SPA 殘留內容
+    if (location.hash) {
+      history.replaceState({}, '', location.pathname);
+    }
+    // 回首頁時主動暫停所有 YouTube 影片
+    if (window.pauseAllYouTubePlayers) {
+      setTimeout(pauseAllYouTubePlayers, 50);
+    }
+    // 回首頁時自動還原所有被清空 src 的 YouTube 影片
+    document.querySelectorAll('iframe[data-orig-src]').forEach(function(iframe) {
+      if (iframe.src !== iframe.dataset.origSrc) iframe.src = iframe.dataset.origSrc;
+    });
+  }
+
+  // 導覽列 active 控制
+  function setActiveNav(sectionFile){
+  const idMap = {1:'nav-about',2:'nav-tech',3:'nav-products',4:'nav-tests',5:'nav-engineering',6:'nav-contact'};
+  document.querySelectorAll('header nav a.nav-link.active').forEach(a=>a.classList.remove('active'));
+  if(!sectionFile){return;}
+  // 例: sections/section-3-2-4.html -> 抓到 3
+  const m = sectionFile.match(/^sections\/section-(\d+)/);
+  if(!m) return;
+  const id = idMap[parseInt(m[1],10)];
+  if(!id) return;
+  const el = document.getElementById(id);
+  if(el){ el.classList.add('active'); }
+  }
+
+  // ================== 頁面初始設定區 (這是您原本的) ==================
+
+  // 當整個 HTML 文件載入完成後，執行以下代碼
+  document.addEventListener('DOMContentLoaded', function() {
+    // SPA: 若網址有 hash，直接載入對應內容
+    if (location.hash && location.hash.startsWith('#sections/')) {
+      loadContent(location.hash.substring(1));
+    } else {
+      setActiveNav(null);
+    }
+    
+    // 輪播圖相關代碼
+    const carouselInner = document.getElementById('carousel-inner');
+    if (carouselInner) {
+      const images = carouselInner.children;
+      let currentIndex = 0;
+      const showSlide = (index) => {
+        if (images.length > 0 && images[0]) {
+          const width = images[0].clientWidth;
+          carouselInner.style.transform = `translateX(-${width * index}px)`;
+        }
+      };
+      document.getElementById('prevBtn').onclick = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showSlide(currentIndex);
+      };
+      document.getElementById('nextBtn').onclick = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+      };
+      const autoSlide = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+      }, 4000);
+      
+      // 確保圖片載入後再執行，避免寬度計算錯誤
+      window.addEventListener('load', () => showSlide(currentIndex));
+    }
+
+    // 手機選單按鈕
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener("click", function () {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+    }
+
+    // 影片自動預覽 (這部分我幫您移到更合適的位置)
+    document.querySelectorAll('video').forEach(function(video) {
+      video.addEventListener('loadedmetadata', function() {
+        if (video.currentTime < 0.1) {
+          video.currentTime = 0.1;
+        }
+      });
+      video.addEventListener('seeked', function() {
+        video.pause();
+      });
+    });
+    // SPA: popstate 事件，返回/前進時載入對應內容
+    window.addEventListener('popstate', function(event) {
+      let url = location.hash && location.hash.startsWith('#sections/') ? location.hash.substring(1) : null;
+      if (url) {
+        // 解析 url，與 loadContent 一致，正確處理 hash
+        let file = url, hash = '';
+        if (url.includes('#')) {
+          [file, hash] = url.split('#');
+        }
+        let scrollTarget = null;
+        if (file.includes('scroll=purarea')) scrollTarget = 'purarea';
+        else if (file.includes('scroll=r1s')) scrollTarget = 'r1s';
+        else if (file.includes('scroll=c300plus')) scrollTarget = 'c300plus';
+        else if (file.includes('scroll=bp1v2')) scrollTarget = 'bp1v2';
+        const dynamicContent = document.getElementById('dynamic-content');
+        const homeContent = document.getElementById('home-content');
+        dynamicContent.innerHTML = '<div class="text-center py-20">載入中...</div>';
+        dynamicContent.classList.remove('hidden');
+        homeContent.classList.add('hidden');
+        fetch(file)
+          .then(response => {
+            if (!response.ok) throw new Error('網路回應錯誤');
+            return response.text();
+          })
+          .then(html => {
+            dynamicContent.innerHTML = html;
+            // 解析並手動執行插入內容中的 <script>（包含 inline 與 JSON-LD）
+            const scriptNodes = [...dynamicContent.querySelectorAll('script')];
+            scriptNodes.forEach(oldS => {
+              if (!oldS.src && /window\.PRODUCTS\s*=/.test(oldS.textContent) && window.PRODUCTS) return;
+              if (oldS.type && oldS.type === 'module') return;
+              const newS = document.createElement('script');
+              [...oldS.attributes].forEach(attr => newS.setAttribute(attr.name, attr.value));
+              if(!oldS.src) newS.textContent = oldS.textContent;
+              if(newS.type === 'application/ld+json') document.head.appendChild(newS); else document.body.appendChild(newS);
+            });
+            window.scrollTo(0, 0);
+            initializeContactForm();
+            if (window.createAllYTPlayers) setTimeout(createAllYTPlayers, 100);
+            setActiveNav(file);
+            // 新增：載入完自動捲動到 hash 錨點，並預留 header 高度
+            if(hash) {
+              setTimeout(() => {
+                // 固定式 chips 全部專屬跳轉
+                if (file.includes('section-3.html') && hash.startsWith('catalog?cat=3-1')) {
+                  const chip = document.getElementById('chip-fixed-all');
+                  if (chip) {
+                    chip.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    chip.focus && chip.focus();
+                    return;
+                  }
+                }
+                // 其他 hash 錨點
+                const el = document.getElementById(hash);
+                if(el) {
+                  const header = document.querySelector('header');
+                  const headerHeight = header ? header.offsetHeight : 0;
+                  const rect = el.getBoundingClientRect();
+                  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                  const top = rect.top + scrollTop - headerHeight - 8;
+                  window.scrollTo({top, behavior: 'smooth'});
+                }
+              }, 120);
+            }
+            // chips: 若載入 section-3.html，強制觸發 hashchange 以刷新 chips 狀態
+            if (file.includes('section-3.html')) {
+              setTimeout(() => {
+                window.dispatchEvent(new Event('hashchange'));
+                // 若有 scroll=purarea/r1s/c300plus/bp1v2，chips active 後自動捲動（用 MutationObserver 確保卡片出現才滑動）
+                if(scrollTarget) {
+                  let tryCount = 0;
+                  const tryScroll = () => {
+                    const el = document.getElementById(scrollTarget);
+                    console.log('[chips scroll debug]', {scrollTarget, el, tryCount});
+                    if(el) {
+                      window.scrollTo(0,0);
+                      setTimeout(()=>{
+                        const chips = document.querySelector('.subchips');
+                        if (chips) {
+                          const header = document.querySelector('header');
+                          const headerHeight = header ? header.offsetHeight : 0;
+                          const rect = chips.getBoundingClientRect();
+                          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                          const top = rect.top + scrollTop - headerHeight - 16;
+                          window.scrollTo({top, behavior: 'smooth'});
+                        } else {
+                          el.scrollIntoView({behavior:'smooth',block:'start'});
+                        }
+                      }, 80);
+                      return true;
+                    }
+                    if (++tryCount < 10) {
+                      setTimeout(tryScroll, 120);
+                    }
+                    return false;
+                  };
+                  tryScroll();
+                }
+              }, 180);
+            }
+          })
+          .catch(error => {
+            console.error('載入內容時發生錯誤:', error);
+            dynamicContent.innerHTML = '<div class="text-center py-20 text-red-600">內容載入失敗。</div>';
+          });
+      } else {
+        // 沒有 hash，回首頁
+        showHomePage();
+      }
+    });
+  });
+
+  // ===== GA 事件監聽：自動綁定所有 data-ga-* 元素 =====
+  (function(){
+    function sendGA(category,action,label){
+      if(window.gtag){gtag('event',action,{event_category:category,event_label:label});}
+      else if(window.dataLayer){window.dataLayer.push({event:'custom_event',event_category:category,event_action:action,event_label:label});}
+      else {console.log('[GA mock]',category,action,label);} }
+    function bind(){
+      document.querySelectorAll('[data-ga-category]').forEach(function(el){
+        if(el.dataset.gaBound) return; el.dataset.gaBound='1';
+        el.addEventListener('click',function(){
+          sendGA(el.dataset.gaCategory, el.dataset.gaAction||'click', el.dataset.gaLabel||el.textContent.trim());
+        });
+      });
+    }
+    document.addEventListener('click', bind, true);
+    document.addEventListener('DOMContentLoaded', bind);
+    // 觀察 SPA 載入內容
+    const dyn=document.getElementById('dynamic-content');
+    if(window.MutationObserver && dyn){
+      new MutationObserver(function(){bind();}).observe(dyn,{childList:true,subtree:true});
+    }
+  })();
+
+  // 浮動 LINE 按鈕 hover 提示
+  (function(){
+    const btn=document.getElementById('floating-line-btn');
+    if(!btn) return;
+    const tip=btn.querySelector('.line-tooltip');
+    function show(){tip.style.opacity='1';tip.style.transform='translateY(0)';}
+    function hide(){tip.style.opacity='0';tip.style.transform='translateY(4px)';}
+    btn.addEventListener('mouseenter',show);btn.addEventListener('mouseleave',hide);
+    btn.addEventListener('click',function(){
+      if(window.gtag){gtag('event','click',{event_category:'CTA',event_label:'line_floating'});}
+    });
+  })();
+
+  // 浮動按鈕顯示/隱藏 + 回到頂部邏輯
+  (function(){
+    const group=document.getElementById('floating-btn-group');
+    const lineBtn=document.getElementById('floating-line-btn');
+    const backTop=document.getElementById('back-to-top-btn');
+    if(!group) return;
+    const THRESHOLD=420; // 捲動高度門檻
+    let visible=false;
+    function toggle(){
+      const shouldShow=window.scrollY>THRESHOLD;
+      if(shouldShow!==visible){
+        visible=shouldShow;
+        group.style.display=visible?'flex':'none';
+      }
+    }
+    window.addEventListener('scroll',toggle,{passive:true});
+    toggle();
+    // hover 提示 (沿用已注入的 line tooltip IIFE，不重複)
+    if(lineBtn){
+      const tip=lineBtn.querySelector('.line-tooltip');
+      lineBtn.addEventListener('mouseenter',()=>{tip.style.opacity='1';tip.style.transform='translateY(-50%)';});
+      lineBtn.addEventListener('mouseleave',()=>{tip.style.opacity='0';tip.style.transform='translateY(-50%) translateY(4px)';});
+    }
+    if(backTop){
+      backTop.addEventListener('click',()=>{
+        window.scrollTo({top:0,behavior:'smooth'});
+        if(window.gtag){gtag('event','click',{event_category:'NAV',event_label:'back_to_top'});} 
+      });
+      backTop.addEventListener('mouseenter',()=>{backTop.style.transform='translateY(-4px)';});
+      backTop.addEventListener('mouseleave',()=>{backTop.style.transform='translateY(0)';});
+      backTop.addEventListener('mousedown',()=>{backTop.style.transform='translateY(-1px) scale(.95)';});
+      backTop.addEventListener('mouseup',()=>{backTop.style.transform='translateY(-4px)';});
+    }
+  })();
+</script>
+
+
+</body>
+<script>
+// 用 YouTube Iframe API 控制所有影片，切換分頁時全部暫停
+var allYTPlayers = [];
+function createAllYTPlayers() {
+  allYTPlayers = [];
+  var iframes = document.querySelectorAll('iframe[src*="youtube.com/embed/"]');
+  iframes.forEach(function(iframe) {
+    if (!/enablejsapi=1/.test(iframe.src)) return;
+    if (iframe.dataset.ytPlayerBound) return;
+    iframe.dataset.ytPlayerBound = '1';
+    if (!iframe.id) {
+      iframe.id = 'yt-embed-auto-' + Math.random().toString(36).substr(2, 8);
+    }
+    var player = new YT.Player(iframe.id, {
+      events: {
+        'onReady': function(event) {
+          allYTPlayers.push(event.target);
+        }
+      }
+    });
+  });
+}
+function pauseAllYouTubePlayers() {
+  allYTPlayers.forEach(function(player) {
+    // 只有 ready 狀態才呼叫 pauseVideo
+    if (player && typeof player.getPlayerState === 'function') {
+      try { player.pauseVideo(); } catch(e){}
+    }
+  });
+}
+
+// 切換分頁時直接中斷所有 YouTube 影片播放
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    document.querySelectorAll('iframe[src*="youtube.com/embed/"]').forEach(function(iframe) {
+      if (!iframe.dataset.origSrc) iframe.dataset.origSrc = iframe.src;
+      iframe.src = '';
+    });
+  } else {
+    document.querySelectorAll('iframe[data-orig-src]').forEach(function(iframe) {
+      if (iframe.src !== iframe.dataset.origSrc) iframe.src = iframe.dataset.origSrc;
+    });
+  }
+});
+// Iframe API 載入後自動建立所有 player
+function onYouTubeIframeAPIReady() {
+  createAllYTPlayers();
+}
+// 若 SPA 動態載入內容，需重新建立 player
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.YT && window.YT.Player) createAllYTPlayers();
+});
+// 若有用 YouTube Iframe API 控制單一影片，仍保留原本功能
+let ytPlayer;
+if (document.getElementById('yt-embed-1')) {
+  ytPlayer = new YT.Player('yt-embed-1', {});
+}
+</script>
+</html>
+

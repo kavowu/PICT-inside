@@ -1,0 +1,261 @@
+/* 表格欄位平均分配且不自動換行 */
+table {
+  table-layout: fixed;
+}
+th, td {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+/* 優化圖表與表格樣式 */
+.figure-caption {
+  font-size: 15px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.figure-caption img {
+  display: block;
+  margin: 0 auto 8px auto;
+  max-width: 100%;
+  height: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+}
+th {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+/* 全站 HERO 區塊樣式 */
+.hero {
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 18px 28px 18px; /* 上下縮減 */
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,.08);
+  margin-bottom: 4px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 {
+  font-size: clamp(1.9rem,1.3rem + 1.9vw,2.6rem);
+  letter-spacing: .9px;
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.hero p {
+  margin: 0;
+  opacity: .95;
+  font-size: 20px;
+  line-height: 1.75;
+}
+/* 深色 hero/banner 區塊標題覆蓋全站 h2 樣式 */
+.hero h2, .banner h2, .hero-title {
+  color: #fff !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-align: center;
+  background: none;
+}
+/* 全站標題統一設計（左側色條、加粗、加大、padding） */
+h2, .section h2, h2.section-title {
+  color: #17826d;
+  font-size: 2rem;
+  border-left: 6px solid #17826d;
+  padding-left: 16px;
+  margin-top: 0;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  background: none;
+}
+/* Footer 基本樣式 */
+.footer {
+  background: #f0f0f0;
+  padding: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== 全站字體與標題系統 (Global Typography) ===== */
+html { font-size:16px; }
+@media (min-width:1280px){ html { font-size:17px; } }
+body { font-family:'Noto Sans TC','Segoe UI',system-ui,-apple-system,'Microsoft JhengHei',sans-serif; letter-spacing:.2px; }
+h1,h2,h3,h4,h5,h6 { font-family:'Noto Sans TC','Segoe UI',system-ui,-apple-system,'Microsoft JhengHei',sans-serif; font-weight:700; line-height:1.25; letter-spacing:.5px; }
+h1 { font-size:clamp(2rem,1.4rem + 2.1vw,3rem); }
+h2 { font-size:clamp(1.55rem,1.2rem + 1.2vw,2.3rem); }
+h3 { font-size:clamp(1.15rem,1rem + .6vw,1.55rem); }
+/* 統一 Hero 標題與副標（各頁不再使用固定 px） */
+.header h1 { font-size:clamp(1.9rem,1.3rem + 1.9vw,2.6rem); line-height:1.18; letter-spacing:.8px; margin:0 0 12px; font-weight:700; }
+.header p { font-size:clamp(1.05rem,.95rem + .5vw,1.35rem); line-height:1.5; letter-spacing:.5px; margin:0; }
+.section-title { position:relative; display:inline-block; padding-left:16px; border-left:6px solid #0f766e; color:#0f766e; background:linear-gradient(90deg,rgba(15,118,110,.08),rgba(13,148,136,0)); border-radius:4px; }
+.section-title.small { border-left-width:4px; padding-left:12px; font-size:clamp(1.3rem,1.05rem + .9vw,1.8rem); }
+.section-sub { font-size:clamp(1rem,.9rem + .4vw,1.2rem); font-weight:600; color:#0f766e; margin:.75rem 0 .4rem; }
+
+/* 導覽列連結標準化 (避免各頁內嵌差異) */
+nav a.nav-link { position:relative; letter-spacing:.5px; font-weight:600; font-size:.95rem; line-height:1.2; padding:.75rem 1rem; transition:color .25s, opacity .25s; }
+nav a.nav-link::after { content:""; position:absolute; left:50%; bottom:8px; transform:translateX(-50%) scaleX(0); transform-origin:center; border-radius:2px; height:2px; width:58%; background:#0f766e; transition:transform .35s ease, background .35s; }
+nav a.nav-link:hover::after, nav a.nav-link:focus-visible::after { transform:translateX(-50%) scaleX(1); }
+nav a.nav-link:hover { color:#0d9488; }
+nav a.nav-link.active { color:#0f766e; }
+nav a.nav-link.active::after { transform:translateX(-50%) scaleX(1); background:#0d9488; }
+
+/* 內容段落調整 */
+#content p { line-height:1.7; }
+#content p + p { margin-top:.9rem; }
+
+
+/* Footer 容器為橫向並可換行（響應式） */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* 左欄：公司資訊 */
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* 右欄：導航列 */
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+  text-align: right;
+}
+
+/* 導航列連結樣式 */
+.footer-right a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-right a:hover {
+  color: #0077cc;
+}
+
+/* 響應式設計：螢幕小於 600px 時垂直排列 */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+}
+
+
+.footer-links-grid {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.footer-links-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-grid a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  margin: 5px 0;
+}
+
+.footer-links-grid a:hover {
+  color: #0077cc;
+}
+
+/* 手機版時，改成直排 */
+@media (max-width: 600px) {
+  .footer-links-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between; /* 調整讓 QR Code 可出現在右邊 */
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-qrcode img {
+  width: 100px;
+  height: auto;
+}
+
+/* 手機版調整 QR Code 放置位置 */
+@media (max-width: 600px) {
+  .footer-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-qrcode {
+    margin-top: 20px;
+  }
+}
+
+
+/* 原有結構不變，新增 QR Code 容器樣式 */
+.footer-qrcode {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 120px; /* 保留最小寬度，確保圖片不會太擠 */
+}
+
+.footer-qrcode img {
+  width: 100px;     /* 最適大小 */
+  height: auto;     /* 自動高度以保持比例 */
+  max-width: 100%;  /* 避免溢出 */
+}
+
+/* 在手機版時，讓 QR Code 移到下方並靠左 */
+@media (max-width: 600px) {
+  .footer-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-qrcode {
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+}

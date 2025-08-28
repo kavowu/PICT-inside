@@ -1,0 +1,286 @@
+    <style>
+            .section-5-4-container * {
+                box-sizing: border-box;
+            }
+
+            .section-5-4-container {
+                margin: 0;
+                font-family: 'Noto Sans TC', sans-serif;
+                background-color: #f8fafc;
+                color: #1e293b;
+                line-height: 1.8;
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .section-5-4-container .header {
+                background: linear-gradient(135deg, #0f766e, #0d9488);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 12px;
+                margin-bottom: 40px;
+            }
+
+            /* Hero 標題/副標移除固定 px，使用全域 .header h1 / .header p 規則 */
+
+            .section-5-4-container .section {
+                background: white;
+                border-radius: 12px;
+                padding: 40px 30px;
+                margin-bottom: 40px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            }
+
+        .section-5-4-container .image-container {margin:30px 0;display:flex;justify-content:center;}
+        .section-5-4-container .image-container img {width:100%;max-width:900px;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1);}
+
+        /* ===== 落下菌法 卡片精緻設計 (Settle Plate Refined Card) ===== */
+        .method-card-refined {background:#fff;border:1.5px solid #dbe3ea;border-radius:16px;padding:20px 20px 18px;position:relative;display:flex;flex-direction:column;gap:10px;box-shadow:0 4px 14px -4px rgba(0,0,0,.06);}        
+        .method-card-refined::before {content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,#0f766e,#0d9488 55%,#14b8a6);}        
+    .method-card-refined.active-sampling::before {background:linear-gradient(90deg,#0d9488,#14b8a6 55%,#0f766e);}        
+        .method-head {display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+        .method-card-refined h3 {margin:0;font-size:clamp(1.05rem,1rem + .45vw,1.28rem);line-height:1.3;color:#0f3d3a;letter-spacing:.5px;font-weight:700;}
+        .method-card-refined h3 .en {font-size:.78em;font-weight:600;color:#0d9488;margin-left:6px;letter-spacing:.5px;}
+        .badge {font-size:.65rem;letter-spacing:.8px;font-weight:600;padding:4px 8px 3px;border-radius:6px;line-height:1.1;background:#e2f7f5;color:#0f766e;border:1px solid #b9ebe6;text-transform:uppercase;}
+        .badge.passive {background:#eefdfc;}
+    .badge.active {background:#f0fdfa;color:#047857;border-color:#b5f2e2;}
+        .method-intro {margin:0;font-size:.9rem;line-height:1.55;color:#475569;}
+        .method-points {margin:0;padding:0 0 0 18px;font-size:.9rem;line-height:1.55;}
+        .method-points li {margin:0 0 4px;}
+        .method-points li:last-child {margin-bottom:0;}
+        .method-points strong {color:#0f766e;font-weight:600;}
+    /* callout 與上方內容距離：維持底對齊 (margin-top:auto) 並略增內距提升視覺分離 */
+    .method-callout {margin-top:auto;display:flex;align-items:center;background:#e0f7f6;border:1px solid #bfeeee;border-left:5px solid #0f766e;padding:14px 16px 12px;border-radius:12px;font-size:.9rem;line-height:1.5;font-weight:600;letter-spacing:.45px;color:#0f534d;min-height:54px;transition:.25s;}
+    /* 若不要底部對齊，於父卡片加 .flow-callout 可改成固定距離 */
+    .method-card-refined.flow-callout .method-callout {margin-top:14px;}
+        @media (max-width:640px){
+            .method-card-refined {padding:18px 18px 16px;border-radius:14px;}
+            .method-card-refined h3 {font-size:clamp(1.02rem,1rem + .6vw,1.22rem);}  
+            .method-callout {font-size:.88rem;line-height:1.46;padding:12px 14px 11px;border-radius:11px;min-height:50px;}
+        }
+        /* ===== 下方內容區塊統一樣式 (Panels) ===== */
+        .edu-panel {background:#fff;border:1.5px solid #dbe3ea;border-radius:20px;padding:26px 26px 30px;margin-top:30px;position:relative;box-shadow:0 4px 18px -4px rgba(0,0,0,.06);}
+        .edu-panel::before {content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#0f766e,#0d9488 55%,#14b8a6);}        
+        .edu-panel h3 {margin:0 0 18px;font-size:clamp(1.05rem,1rem + .5vw,1.3rem);color:#0f3d3a;letter-spacing:.6px;line-height:1.32;font-weight:700;}
+        .edu-panel h4 {margin:0 0 10px;font-size:clamp(.92rem,.88rem + .3vw,1rem);color:#0f766e;letter-spacing:.4px;}
+        .step-cards, .note-cards {display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+        .mini-card {border:1px solid #e2e8f0;border-radius:14px;padding:16px 16px 18px;background:#fff;box-shadow:0 2px 8px -2px rgba(0,0,0,.04);}
+        .mini-card ol, .mini-card ul {margin:0;padding-left:20px;line-height:1.55;font-size:.88rem;}
+        .mini-card li + li {margin-top:2px;}
+        .panel-subnote {margin:14px 0 0;font-size:.8rem;color:#475569;letter-spacing:.25px;}
+        .compare-wrap {overflow-x:auto;}
+        table.compare-table {width:100%;min-width:620px;border-collapse:separate;border-spacing:0;font-size:.9rem;line-height:1.55;}
+        table.compare-table thead tr {background:#0f766e;color:#fff;text-align:left;}
+        table.compare-table th, table.compare-table td {padding:10px 14px;}
+        table.compare-table tbody tr td {border-top:1px solid #e2e8f0;}
+        table.compare-table tbody tr:nth-child(even) {background:#f9fafb;}
+        .pill-group {display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 0;}
+        .pill {background:#e0f7f6;color:#0f766e;border:1px solid #bfeeee;padding:8px 16px;border-radius:999px;font-size:clamp(.78rem,.72rem + .45vw,.96rem);font-weight:600;letter-spacing:.35px;line-height:1.15;}
+        .note-cards .mini-card h4 {margin:0 0 8px;font-size:.9rem;}
+        @media (max-width:640px){
+            .edu-panel {padding:24px 20px 28px;border-radius:18px;}
+            .edu-panel h3 {margin-bottom:14px;}
+        }
+    /* 特殊教學主標題調整：與下方卡片標題同字級 */
+        #airborne-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0f766e;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 6px solid #0f766e;
+            padding-left: 16px;
+            letter-spacing: 0.5px;
+            background: none;
+            text-align: left;
+        }
+    /* ===== 注意事項 區塊字型優化 ===== */
+    #notes-title {position:relative;padding-left:12px;font-size:clamp(1.05rem,1rem + .5vw,1.3rem);letter-spacing:.65px;line-height:1.32;color:#0f3d3a;}
+    #notes-title::before {content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:5px;height:64%;border-radius:3px;background:linear-gradient(180deg,#0f766e,#0d9488);}    
+    .note-cards {gap:16px;}
+    .note-cards .mini-card {padding:18px 16px 16px;border:1.2px solid #e2e8f0;border-radius:14px;transition:.25s;background:#ffffff;}
+    .note-cards .mini-card:hover {border-color:#0d9488;box-shadow:0 4px 14px -4px rgba(0,0,0,.08);}
+    /* 字體放大 +2px：.82rem -> 約 .94rem；行動版同步提升 */
+    .note-cards .mini-card h4 {font-size:.94rem;letter-spacing:.7px;font-weight:700;margin:0 0 6px;color:#0f766e;display:flex;align-items:center;gap:6px;text-transform:uppercase;}
+    .note-cards .mini-card h4::before {content:"⚑";font-size:.7rem;color:#14b8a6;opacity:.9;}
+    .note-cards .mini-card ul {margin:0;padding-left:18px;list-style:disc;font-size:.9rem;line-height:1.6;letter-spacing:.35px;}
+    .note-cards .mini-card li + li {margin-top:2px;}
+    /* 操作流程字體同注意事項 */
+    .step-cards .mini-card h4 {font-size:.94rem;letter-spacing:.7px;font-weight:700;margin:0 0 6px;color:#0f766e;}
+    .step-cards .mini-card ol {font-size:.9rem;line-height:1.6;letter-spacing:.35px;padding-left:18px;margin:0;}
+    .step-cards .mini-card ol li + li {margin-top:2px;}
+    @media (max-width:640px){
+        #notes-title {padding-left:10px;}
+        .note-cards .mini-card {padding:16px 14px 14px;}
+    .note-cards .mini-card h4 {font-size:.9rem;}
+    .note-cards .mini-card ul {font-size:.88rem;}
+    .step-cards .mini-card h4 {font-size:.9rem;}
+    .step-cards .mini-card ol {font-size:.88rem;}
+    }
+    </style>
+        </style>
+        <div class="section-5-4-container">
+            <div class="header">    
+                <h1>防疫與病菌滅活案例</h1>
+                <p>PICT光離子催化技術實證應用</p>
+            </div>
+
+            <div class="main">
+                                <!-- 教學 / 資訊文章區：空氣落菌檢測方法整合 -->
+                                <section class="section" id="airborne-overview" aria-labelledby="airborne-title">
+                                    <h2 class="section-title" id="airborne-title">空氣落菌檢測方法：落下菌法 vs 空氣採樣法</h2>
+                                    <p style="margin-top:4px;margin-bottom:18px;line-height:1.7">了解兩種常用方法的原理與操作，選對工具更精準掌握環境微生物濃度；本區作為案例成效前的背景知識補充。</p>
+                                    <div class="grid cols-2" style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+                                        <div class="method-card-refined" aria-labelledby="method-settle-title">
+                                            <div class="method-head">
+                                                <h3 id="method-settle-title">落下菌法 <span class="en">Settle Plate</span></h3>
+                                                <span class="badge passive" aria-label="被動沉降法">Passive</span>
+                                            </div>
+                                            <p class="method-intro">利用自然沉降收集空氣中微生物，操作簡單、低成本，適合巡檢趨勢觀察。</p>
+                                            <ul class="method-points">
+                                                <li>將已凝固之培養基<strong>暴露於空氣</strong>一段時間，落菌自然沉降。</li>
+                                                <li>監測<strong>總生菌數</strong>；不需儀器、流程直覺。</li>
+                                                <li>結果為菌落數（可換算 CFU/m² / 時間）。</li>
+                                            </ul>
+                                            <div class="method-callout">巡檢適用：實驗室 / 食品廠 等日常環境</div>
+                                        </div>
+                                        <div class="method-card-refined active-sampling" aria-labelledby="method-active-title">
+                                            <div class="method-head">
+                                                <h3 id="method-active-title">空氣採樣法 <span class="en">Active Sampling</span></h3>
+                                                <span class="badge active" aria-label="主動採樣">Active</span>
+                                            </div>
+                                            <p class="method-intro">以設備主動抽取固定體積空氣並將微生物捕集於培養基表面，數據可量化比較。</p>
+                                            <ul class="method-points">
+                                                <li>以<strong>採樣器</strong>控制流量與體積，提升一致性。</li>
+                                                <li>可直接換算 <strong>CFU/m³</strong>，利標準對照。</li>
+                                                <li>適用高潔淨 / 醫療或需精確趨勢的場域。</li>
+                                            </ul>
+                                            <div class="method-callout">精確量化：潔淨室 / 醫療空間 等關鍵場域</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="edu-panel" aria-labelledby="flow-title">
+                                        <h3 id="flow-title">操作流程（精簡）</h3>
+                                        <div class="step-cards">
+                                            <div class="mini-card" aria-labelledby="flow-settle-h4">
+                                                <h4 id="flow-settle-h4">落下菌法</h4>
+                                                <ol>
+                                                    <li>選擇適當培養基</li>
+                                                    <li>按設定時間暴露</li>
+                                                    <li>細菌 30–35°C / 真菌 25–30°C 培養</li>
+                                                    <li>計數菌落並紀錄條件</li>
+                                                </ol>
+                                            </div>
+                                            <div class="mini-card" aria-labelledby="flow-active-h4">
+                                                <h4 id="flow-active-h4">空氣採樣法</h4>
+                                                <ol>
+                                                    <li>校正採樣器流量</li>
+                                                    <li>依高度與點位採樣</li>
+                                                    <li>培養與計數換算 CFU/m³</li>
+                                                    <li>完整紀錄流量、體積、環境</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                        <p class="panel-subnote">＊條件依法規 / 內控標準調整；此為常見範圍示意。</p>
+                                    </div>
+
+                                    <div class="edu-panel" aria-labelledby="compare-title">
+                                        <h3 id="compare-title">方法比較</h3>
+                                        <div class="compare-wrap">
+                                            <table class="compare-table" aria-label="落下菌法與空氣採樣法比較表">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">項目</th>
+                                                        <th scope="col">落下菌法</th>
+                                                        <th scope="col">空氣採樣法</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>量測指標</td><td>菌落數（可換算面積/時間）</td><td>CFU/m³</td></tr>
+                                                    <tr><td>設備/成本</td><td>培養皿 + 培養箱，低</td><td>需採樣器，較高</td></tr>
+                                                    <tr><td>精確度</td><td>受氣流/沉降影響</td><td>體積可控，可比較</td></tr>
+                                                    <tr><td>適用場景</td><td>日常巡檢</td><td>高潔淨或醫療</td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="edu-panel" aria-labelledby="use-cases-title">
+                                        <h3 id="use-cases-title">應用場景</h3>
+                                        <div class="pill-group" role="list" aria-label="典型應用場景">
+                                            <span class="pill" role="listitem">實驗室</span>
+                                            <span class="pill" role="listitem">食品廠</span>
+                                            <span class="pill" role="listitem">醫療場所</span>
+                                            <span class="pill" role="listitem">潔淨室</span>
+                                            <span class="pill" role="listitem">室內空氣評估</span>
+                                            <span class="pill" role="listitem">黴菌趨勢</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="edu-panel" aria-labelledby="notes-title">
+                                        <h3 id="notes-title">注意事項</h3>
+                                        <div class="note-cards">
+                                            <div class="mini-card" aria-labelledby="note-equip-h4">
+                                                <h4 id="note-equip-h4">採樣與設備</h4>
+                                                <ul>
+                                                    <li>採樣前校正流量</li>
+                                                    <li>操作與器材保持無菌</li>
+                                                </ul>
+                                            </div>
+                                            <div class="mini-card" aria-labelledby="note-culture-h4">
+                                                <h4 id="note-culture-h4">培養條件</h4>
+                                                <ul>
+                                                    <li>細菌 30–35°C</li>
+                                                    <li>真菌 25–30°C</li>
+                                                </ul>
+                                            </div>
+                                            <div class="mini-card" aria-labelledby="note-record-h4">
+                                                <h4 id="note-record-h4">紀錄與判讀</h4>
+                                                <ul>
+                                                    <li>完整紀錄條件與結果</li>
+                                                    <li>對照歷史趨勢與標準</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="sr-only">本區說明落下菌法與空氣採樣法的概念、流程、比較與應用場景，協助選擇合適的環境微生物監測方法。</p>
+                                </section>
+                                <!-- /教學區結束 -->
+                <div class="section">
+                    <div class="image-container">
+                        <img src="images/S5/案例1_0.jpg" alt="案例1 - 糖尿病患者去味實證（新北市）">
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="images/S5/案例2_0.jpg" alt="案例2 - 小兒科診所實證">
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="images/S5/案例3_0.jpg" alt="案例3 - 公司內防疫實證（台北市）">
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="images/S5/案例4_0.jpg" alt="案例4 - 廁所去異味實證（台北市）">
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="images/S5/案例5_0.jpg" alt="案例5 - 廁所除異味實證（新北市）">
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="images/S5/案例6_0.jpg" alt="案例6 - 房間除黴味實證（新北市）">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- JSON-LD：補充 HowTo 結構化資料（保留簡化版） -->
+<script type="application/ld+json">{
+"@context":"https://schema.org","@type":"HowTo","name":"空氣落菌檢測方法：落下菌法與空氣採樣法","description":"落下菌法與空氣採樣法之原理、流程、比較與應用重點。","inLanguage":"zh-TW","step":[{"@type":"HowToStep","name":"落下菌法","text":"暴露培養基於空氣一定時間，培養後計數菌落。"},{"@type":"HowToStep","name":"空氣採樣法","text":"以採樣器吸入固定體積空氣，培養並換算 CFU/m³。"}]}</script>
+
+

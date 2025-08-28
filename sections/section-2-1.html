@@ -1,0 +1,740 @@
+<style>
+  :root {
+    --primary: #0f766e;
+    --secondary: #e0f7f6;
+    --background: #f8fafc;
+    --text: #1f2937;
+    --highlight: #fef3c7;
+    --warning: #fef2f2;
+    --success: #f0fdf4;
+    --info: #eff6ff;
+  }
+
+  .section-2-1-container * {
+    box-sizing: border-box;
+  }
+
+  .section-2-1-container {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 20px;
+    font-size: 17px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-2-1-container .header {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .section-2-1-container .header h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .section-2-1-container .header p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin: 0;
+  }
+
+  .section-2-1-container .main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-2-1-container .section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .section-2-1-container .section:hover {
+    transform: translateY(-3px);
+  }
+
+  .section-2-1-container h2 {
+    color: var(--primary);
+    font-size: 30px;
+    border-left: 6px solid var(--primary);
+    padding-left: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .section-2-1-container h3 {
+    color: var(--primary);
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .section-2-1-container h4 {
+    color: var(--text);
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+  }
+
+  .section-2-1-container .comparison-section {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+  }
+
+  .section-2-1-container .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+  }
+
+  .section-2-1-container .comparison-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px 22px 28px;
+    border: 2.5px solid #0f766e22;
+    box-shadow: 0 4px 24px rgba(15, 118, 110, 0.08);
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    position: relative;
+    font-size: 17.5px;
+    line-height: 1.85;
+  }
+
+  .section-2-1-container .comparison-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .section-2-1-container .comparison-card h4 {
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .section-2-1-container .comparison-card p {
+    font-size: 17.2px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+
+  .section-2-1-container .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .section-2-1-container .tech-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 25px 18px 25px;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .section-2-1-container .tech-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-2-1-container .tech-card.hepa {
+    border-left-color: #10b981;
+  }
+
+  .section-2-1-container .tech-card.electrostatic {
+    border-left-color: #f59e0b;
+  }
+
+  .section-2-1-container .tech-card.carbon {
+    border-left-color: #8b5cf6;
+  }
+
+  .section-2-1-container .tech-card.uv {
+    border-left-color: #06b6d4;
+  }
+
+  .section-2-1-container .tech-card.ion {
+    border-left-color: #ef4444;
+  }
+
+  .section-2-1-container .tech-card.ozone {
+    border-left-color: #f97316;
+  }
+
+  .section-2-1-container .tech-card h5 {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .section-2-1-container .tech-card p {
+    font-size: 16.8px;
+    line-height: 1.9;
+    margin-bottom: 10px;
+  }
+
+  .section-2-1-container .pros-cons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 18px 0 0 0;
+  }
+
+  .section-2-1-container .pros {
+    background: var(--success);
+    padding: 16px 15px;
+    border-radius: 10px;
+    border-left: 5px solid #22c55e;
+    flex: 1 1 0;
+    font-size: 16.5px;
+    line-height: 1.85;
+  }
+
+  .section-2-1-container .cons {
+    background: var(--warning);
+    padding: 16px 15px;
+    border-radius: 10px;
+    border-left: 5px solid #ef4444;
+    flex: 1 1 0;
+    font-size: 16.5px;
+    line-height: 1.85;
+  }
+
+  /* h6 樣式優化：提升層次、加強重點、微調字級與間距 */
+  .section-2-1-container h6 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f766e;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    line-height: 1.7;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-2-1-container .pros h6 {
+    color: #16a34a;
+  }
+  .section-2-1-container .cons h6 {
+    color: #dc2626;
+  }
+
+  .section-2-1-container .highlight-box {
+    background-color: var(--secondary);
+    border-left: 5px solid var(--primary);
+    padding: 20px 25px;
+    margin: 25px 0;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+
+  .section-2-1-container .info-box {
+    background-color: var(--info);
+    border-left: 5px solid #3b82f6;
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+  }
+
+  .section-2-1-container .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  /* 技術比較總覽表格文字優化 */
+  .section-2-1-container .comparison-table th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .section-2-1-container .comparison-table td {
+    font-size: 17px;
+    color: #1f2937;
+    padding: 15px 12px;
+    line-height: 1.85;
+    letter-spacing: 0.1px;
+    text-align: center;
+  }
+  .section-2-1-container .comparison-table tr:hover {
+    background-color: #f0fdfa;
+  }
+
+  .section-2-1-container .selection-guide {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+  }
+
+  .section-2-1-container .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+  }
+
+  .section-2-1-container .guide-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 28px 22px 28px;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+    font-size: 17.5px;
+    line-height: 1.85;
+    box-shadow: 0 4px 18px rgba(15, 118, 110, 0.07);
+  }
+
+  .section-2-1-container .guide-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .section-2-1-container .guide-card.pollution {
+    border-left-color: #f59e0b;
+  }
+
+  .section-2-1-container .guide-card.humidity {
+    border-left-color: #06b6d4;
+  }
+
+  .section-2-1-container .guide-card.pollutant {
+    border-left-color: #8b5cf6;
+  }
+
+  .section-2-1-container .guide-card h5 {
+    color: var(--primary);
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .section-2-1-container .guide-card ul {
+    margin: 0 0 0 18px;
+    padding: 0;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .section-2-1-container .guide-card li {
+    margin-bottom: 7px;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .section-2-1-container .guide-card strong {
+    font-weight: bold;
+    color: #0f766e;
+    letter-spacing: 0.2px;
+  }
+
+  @media (max-width: 768px) {
+    .section-2-1-container .header h1 {
+      font-size: 32px;
+    }
+
+    .section-2-1-container .section {
+      padding: 30px 20px;
+    }
+
+    .section-2-1-container .comparison-grid,
+    .section-2-1-container .tech-grid,
+    .section-2-1-container .guide-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-2-1-container .pros-cons {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="section-2-1-container">
+  <div class="header">
+    <h1>空氣淨化技術彙整</h1>
+    <p>市面上的空氣淨化產品可分為被動式和主動式兩大類，各有其優缺點與適用場景</p>
+  </div>
+
+  <div class="main">
+    <!-- 技術比較概述 -->
+    <div class="section">
+      <h2>🔄 被動式與主動式技術比較</h2>
+      
+      <div class="comparison-section">
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h4>🌪️ 被動式空氣清淨裝置</h4>
+            <p>利用大風量抽風設備將室內空氣抽到裝置內處理。</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <h6>✅ 優點</h6>
+                <ul>
+                  <li>處理效率高</li>
+                  <li>適用於較高污染空間</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <h6>❌ 缺點</h6>
+                <ul>
+                  <li>易受水氣影響</li>
+                  <li>須經常更換濾網</li>
+                  <li>對表面附著污染物無效</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <h4>⚡ 主動式空氣清淨裝置</h4>
+            <p>利用小風量抽風設備將淨化因子排至環境中。</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <h6>✅ 優點</h6>
+                <ul>
+                  <li>體積小、能耗低</li>
+                  <li>可處理表面污染物</li>
+                  <li>不受水氣影響</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <h6>❌ 缺點</h6>
+                <ul>
+                  <li>反應較慢</li>
+                  <li>處理時間長</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 被動式技術：粒狀污染物 -->
+    <div class="section">
+      <h2>🔬 被動式技術：粒狀污染物處理</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card hepa">
+          <h5>HEPA濾網</h5>
+          <p>特殊編織方法或不織布，對0.3μm以上微粒具99%以上捕集功效。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>效率高</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>需定期更換，且若無抑菌機制，細菌易滋生</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card electrostatic">
+          <h5>靜電濾網</h5>
+          <p>在濾網纖維上載入駐極體或帶靜電材料，增加靜電吸引力。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>壓損較HEPA小</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>與HEPA濾網相似</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card electrostatic">
+          <h5>靜電集塵器</h5>
+          <p>藉放電電極讓微粒帶電，經電場吸附至集塵板。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>不需更換濾網</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>要定期清洗，機體較重，且可能產生臭氧和氮氧化物</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 被動式技術：氣狀污染物 -->
+    <div class="section">
+      <h2>💨 被動式技術：氣狀污染物處理</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card carbon">
+          <h5>活性碳濾網</h5>
+          <p>表面具大中微孔結構，可廣泛吸附氣狀污染物。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>反應快速，價格合理</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>易受水氣影響，壽命短，且易滋生細菌</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card carbon">
+          <h5>沸石濾網</h5>
+          <p>特殊中微孔結構，提高小分子污染物吸附效果。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>對小分子污染物吸附效能高</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>價格較貴，常與活性碳混合使用</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card uv">
+          <h5>光觸媒濾網</h5>
+          <p>與紫外燈管搭配，產生電子電洞對驅動氧化還原反應。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>不用經常更換</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>必須搭配紫外燈管才能發揮功效</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 紫外燈管技術 -->
+    <div class="section">
+      <h2>💡 紫外燈管技術</h2>
+      
+      <div class="image-container">
+        <img src="images/S2/UV1.png" alt="紫外燈管技術示意圖" class="uv-image">
+      </div>
+
+      <div class="info-box">
+        <strong>紫外燈管種類多樣，功能各異：</strong>
+        <ul>
+          <li><strong>UVA範圍(352-365nm)</strong>：驅動光催化反應</li>
+          <li><strong>254nm殺菌燈管</strong>：具抑菌效能</li>
+          <li><strong>185nm真空紫外燈管</strong>：可產生臭氧</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <strong>真空紫外燈管(185nm)技術特點：</strong><br>
+        能量約646 kJ/mol，可透過直接光解反應將分子鍵斷鍵，或產生活性物質如臭氧、雙氧水、氫氧自由基等，對污染物進行間接光解的氧化/還原反應。
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h6>✅ 優點</h6>
+          <p>多功能；兼具主動式效能與被動式廣效性</p>
+        </div>
+        <div class="cons">
+          <h6>❌ 缺點</h6>
+          <p>紫外光不能直接外露，且出口臭氧濃度需控制；光線不能外露，且屬易碎品，須妥善保護</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主動式技術：負離子與臭氧 -->
+    <div class="section">
+      <h2>⚡ 主動式技術：負離子與臭氧</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card ion">
+          <h5>負離子產生器</h5>
+          <p>透過電暈放電等方式讓氧氣和水氣帶負電荷。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>體積小，有效範圍廣</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>可能產生氮氧化物污染</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card ozone">
+          <h5>臭氧產生器</h5>
+          <p>使用電暈放電產生臭氧，可促進污染物氧化反應。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>機體小、範圍廣</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>可能產生氮氧化物，且臭氧濃度需控制在標準以下</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>重要特點：</strong><br>
+        這些技術能有效處理傳統空氣清淨機無法解決的問題，如牆面、家具和衣物上的污染物。
+      </div>
+    </div>
+
+    <!-- 主動式技術：液態與噴劑 -->
+    <div class="section">
+      <h2>💧 主動式技術：液態與噴劑</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h5>次氯酸水(HClO)</h5>
+          <p>以噴劑或霧化器將低濃度次氯酸水噴灑至環境中。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>範圍廣、抑菌效果佳、價格便宜</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>增加室內濕度，且需定期噴灑，長期使用可能導致家具退色</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <h5>除臭噴劑</h5>
+          <p>含多種成分如殺菌劑、芳香劑等。</p>
+          <div class="pros-cons">
+            <div class="pros">
+              <h6>優點</h6>
+              <p>除臭效果明顯</p>
+            </div>
+            <div class="cons">
+              <h6>缺點</h6>
+              <p>價格較貴，不適合長時間使用，且成分繁雜，需注意是否含過多人工香精</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 技術比較表格 -->
+    <div class="section">
+      <h2>📊 技術比較總覽</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>清淨機類別</th>
+            <th>被動式空氣清淨裝置</th>
+            <th>主動式空氣清淨裝置</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>粒狀污染物處理技術</strong></td>
+            <td>HEPA濾網、靜電濾網、靜電集塵器</td>
+            <td>負離子產生器</td>
+          </tr>
+          <tr>
+            <td><strong>氣狀污染物處理技術</strong></td>
+            <td>活性碳濾網、沸石、光觸媒、紫外燈管</td>
+            <td>臭氧產生器、次氯酸水、除臭噴劑、紫外燈管</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 選擇指南 -->
+    <div class="section">
+      <h2>🎯 如何選擇適合的空氣淨化產品</h2>
+      
+      <div class="selection-guide">
+        <div class="guide-grid">
+          <div class="guide-card pollution">
+            <h5>🏭 考量空間污染程度</h5>
+            <ul>
+              <li><strong>高污染空間</strong>適合選擇<strong>被動式裝置</strong></li>
+              <li><strong>低污染空間</strong>可考慮<strong>主動式裝置</strong></li>
+            </ul>
+          </div>
+
+          <div class="guide-card humidity">
+            <h5>💧 評估使用環境濕度</h5>
+            <ul>
+              <li><strong>高濕度環境</strong>不適合使用<strong>活性碳濾網等被動式裝置</strong></li>
+              <li>可考慮<strong>不受水氣影響的主動式裝置</strong></li>
+            </ul>
+          </div>
+
+          <div class="guide-card pollutant">
+            <h5>🔬 分析污染物類型</h5>
+            <ul>
+              <li>針對<strong>粒狀污染物</strong>，<strong>HEPA濾網效果佳</strong></li>
+              <li>針對<strong>氣味</strong>和<strong>氣狀污染物</strong>，<strong>活性碳或主動式裝置較適合</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>選擇建議：</strong><br>
+        不同技術各有優缺點，選擇時應考量實際需求和待解決的問題，並參考代表性產品後再做決定。
+      </div>
+    </div>
+
+    <!-- CTA區域 -->
+    <div class="cta-section">
+      <h2 style="color: white; border: none; padding: 0; margin-bottom: 20px;">了解更多空氣淨化解決方案</h2>
+      <p style="font-size: 18px; margin-bottom: 30px;">選擇最適合您需求的空氣淨化技術</p>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-2.html')" class="cta-button">
+        室內環境淨化需求
+      </a>
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-3.html')" class="cta-button">
+        選購指南
+      </a>
+    </div>
+  </div>
+</div>
+

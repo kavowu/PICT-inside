@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4.3 批次式測定法 - WETOP環境淨化器科學驗證</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .section-4-container {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.8;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-4-container * { box-sizing: border-box; }
+    .hero {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      color: white;
+      padding: 56px 24px;
+      border-radius: 20px;
+      text-align: center;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(15, 118, 110, 0.3);
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem,1.3rem + 1.9vw,2.6rem);
+      font-weight: bold;
+      margin-bottom: 12px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.18);
+    }
+    .hero p {
+      font-size: 20px;
+      opacity: 0.92;
+      margin-bottom: 0;
+    }
+    .content-section {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .content-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #e0e7ef, #f1f5f9);
+      color: #1e293b;
+      padding: 50px 40px;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(15, 118, 110, 0.3);
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(15, 118, 110, 0.4);
+      color: white;
+    }
+    th {
+      background: #0f766e;
+      color: white;
+      font-weight: 600;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    tr:nth-child(even) {
+      background-color: #f0fdfa;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: #334155;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 18px;
+      color: #475569;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
+    .method-card {
+      background: #e0ecf2;
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(15, 118, 110, 0.10);
+      padding: 38px 32px 30px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 220px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .method-card:hover {
+      box-shadow: 0 16px 48px rgba(15, 118, 110, 0.16);
+      transform: translateY(-4px) scale(1.025);
+    }
+    .method-card h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f766e;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+    }
+    .method-card ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .method-card li {
+      margin-bottom: 13px;
+      color: #334155;
+      font-size: 1.08rem;
+      line-height: 2.1;
+      letter-spacing: 0.2px;
+    }
+      .highlight {
+        background: linear-gradient(90deg, #e0f7fa 60%, #f1f5f9 100%);
+        border-radius: 12px;
+        padding: 14px 22px;
+        font-weight: bold;
+        color: #0f766e;
+        font-size: 1.13rem;
+        margin: 18px 0 24px 0;
+        box-shadow: 0 2px 8px rgba(15, 118, 110, 0.07);
+        display: inline-block;
+        letter-spacing: 0.5px;
+      }
+    @media (max-width: 900px) {
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .content-section {
+        padding: 20px;
+      }
+    }
+    .test-result {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .test-result h4 {
+      color: #0f766e;
+      margin-top: 0;
+    }
+  </style>
+  <style>
+    .card-group-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin: 36px 0 18px 0;
+      letter-spacing: 1px;
+    }
+    .toluene-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    .toluene-card {
+      background: #f9fafb;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      padding: 28px 22px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 160px;
+      transition: box-shadow 0.2s;
+    }
+    .toluene-card:hover {
+      box-shadow: 0 10px 32px rgba(15, 118, 110, 0.13);
+    }
+    .toluene-card-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 12px;
+    }
+    .toluene-card-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .toluene-card-label {
+      font-size: 1rem;
+      color: #334155;
+      min-width: 56px;
+    }
+    .toluene-card-value {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0d9488;
+      margin-right: 6px;
+    }
+    .toluene-card-desc {
+      font-size: 0.98rem;
+      color: #64748b;
+    }
+
+    .toluene-2x2-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) {
+      .toluene-2x2-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+ .comparison-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .blue-info-box {
+  background: #e3f4fd;
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 24px 0;
+  color: #1e293b;
+  font-size: 1.08rem;
+}
+.blue-info-box strong {
+  font-size: 1.13rem;
+  color: #0f766e;
+  display: block;
+  margin-bottom: 10px;
+}
+.blue-info-box ul {
+  margin: 0;
+  padding-left: 22px;
+}
+.blue-info-box li {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+    @media (max-width: 900px) {
+      .toluene-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="section-4-container">
+    <div class="hero">
+      <div class="container">
+        <h1>批次式測定方法：終端產品的「實境模擬」</h1>
+        <p>更接近消費者實際使用環境</p>
+      </div>
+    </div>
+    <div class="content-section">
+  <h2 class="section-title">批次式測定法</h2>
+      <div class="highlight">
+        🏠 批次式測定方法：終端產品的「實境模擬」
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h4>📊 測試方式</h4>
+          <ul>
+            <li>將淨化器放入固定體積測試艙（如 30m³、50m³）</li>
+            <li>注入固定量污染物（如甲醛、TVOC、氨氣）</li>
+            <li>密閉空間中觀察一定時間內的污染物濃度變化曲線</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h4>🎯 測試意義</h4>
+          <ul>
+            <li>更接近消費者實際使用環境（如房間、會議室）</li>
+            <li>可整體評估模組/產品在空間內主動淨化污染物的能力</li>
+            <li>強調「空間效應」與「淨化反應時間」，具消費導向參考價值</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h4>🔧 適合應用</h4>
+          <ul>
+            <li>空氣清淨機/環境淨化器整機測試</li>
+            <li>空氣品質改善提案驗證</li>
+            <li>消費者體感對照（如：異味去除、甲醛降低時間）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content-section">
+  <h2 class="section-title">揮發性有機物</h2>
+      <p>本項測試係以批次式的測試方法，測試 PICT 玻纖套管搭配不同紫外燈管，對不同揮發性有機物的去除效能。測試系統使用 4 L 小型反應器，分析儀為傅立葉紅外光譜儀(FTIR)，最小偵測極限約為 1 ppm。</p>
+      <h3>PICT 玻纖套管搭配 10 W 捕蟲燈管(365 nm)之測試結果</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>項次</th>
+              <th>測試氣體名稱</th>
+              <th>化學式</th>
+              <th>初始濃度 (ppm)</th>
+              <th>分解速率 (min⁻¹)</th>
+              <th>樣品量 (μL)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>醋酸</td>
+              <td>CH₃COOH</td>
+              <td>1020</td>
+              <td>0.2418</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>三甲胺</td>
+              <td>N(CH₃)₃</td>
+              <td>980</td>
+              <td>0.1105</td>
+              <td>30 (40 wt%)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>甲醇</td>
+              <td>CH₃OH</td>
+              <td>1914</td>
+              <td>0.0702</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>乙醛</td>
+              <td>CH₃CHO</td>
+              <td>1392</td>
+              <td>0.1708</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>乙酸丁酯</td>
+              <td>CH₃COOC₄H₉</td>
+              <td>105</td>
+              <td>0.3123</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>丁酮</td>
+              <td>CH₃COC₂H₅</td>
+              <td>170</td>
+              <td>0.2894</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>四氫呋喃</td>
+              <td>(CH₂)₄O</td>
+              <td>170</td>
+              <td>0.3426</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>吡啶</td>
+              <td>C₅H₅N</td>
+              <td>155</td>
+              <td>0.0753</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>PICT 玻纖套管搭配 10 W 殺菌燈管(254 nm)之測試結果</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>項次</th>
+              <th>測試氣體名稱</th>
+              <th>化學式</th>
+              <th>初始濃度 (ppm)</th>
+              <th>分解速率 (min⁻¹)</th>
+              <th>樣品量 (μL)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>醋酸</td>
+              <td>CH₃COOH</td>
+              <td>1020</td>
+              <td>0.1721</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>丁酮</td>
+              <td>CH₃COC₂H₅</td>
+              <td>170</td>
+              <td>0.3106</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>乙酸丁酯</td>
+              <td>CH₃COOC₄H₉</td>
+              <td>105</td>
+              <td>0.4023</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>四氫呋喃</td>
+              <td>(CH₂)₄O</td>
+              <td>170</td>
+              <td>0.4019</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>甲苯</td>
+              <td>CH₃C₆H₅</td>
+              <td>133</td>
+              <td>0.1795</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>正己烷</td>
+              <td>C₆H₁₄</td>
+              <td>146</td>
+              <td>0.110</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>苯</td>
+              <td>C₆H₆</td>
+              <td>157</td>
+              <td>0.0651</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>鄰-二氯苯</td>
+              <td>C₆H₄Cl₂</td>
+              <td>83</td>
+              <td>0.0528</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>二氯甲烷</td>
+              <td>CH₂Cl₂</td>
+              <td>144</td>
+              <td>0.0185</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>與捕蟲燈管相比較，可以發現除了醋酸以外，其他揮發性有機物的去除效能都有提高，這是因為 254 nm 的殺菌燈管波長較短，驅動光催化反應的能量更強的緣故。另外，針對較難分解的苯類化合物和含氯的有機化合物，PICT 玻纖套管的光催化反應也具有相當優異的去除效能。</p>
+      </div>
+    </div>
+    <div class="content-section">
+  <h2 class="section-title">抗菌</h2>
+      <p>PICT 光水離子化反應系統所使用的 PICT 燈管本身就可放射出殺菌燈管 254 nm 波長的紫外光，具有殺菌燈管的效能。本測試係將 PICT 玻纖套管在 365 nm 波長的捕蟲燈管照射下，測試其對不同細菌的抗菌效能。</p>
+      <h3>抗菌效能測試步驟</h3>
+      <div class="info-box">
+        <ol>
+          <li>以 254 nm 殺菌燈管照射 PICT 玻纖套管及未塗佈光觸媒的一般玻纖套管，對玻纖套管進行滅菌</li>
+          <li>把 PICT 玻纖套管鋪設在含培養基的培養皿上，將定量菌液滴在玻纖套管上</li>
+          <li>未照光前，先各取一組樣品，計算起始菌落數</li>
+          <li>以 UV 365 nm 捕蟲燈管照射，每隔 3 分鐘各取一組培養皿</li>
+          <li>以 37℃、培養 48 小時後，計算菌落數，比較殺菌功效</li>
+        </ol>
+      </div>
+      <h3>PICT 玻纖套管照射 365 nm 捕蟲燈管之抗菌效能測定結果</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>照光時間(分)</th>
+              <th>大腸桿菌</th>
+              <th>表皮葡萄球菌</th>
+              <th>金黃色葡萄球菌</th>
+              <th>黏質沙雷氏菌</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>99.4%</td>
+              <td>99.3%</td>
+              <td>79.0%</td>
+              <td>56.9%</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>99.5%</td>
+              <td>99.6%</td>
+              <td>> 99.99%</td>
+              <td>82.0%</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>99.8%</td>
+              <td>99.7%</td>
+              <td>> 99.99%</td>
+              <td>99.7%</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>> 99.99%</td>
+              <td>99.4%</td>
+              <td>> 99.99%</td>
+              <td>> 99.99%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>測試結果顯示照射 12 分鐘後，抗菌率都在 99%以上；大腸桿菌和表皮葡萄球菌更是照射 3 分鐘後即達到 99%以上的抗菌率。其中，大腸桿菌和黏質沙雷氏菌都是革蘭氏陰性菌，表皮葡萄球菌和金黃色葡萄球菌則是革蘭氏陽性菌。</p>
+      </div>
+    </div>
+    <section>
+    <div class="content-section">
+  <h2 class="section-title">甲苯</h2>
+      <p>生活環境中，甲苯的主要來源是油漆或汽油，甲苯通常作為油漆的稀釋劑或汽油的添加劑。一般都是以活性碳吸附的方式進行處理，但容易受空氣中的水氣影響；若是使用光催化等化學降解的方法，通常只適用於處理非常低的濃度。</p>
+      <h3>測試系統設計</h3>
+      <p>本測試係以批次式的測試方式，將 PICT 模組或 PICT-inside 環境淨化器放置在一個密閉的空間中，然後在這密閉空間中放入適量的污染物(高濃度約 20 ppm、低濃度約 7 ppm)，再測試 PICT 模組或 PICT-inside 環境淨化器對甲苯的去除效能。</p>
+      <div class="info-box">
+        <div class="blue-info-box">
+          <strong>測試箱規格：</strong>
+          <ul>
+            <li>測試箱體內容積：366L (長 x 寬 x 高= 620 x 820 x 720 mm)</li>
+            <li>內部裝設：循環風扇、燈源、電源開關控制器</li>
+            <li>外部裝設：HEPA 濾材箱體及進氣與出氣風管、採樣口</li>
+            <li>分析儀器：氣相層析儀火焰離子偵測器(GC-FID，Agilent GC 7890A)</li>
+          </ul>
+        </div>
+      </div>
+      <div style="font-size:1.25rem;font-weight:bold;color:#0f766e;margin:36px 0 18px 0;letter-spacing:1px;">PICT 模組甲苯去除效能測定結果</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-bottom:32px;">
+      <div class="toluene-2x2-grid">
+        <div class="toluene-card">
+          <div class="toluene-card-title">PICT M1 模組 (低濃度)</div>
+          <div class="toluene-card-value">88.7%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 6 ppm)</div>
+        </div>
+        <div class="toluene-card">
+          <div class="toluene-card-title">PICT M1 模組 (高濃度)</div>
+          <div class="toluene-card-value">96.5%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 18 ppm)</div>
+        </div>
+        <div class="toluene-card">
+          <div class="toluene-card-title">PICT M2 模組 (低濃度)</div>
+          <div class="toluene-card-value">92.6%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 6 ppm)</div>
+        </div>
+        <div class="toluene-card">
+          <div class="toluene-card-title">PICT M2 模組 (高濃度)</div>
+          <div class="toluene-card-value">97.9%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 18 ppm)</div>
+        </div>
+      </div>
+      </div>
+
+      <h3>PICT-inside 環境淨化器甲苯去除效能測定結果</h3>
+      
+      <div class="comparison-grid">
+        <div class="toluene-card">
+          <div class="toluene-card-title">C00 PICT-inside</div>
+          <div class="toluene-card-value">76.1%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 6 ppm, 3W)</div>
+        </div>
+        <div class="toluene-card">
+          <div class="toluene-card-title">iBreeze301 (低濃度)</div>
+          <div class="toluene-card-value">95%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 6 ppm)</div>
+        </div>
+        <div class="toluene-card">
+          <div class="toluene-card-title">iBreeze301 (高濃度)</div>
+          <div class="toluene-card-value">82%</div>
+          <div class="toluene-card-desc">去除率 (初始濃度 18 ppm)</div>
+        </div>
+      </div>
+
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>由於測試的 PICT 模組和 PICT-inside 環境淨化器都不含吸附濾材，所以其效能完全是出自 PICT 光水離子化作用。C00 的紫外燈管耗電量只有 3W，搭配光觸媒玻纖套管，就可以在小空間內有效去除甲苯，非常適用於車內異味的去除，或是小套房等小空間的環境淨化。</p>
+      </div>
+    </section>
+    <!-- CTA區域 -->
+    <div class="cta-section">
+      <h2 class="cta-title">選擇WETOP，選擇透明可靠的科學驗證</h2>
+      <p>WETOP的測試環境與數據皆符合國際標準，確保您獲得真實可行的數據，而非僅用於行銷的誇大數據！</p>
+      <div class="cta-buttons">
+  <a href="#" class="cta-button" onclick="gotoSection('section-2-5', 'manual-img-10'); return false;">查看測試報告</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function gotoSection(section, hash) {
+      var url = 'sections/' + section + '.html' + (hash ? '#' + hash : '');
+      if (window.parent && window.parent !== window && typeof window.parent.loadContent === 'function') {
+        window.parent.loadContent(url);
+      } else if (typeof window.loadContent === 'function') {
+        window.loadContent(url);
+      } else {
+        window.location.hash = '#' + url;
+      }
+    }
+    function gotoContact(event) {
+      if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+      }
+      gotoSection('section-6');
+    }
+  </script>
+</body>
+</html>

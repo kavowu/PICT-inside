@@ -1,0 +1,620 @@
+<style>
+        :root {
+            --primary: #0f766e;
+            --secondary: #e0f7f6;
+            --background: #f8fafc;
+            --text: #1f2937;
+            --highlight: #fef3c7;
+            --warning: #fef2f2;
+            --success: #f0fdf4;
+        }
+
+        .section-2-2-container * {
+            box-sizing: border-box;
+        }
+
+        .section-2-2-container {
+            margin: 0;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 17px;
+        }
+
+        .section-2-2-container .header {
+            background: linear-gradient(135deg, #0f766e, #0d9488);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .section-2-2-container .header h1 {
+            font-size: 44px;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+
+        .section-2-2-container .header p {
+            font-size: 20px;
+            opacity: 0.95;
+            margin: 0;
+        }
+
+        .section-2-2-container .main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-2-2-container .section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section-2-2-container .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section-2-2-container h2 {
+            color: var(--primary);
+            font-size: 30px;
+            border-left: 6px solid var(--primary);
+            padding-left: 16px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .section-2-2-container h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section-2-2-container h4 {
+            color: var(--text);
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .section-2-2-container .highlight-box {
+            background-color: var(--secondary);
+            border-left: 5px solid var(--primary);
+            padding: 20px 25px;
+            margin: 25px 0;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .section-2-2-container .warning-box {
+            background-color: var(--warning);
+            border-left: 5px solid #ef4444;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .section-2-2-container .success-box {
+            background-color: var(--success);
+            border-left: 5px solid #22c55e;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .section-2-2-container .info-box {
+            background-color: #eff6ff;
+            border-left: 5px solid #3b82f6;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .section-2-2-container .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .section-2-2-container .tech-card {
+            background: linear-gradient(135deg, #f0fdfa, #e6fffa);
+            border: 2px solid var(--secondary);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-2-2-container .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(15, 118, 110, 0.15);
+        }
+
+        .section-2-2-container .tech-card h4 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .section-2-2-container .mechanism-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .section-2-2-container .mechanism-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .section-2-2-container .mechanism-card.photolysis {
+            border-color: #fbbf24;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+
+        .section-2-2-container .mechanism-card.ionization {
+            border-color: #a78bfa;
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+        }
+
+        .section-2-2-container .mechanism-card.catalysis {
+            border-color: #34d399;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .section-2-2-container .mechanism-card h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .section-2-2-container .bond-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-2-2-container .bond-table th,
+        .section-2-2-container .bond-table td {
+            padding: 12px 16px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-2-2-container .bond-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        .section-2-2-container .bond-table tbody tr:nth-child(odd) {
+            background-color: #f8fafc;
+        }
+        .section-2-2-container .bond-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .section-2-2-container .bond-table tr:hover {
+            background-color: #f9fafb;
+        }
+
+        .section-2-2-container .ion-factors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .section-2-2-container .ion-factor {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section-2-2-container .ion-factor.ozone {
+            border-color: #60a5fa;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+        }
+
+        .section-2-2-container .ion-factor.hydroxyl {
+            border-color: #f87171;
+            background: linear-gradient(135deg, #fef2f2, #fecaca);
+        }
+
+        .section-2-2-container .ion-factor.hydrogen-peroxide {
+            border-color: #34d399;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .section-2-2-container .ion-factor h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .section-2-2-container .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .section-2-2-container .advantage-card {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 2px solid #22c55e;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-2-2-container .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(34, 197, 94, 0.15);
+        }
+
+        .section-2-2-container .advantage-card h4 {
+            color: #16a34a;
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .section-2-2-container .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .section-2-2-container .application-item {
+            background: white;
+            border: 2px solid var(--secondary);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-2-2-container .application-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(15, 118, 110, 0.1);
+        }
+
+        .section-2-2-container .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .section-2-2-container .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* 強制應用領域圖片縮小 20% 並置中 */
+        .section-2-2-container .image-container img.application-image {
+            max-width: 80% !important;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section-2-2-container .image-container img:hover {
+            transform: scale(1.02);
+        }
+
+        .section-2-2-container .cta-section {
+            background: linear-gradient(135deg, #0f766e, #0d9488);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .section-2-2-container .cta-section h3 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .section-2-2-container .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .section-2-2-container .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .section-2-2-container .cta-button {
+            background: white;
+            color: var(--primary);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-2-2-container .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+        }
+
+        .section-2-2-container .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .section-2-2-container .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .section-2-2-container {
+                padding: 15px;
+            }
+
+            .section-2-2-container .header h1 {
+                font-size: 32px;
+            }
+
+            .section-2-2-container .header p {
+                font-size: 18px;
+            }
+
+            .section-2-2-container h2 {
+                font-size: 26px;
+            }
+
+            .section-2-2-container .section {
+                padding: 25px 20px;
+            }
+
+            .section-2-2-container .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-2-2-container .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+<div class="section-2-2-container">
+        <div class="header">
+            <h1>PICT光離子催化技術</h1>
+            <p>高級氧化技術，透過特殊波長紫外光淨化空氣，有效滅活細菌、病毒和黴菌</p>
+        </div>
+
+        <div class="main">
+            <!-- PICT技術原理 -->
+            <div class="section">
+                <h2>🔬 PICT技術原理</h2>
+                <p>PICT光離子催化技術是一種高級氧化技術，透過特殊波長的紫外光淨化空氣，有效滅活<strong>細菌</strong>、<strong>病毒</strong>和<strong>黴菌</strong>，同時分解各種空氣污染物。</p>
+                <div class="image-container">
+                    <img src="images/banner-2.jpg" alt="PICT光解反應示意圖" />
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4>💡 光解反應</h4>
+                        <p>利用<strong>短波長紫外光能量</strong>直接破壞污染物分子鍵結，特別是254nm波長<strong>可直接破壞細菌和病毒的DNA</strong>。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>⚡ 離子化反應</h4>
+                        <p>小於200nm波長的紫外光將空氣中的氧氣和水氣離子化，產生<strong>多種具強氧化力的淨化因子</strong>。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>🧪 催化反應</h4>
+                        <p>利用<strong>TiO₂</strong>觸媒加速淨化反應，<strong>降低反應能障並縮短反應時間</strong>，<strong>提高整體淨化效率</strong>。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 光解反應詳解 -->
+            <div class="section">
+                <h2>🌟 光解反應詳解</h2>
+                <div class="image-container">
+                    <img src="images/S2/光解.jpg" alt="PICT光解反應示意圖" style="display:block;margin-left:auto;margin-right:auto;" />
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>雙波長紫外光技術：</strong>PICT燈管放射185nm和254nm紫外線，其中254nm波長紫外光可直接破壞<strong>細菌</strong>和<strong>病毒</strong>的DNA，達到<strong>滅活效果</strong>。
+                </div>
+
+                <p>185nm波長紫外光具有6.7eV（646 kJ/mol）的能量，足以破壞大多數污染物的分子鍵結。當分子間的鍵能小於紫外光所放射的能量時，分子鍵結就會被破壞而崩解，有效分解室內空氣污染物和異臭味。</p>
+
+                <h3>可被PICT光解的分子鍵</h3>
+                <table class="bond-table">
+                    <thead>
+                        <tr>
+                            <th>分子鍵類型</th>
+                            <th>鍵能 (kJ/mol)</th>
+                            <th>光解效果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HO鍵</td>
+                            <td>459</td>
+                            <td>✅ 可被分解</td>
+                        </tr>
+                        <tr>
+                            <td>HC鍵</td>
+                            <td>411</td>
+                            <td>✅ 可被分解</td>
+                        </tr>
+                        <tr>
+                            <td>HH鍵</td>
+                            <td>432</td>
+                            <td>✅ 可被分解</td>
+                        </tr>
+                        <tr>
+                            <td>HN鍵</td>
+                            <td>386</td>
+                            <td>✅ 可被分解</td>
+                        </tr>
+                        <tr>
+                            <td>HS鍵</td>
+                            <td>363</td>
+                            <td>✅ 可被分解</td>
+                        </tr>
+                        <tr>
+                            <td>CC鍵</td>
+                            <td>346</td>
+                            <td>✅ 可被分解</td>
+                        </tr>
+                        <tr>
+                            <td>N≡N鍵（氮氣）</td>
+                            <td>940</td>
+                            <td>❌ 不會分解（安全）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="success-box">
+                    <strong>安全保證：</strong>空氣中的氮氣（N≡N鍵能940 kJ/mol）不會被PICT技術分解產生氮氧化物，確保了處理過程的安全性。
+                </div>
+            </div>
+
+            <!-- 離子化反應機制 -->
+            <div class="section">   
+                <h2>⚡ 離子化反應機制</h2>
+                <div class="image-container">
+                    <img src="images/S2/離子化.jpg" alt="PICT離子化反應示意圖" style="display:block;margin-left:auto;margin-right:auto;" />
+                </div>
+                <p>PICT燈管釋放的小於200nm波長紫外光能將空氣中的氧氣和水氣離子化，產生多種淨化因子：</p>
+
+                <div class="ion-factors">
+                    <div class="ion-factor ozone">
+                        <h4>臭氧（O₃）</h4>
+                        <p>由氧分子和氧原子結合而成，具有<strong>強氧化能力</strong>。</p>
+                    </div>
+                    <div class="ion-factor hydroxyl">
+                        <h4>氫氧自由基（OH·）</h4>
+                        <p>極強的<strong>氧化劑</strong>，可迅速與污染物反應，壽命僅數微秒，<strong>不會對人體造成傷害</strong>。</p>
+                    </div>
+                    <div class="ion-factor hydrogen-peroxide">
+                        <h4>過氧化氫（H₂O₂）</h4>
+                        <p>具有廣譜殺菌能力，能<strong>有效分解有機污染物</strong>。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 催化反應過程 -->
+            <div class="section">
+              <h2>🧪 催化反應過程</h2>
+                <div class="image-container">
+                    <img src="images/S2/催化.jpg" alt="PICT催化反應示意圖" style="display:block;margin-left:auto;margin-right:auto;" />
+                </div>
+            
+                <div class="info-box">
+                    <strong>TiO₂光觸媒反應：</strong>PICT系統中的<strong>TiO₂</strong>光觸媒在紫外光照射下產生電子-電洞對，與環境中的氧氣和水以及污染物引起一系列氧化還原反應。
+                </div>
+            </div>
+
+            <!-- PICT技術優勢 -->
+            <div class="section">
+                <h2>🏆 PICT技術優勢</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <h4>🦠 高效滅菌</h4>
+                        <p>UVC波長範圍(100-280nm)的紫外光對<strong>細菌</strong>、<strong>病毒</strong>和<strong>黴菌</strong>具有最佳的滅活效能。</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h4>🌐 全面淨化</h4>
+                        <p>同時通過<strong>光解</strong>、<strong>離子化</strong>和<strong>催化</strong>三種機制淨化空氣，效果全面。</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h4>⚡ 高效率</h4>
+                        <p>反應速率遠高於傳統<strong>UV/O₃/TiO₂</strong>的高級氧化程序，<strong>淨化效率更高</strong>。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 應用領域 -->
+            <div class="section">
+                <h2>🏢 應用領域</h2>
+                <div class="image-container">
+                    <img src="images/S2/應用領域.jpg" alt="PICT應用領域宣傳圖片" class="application-image" />
+                </div>
+
+                <p>PICT光離子催化技術憑藉其高效的<strong>空氣淨化能力</strong>，廣泛應用於需要嚴格空氣品質控制的場所：</p>
+
+                <div class="application-grid">
+                    <div class="application-item">
+                        <h4>🏥 醫療機構</h4>
+                    </div>
+                    <div class="application-item">
+                        <h4>🏢 商業空間</h4>
+
+                    </div>
+                    <div class="application-item">
+                        <h4>🏫 教育場所</h4>
+  
+                    </div>
+                    <div class="application-item">
+                        <h4>🏠 家庭環境</h4>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>真正去除異味零死角：</strong>為呼吸更上層形防護衣，WETOP環境淨化器提供全方位的空氣淨化解決方案。
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA區域 -->
+        <div class="cta-section">
+            <h3>🚀 體驗PICT光離子催化技術的強大淨化能力</h3>
+            <p>了解更多WETOP環境淨化器產品，為您的空間提供最專業的空氣淨化解決方案</p>
+            <div class="cta-buttons">
+      <a href="javascript:void(0)" onclick="loadContent('sections/section-3-2.html')" class="cta-button">
+        查看產品規格
+      </a>
+                <a href="javascript:void(0)" onclick="loadContent('sections/section-2-5.html')" class="cta-button">
+        技術手冊
+      </a>
+            </div>
+        </div>
+        </div>

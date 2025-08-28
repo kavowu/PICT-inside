@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>連續式與批次式測試法：PICT光水離子化技術效能驗證</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* CTA區域 */
+  .cta-section {
+    background: linear-gradient(135deg, #e0e7ef, #f1f5f9);
+    color: #1e293b;
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .cta-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .cta-button {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(15, 118, 110, 0.3);
+  }
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(15, 118, 110, 0.4);
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+    :root {
+      --primary: #0f766e;
+      --accent: #10b981;
+      --light-bg: #f9fafb;
+      --card-bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --info: #3b82f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  border-left: 6px solid #0f766e;
+      padding-left: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: #334155;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 18px;
+      color: #475569;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    ul, ol {
+      padding-left: 25px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, #e0f7fa 60%, #f1f5f9 100%);
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-weight: bold;
+      color: #0f766e;
+      font-size: 1.13rem;
+      margin: 18px 0 24px 0;
+      box-shadow: 0 2px 8px rgba(15, 118, 110, 0.07);
+      display: inline-block;
+      letter-spacing: 0.5px;
+    }
+
+    .warning-box {
+      background-color: #fef3c7;
+      border-left: 6px solid var(--warning);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 8px;
+    }
+
+    .info-box {
+      background-color: #e0f2fe;
+      border-left: 6px solid var(--info);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 8px;
+    }
+
+    .quote {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      margin: 20px 0;
+      font-style: italic;
+      border-radius: 6px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f0fdfa;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
+    .method-card {
+      background: #e0ecf2;
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(15, 118, 110, 0.10);
+      padding: 38px 32px 30px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 220px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .method-card:hover {
+      box-shadow: 0 16px 48px rgba(15, 118, 110, 0.16);
+      transform: translateY(-4px) scale(1.025);
+    }
+    .method-card h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f766e;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+      margin-top: 0;
+    }
+    .method-card ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style: none;
+    }
+    .method-card li {
+      margin-bottom: 13px;
+      color: #334155;
+      font-size: 1.08rem;
+      line-height: 2.1;
+      padding-left: 0;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    .test-result {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .test-result h4 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    .figure-placeholder {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+      color: var(--muted);
+    }
+
+    .figure-caption {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .comparison-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .comparison-item h5 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .comparison-item .value {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 8px 0 4px 0;
+    }
+
+    .comparison-item p {
+      font-size: 15px;
+      color: #334155;
+      margin: 0;
+    }
+
+    .conclusion-list {
+      counter-reset: conclusion-counter;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .conclusion-list li {
+      counter-increment: conclusion-counter;
+      margin-bottom: 15px;
+      padding-left: 40px;
+      position: relative;
+    }
+
+    .conclusion-list li::before {
+      content: counter(conclusion-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--accent);
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+    header h1 { font-size: 28px; }
+    header p { font-size: 16px; }
+    section { padding: 25px 20px; }
+    th, td { font-size: 14px; padding: 8px; }
+    .method-grid { grid-template-columns: 1fr; }
+    .comparison-grid { grid-template-columns: 1fr; }
+    }
+    /* CTA區域 */
+    .cta-section {
+      background: linear-gradient(135deg, #e0e7ef, #f1f5f9);
+      color: #1e293b;
+      padding: 50px 40px;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(15, 118, 110, 0.3);
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(15, 118, 110, 0.4);
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <h1>連續式測定法｜材料壓力測試</h1>
+      <p>固定濃度 × 固定流量 × 長時間曝光 → 量化元件的純效能、飽和點與衰減曲線。</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>連續式測試法</h2>
+      <div class="highlight">
+        🔬 連續式測定方法：技術材料的「壓力測試」
+      </div>
+      
+      <div class="method-grid">
+        <div class="method-card">
+          <h4>📊 測試方式</h4>
+          <ul>
+            <li>持續供應固定濃度與固定流量的污染氣體（如甲醛、甲苯、氨氣等）</li>
+            <li>長時間導入測試元件或材料（如濾材、觸媒）</li>
+            <li>實時監測出口濃度變化，以計算去除效率</li>
+          </ul>
+        </div>
+
+        <div class="method-card">
+          <h4>🎯 測試意義</h4>
+          <ul>
+            <li>用於評估單一元件（如活性碳、觸媒材料、光催化材料）的純淨化能力與飽和表現</li>
+            <li>可觀察長時間暴露下的效能衰減</li>
+            <li>更適合作為科研與材料比對使用</li>
+          </ul>
+        </div>
+
+        <div class="method-card">
+          <h4>🔧 適合應用</h4>
+          <ul>
+            <li>新材料研發階段</li>
+            <li>元件效能壽命比較</li>
+            <li>高強度壓力測試（模擬極端污染負荷）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>甲苯去除</h2>
+      <p>連續式空氣淨化效能測試系統主要係依據奈米標章（TN-009）的檢測方法，本方法係參考國際標準組織（ISO 22197-2）、中華民國國家標準（CNS 15094-2）所制訂，目的在測試 PICT 燈管+PICT 套管的空氣淨化效果。</p>
+
+      <h3>測試系統與流程</h3>
+      <p>以含有 1 ppm 甲苯的空氣當作測試氣體，甲苯是日常生活中油漆的代表成份。當測試氣體濃度達到設定值後，轉動氣體流向切換閥件(四向閥)，將測試氣體導入反應器，此時，尚未點燈，經過反應器之流量需為 1 L/min。</p>
+
+      <div class="info-box">
+        <strong>測試流程：</strong>
+        <ol>
+          <li>在燈管沒有開啟的情況下，繼續 30 分鐘，觀察標準氣體濃度變化</li>
+          <li>如果 30 分鐘後，標準氣體濃度仍低於預設值的 90%，必須繼續此步驟</li>
+          <li>開啟燈管電源，連續進行 5 個小時的點燈測試</li>
+          <li>關閉燈管電源、停止供應標準氣體，觀察有無脫附現象</li>
+        </ol>
+      </div>
+
+      <h3>甲苯去除效能測試結果</h3>
+      
+      <h4>PICT 套管搭配 10W 捕蟲燈管</h4>
+      <div class="figure-caption">
+        <img src="images/S4/10W.png" alt="PICT 套管搭配 10W 捕蟲燈管之甲苯去除效能測試結果" style="max-width:100%;height:auto;">
+        <br>
+        圖：PICT 套管搭配 10W 捕蟲燈管之甲苯去除率&gt; 99% (使用 GC-FID，最低偵測極限 0.01 ppm)
+      </div>
+
+      <h4>PICT 套管搭配 20W 捕蟲燈管</h4>
+      <div class="figure-caption">
+        <img src="images/S4/20W.png" alt="PICT 套管搭配 20W 捕蟲燈管之甲苯去除效能測試結果" style="max-width:100%;height:auto;">
+        <br>
+        圖：PICT 套管搭配 20W 捕蟲燈管之甲苯去除率&gt; 99% (使用 GC-FID，最低偵測極限 0.01 ppm)
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>燈管種類</th>
+              <th>去除率</th>
+              <th>每小時甲苯去除量 (μmol/h)</th>
+              <th>每瓦每小時甲苯去除量 (μmol/W‧h)</th>
+              <th>每耗一度電之甲苯去除量 (mmol/kW‧h)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10W 光水離子化套管</td>
+              <td>99%</td>
+              <td>1.33</td>
+              <td>0.13</td>
+              <td>0.13</td>
+            </tr>
+            <tr>
+              <td>20W 光水離子化套管</td>
+              <td>99%</td>
+              <td>1.33</td>
+              <td>0.07</td>
+              <td>0.07</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>表示即使只使用 UVA 範圍的紫外燈管，其去除甲苯的效能依然優異。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>醛類去除效能</h2>
+      <p>一般環境中常見的醛類有甲醛和乙醛，甲醛主要來自裝潢的建材，乙醛的來源主要是香菸。雖然甲醛較常見，但因為甲醛的分析比較麻煩，需先以吸附劑採樣後，再進行萃取，然後以高解析度的液相層析儀進行分析。</p>
+
+      <h3>甲醛與乙醛的關係</h3>
+      <div class="info-box">
+        <strong>科學依據：</strong>根據 2006 年日本產業技術總合研究所的竹內浩士博士在台北舉行的 2006 光觸媒環境淨化技術國際研討會上所發表的資料，圖中顯示光催化處理甲醛和乙醛之去除率間具有一定的關連性，乙醛去除效能的測試結果也可以用於推估甲醛的去除效能。
+      </div>
+
+      <h3>測試方法與條件</h3>
+      <p>測試方法係參考 CNS 15094-2「精密陶瓷—光觸媒材料之空氣淨化性能測定法—第 2 部：乙醛去除性能」及奈米標章 TN-009「奈米光觸媒空氣淨化燈驗證規範」。</p>
+
+      <div class="quote">
+        乙醛的光催化分解反應：<br>
+        CH₃CHO + 5/2 O₂ → 2CO₂ + 2H₂O (TiO₂, hv)
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>測試條件</th>
+              <th>數值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>乙醛濃度</td>
+              <td>50 ppm</td>
+            </tr>
+            <tr>
+              <td>測試氣體流量</td>
+              <td>1 L/min</td>
+            </tr>
+            <tr>
+              <td>測試氣體入口溫度</td>
+              <td>23 ℃</td>
+            </tr>
+            <tr>
+              <td>測試氣體入口相對濕度</td>
+              <td>71 %</td>
+            </tr>
+            <tr>
+              <td>點燈時間</td>
+              <td>5 小時</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>乙醛去除效能測試結果</h3>
+      
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h5>10W BLB + 31cm 玻纖</h5>
+          <div class="value">> 95%</div>
+          <p>去除率</p>
+        </div>
+        <div class="comparison-item">
+          <h5>20W BLB + 55cm 玻纖</h5>
+          <div class="value">> 95%</div>
+          <p>去除率</p>
+        </div>
+        <div class="comparison-item">
+          <h5>8W L1P5H0S + 11cm 玻纖</h5>
+          <div class="value">> 95%</div>
+          <p>去除率</p>
+        </div>
+        <div class="comparison-item">
+          <h5>10W L2P1H2S + 18cm 玻纖</h5>
+          <div class="value">> 95%</div>
+          <p>去除率</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>測試樣品</th>
+              <th>10W BLB +31cm 玻纖</th>
+              <th>20W BLB +55cm 玻纖</th>
+              <th>8W L1P5H0S +11cm 玻纖</th>
+              <th>10W L2P1H2S +18cm 玻纖</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>乙醛吸附量(μmol)</td>
+              <td>12.94</td>
+              <td>14.65</td>
+              <td>4.71</td>
+              <td>2.06</td>
+            </tr>
+            <tr>
+              <td>乙醛脫附量(μmol)</td>
+              <td>0.87</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>每小時乙醛去除量(μmol/h)</td>
+              <td>> 127</td>
+              <td>> 127</td>
+              <td>> 127</td>
+              <td>> 127</td>
+            </tr>
+            <tr>
+              <td>去除率(%)</td>
+              <td>> 95%</td>
+              <td>> 95%</td>
+              <td>> 95%</td>
+              <td>> 95%</td>
+            </tr>
+            <tr>
+              <td>臭氧濃度(ppm)</td>
+              <td>0</td>
+              <td>0</td>
+              <td>< 0.6</td>
+              <td>< 0.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>搭配 PICT 燈管的兩組，雖然使用的 PICT 玻纖長度較短、光源的功率也較小，但因為光源能發出更短波長的紫外光，驅動更強的光催化反應，所以 L1P5H0S 的組合，雖僅有 8W，但乙醛去除效果比 10W 捕蟲燈管的組合更好，可與 20W 捕蟲燈管的組合媲美。這結果證實 PICT 光離子催化反應比單純的光觸媒反應，效果更好、更節能。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>氮氧化物去除效能</h2>
+      <p>此部分主要在測試 PICT 玻纖套管在紫外光照射下對氮氧化物的去除效能，測試方法係參考 CNS 15094-1「精密陶瓷—光觸媒材料之空氣淨化性能測定法—第 1 部：氮氧化物去除性能」及奈米標章 TN-009「奈米光觸媒空氣淨化燈驗證規範」。</p>
+
+      <h3>測試原理</h3>
+      <p>氮氧化物去除效能測定係以 NO (一氧化氮)為標準氣體，光催化去除 NO 的過程中，NO₂ 為中間產物，NO+NO₂ 即為 NOx(氮氧化物)。</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>測試條件</th>
+              <th>數值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NO 濃度</td>
+              <td>1 ppm</td>
+            </tr>
+            <tr>
+              <td>測試氣體流量</td>
+              <td>3 L/min</td>
+            </tr>
+            <tr>
+              <td>溫度(入口/反應器內)</td>
+              <td>23/39 ℃</td>
+            </tr>
+            <tr>
+              <td>相對濕度(入口/反應器內)</td>
+              <td>71/18 %</td>
+            </tr>
+            <tr>
+              <td>點燈時間</td>
+              <td>5 小時</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>氮氧化物去除效能測試結果</h3>
+      
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>測試對象</th>
+              <th>10W T8 燈管+玻纖套管(長 31 cm)</th>
+              <th>20W T8 燈管+玻纖套管(長 55 cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="3" style="background: var(--primary); color: white; text-align: center; font-weight: 600;">第一次測試</td>
+            </tr>
+            <tr>
+              <td>NO 去除量（μmol/5h）</td>
+              <td>36.54</td>
+              <td>36.59</td>
+            </tr>
+            <tr>
+              <td>NO₂ 產生量（μmol/5h）</td>
+              <td>8.37</td>
+              <td>3.05</td>
+            </tr>
+            <tr>
+              <td>NOx 去除量（μmol/5h）</td>
+              <td>28.17</td>
+              <td>33.54</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="background: var(--primary); color: white; text-align: center; font-weight: 600;">水洗後測試</td>
+            </tr>
+            <tr>
+              <td>NO 去除量（μmol/5h）</td>
+              <td>36.42</td>
+              <td>36.57</td>
+            </tr>
+            <tr>
+              <td>NO₂ 產生量（μmol/5h）</td>
+              <td>12.64</td>
+              <td>5.18</td>
+            </tr>
+            <tr>
+              <td>NOx 去除量（μmol/5h）</td>
+              <td>23.78</td>
+              <td>31.39</td>
+            </tr>
+            <tr>
+              <td>水洗再生率（%）</td>
+              <td>84.4</td>
+              <td>93.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>4 個測試條件下，NO 幾乎都可以完全去除，雖仍有少量 NO₂ 產生，但與其他光觸媒材料相比較，PICT 玻纖套管的性能明顯優異很多。水洗再生率都在 8 成及 9 成以上，表示 PICT 玻纖套管的光觸媒固著性良好，不會因水洗而脫落。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>氨氣去除效能</h2>
+      <p>氨氣是一種無色氣體，帶有強烈的刺激氣味。生活環境中，主要來源為動物的尿液和糞便。本測試系統主要目的在驗證 PICT 光水離子化系統對氨氣的去除效能，並與光解反應比較，以瞭解 PICT 光水離子化系統在廁所異味去除的應用潛力。</p>
+
+      <h3>測試系統設計</h3>
+      <div class="info-box">
+        <strong>測試條件：</strong>
+        <ul>
+          <li>標準氣體：氨氣濃度為 1000 ppm 的鋼瓶提供(平衡氣體為氮氣)</li>
+          <li>入口氨氣濃度：5 ppm</li>
+          <li>反應器入口相對濕度：≧ 75%</li>
+          <li>觸媒塊：直徑 5 cm、高 5 cm，體積約 0.1 L</li>
+          <li>每小時空間流速(GHSV)：12,000 h⁻¹</li>
+        </ul>
+      </div>
+
+      <h3>光解與 PICT-A 之氨氣去除效能比較</h3>
+      
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>反應機制</th>
+              <th colspan="2">光解(只有燈管)</th>
+              <th colspan="3">PICT-A(燈管+觸媒塊)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PICT 燈管瓦數</td>
+              <td>10W</td>
+              <td>10W</td>
+              <td>10W</td>
+              <td>7W</td>
+              <td>7W</td>
+            </tr>
+            <tr>
+              <td>GHSV (h⁻¹)</td>
+              <td>12000</td>
+              <td>15000</td>
+              <td>12000</td>
+              <td>12000</td>
+              <td>15000</td>
+            </tr>
+            <tr>
+              <td>入口氨氣濃度(ppm)</td>
+              <td>4.97</td>
+              <td>5.08</td>
+              <td>5.12</td>
+              <td>4.92</td>
+              <td>5.08</td>
+            </tr>
+            <tr>
+              <td>出口氨氣濃度(ppm)</td>
+              <td>4.79</td>
+              <td>4.91</td>
+              <td>N.D.</td>
+              <td>N.D.</td>
+              <td>1.92</td>
+            </tr>
+            <tr>
+              <td>氨氣去除率</td>
+              <td>3.7%</td>
+              <td>3.3%</td>
+              <td>> 94.4%</td>
+              <td>> 93.9%</td>
+              <td>62.1%</td>
+            </tr>
+            <tr>
+              <td>入口臭氧濃度(ppm)</td>
+              <td>23.5</td>
+              <td>19.7</td>
+              <td>23.5</td>
+              <td>11.5</td>
+              <td>7.48</td>
+            </tr>
+            <tr>
+              <td>出口臭氧濃度(ppm)</td>
+              <td>10.9</td>
+              <td>7.54</td>
+              <td>7.42</td>
+              <td>N.D.</td>
+              <td>N.D.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="test-result">
+        <h4>🎯 測試結論</h4>
+        <p>以上的氨氣去除效能測試結果證明：<strong>PICT 光水離子化技術對氨氣的去除效能遠高於單純的光解和臭氧反應。</strong>光解反應對氨氣的去除效果不佳，在測試氣體流量分別為 20 L/min 和 25 L/min 的條件下，其氨氣去除率皆在 3 %出頭，而 PICT-A 對氨氣的去除率可以達到 94.4%。</p>
+      </div>
+    </section>
+
+    <div class="cta-section">
+      <h2 class="cta-title">WETOP連續性測試真實的數據</h2>
+      <div class="cta-buttons">
+        <a href="#" class="cta-button" onclick="gotoSection('section-2-5', 'manual-img-8'); return false;">查看測試報告</a>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function gotoSection(section, hash) {
+    var url = 'sections/' + section + '.html' + (hash ? '#' + hash : '');
+    if (window.parent && window.parent !== window && typeof window.parent.loadContent === 'function') {
+      window.parent.loadContent(url);
+    } else if (typeof window.loadContent === 'function') {
+      window.loadContent(url);
+    } else {
+      window.location.hash = '#' + url;
+    }
+  }
+</script>
+</html>

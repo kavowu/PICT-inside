@@ -1,0 +1,365 @@
+
+<style>
+
+    /* 表格美化（模仿截圖） */
+    .table, table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(13,148,136,.10);
+      overflow: hidden;
+      margin: 0 auto 2.2em auto;
+    }
+    .table th, table th {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      color: #17826d;
+      background: #f4faf9;
+      border-bottom: 2px solid #e0f7f6;
+      padding: 14px 12px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .table td, table td {
+      font-size: 1.04rem;
+      color: #2d3a3a;
+      padding: 13px 12px;
+      border-bottom: 1.5px solid #f0f5f4;
+      background: #fff;
+      text-align: center;
+    }
+    .table tr:last-child td, table tr:last-child td {
+      border-bottom: none;
+    }
+    .table th:first-child, .table td:first-child, table th:first-child, table td:first-child {
+      border-left: none;
+    }
+    .table th, .table td, table th, table td {
+      border-right: none;
+    }
+    .table {
+      margin-top: 1.2em;
+    }
+    /* 圓角陰影 */
+    .table, table {
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(13,148,136,.10);
+    }
+    :root{
+      --primary:#0f766e;
+      --secondary:#e0f7f6;
+      --bg:#f8fafc;
+      --text:#1f2937;
+      --background: #f8fafc;
+      --highlight: #fef3c7;
+    }
+  /* 強制移除本頁所有 h2 樣式覆蓋，完全交由 style.css 控制 */
+    h3, .section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      margin-bottom: 0.5em;
+      line-height: 1.22;
+    }
+    table th, .table th {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      color: var(--primary);
+      background: #e0f7f6;
+      border-bottom: 2px solid #0f766e;
+    }
+
+  .section-1-1-container * {
+    box-sizing: border-box;
+  }
+
+  .section-1-1-container {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 20px;
+     max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-1-1-container .header {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .section-1-1-container .header h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .section-1-1-container .header p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin: 0;
+  }
+
+  .section-1-1-container .main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-1-1-container .section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  /* max-width: 820px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+    /* Hero 標題：與全站 hero/banner 樣式一致 */
+    .section-1-1-container .header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 1.3rem + 1.9vw, 2.6rem);
+      line-height: 1.18;
+      letter-spacing: .8px;
+      font-weight: 900;
+      color: #fff;
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+      background: none;
+    }
+
+  .section-1-1-container h3 {
+    font-size: 20px;
+    color: #334155;
+    margin-top: 30px;
+  }
+
+  .section-1-1-container ul {
+    padding-left: 25px;
+    margin-top: 15px;
+  }
+
+  .section-1-1-container li {
+    margin-bottom: 8px;
+  }
+
+  .section-1-1-container .highlight-box,
+  .section-1-1-container .highlight {
+    background-color: var(--secondary);
+    border-left: 5px solid var(--primary);
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .section-1-1-container .example-box {
+    background-color: var(--secondary);
+    border-left: 5px solid var(--primary);
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .section-1-1-container h2 {
+    color: var(--primary);
+    font-size: 26px;
+    border-left: 6px solid var(--primary);
+    padding-left: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    background: none;
+  }
+
+  .section-1-1-container .icon-title {
+    font-weight: bold;
+    color: #0f172a;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .section-1-1-container .header h1 {
+      font-size: 28px;
+    }
+
+    .section-1-1-container .section {
+      padding: 30px 20px;
+    }
+  }
+</style>
+
+<div class="section-1-1-container" id="section-1-1">
+  <div class="main">
+    <div class="header">
+      <h1>WETOP 環境淨化器</h1>
+      <p>打造安全、長效、可視化的空氣品質方案</p>
+    </div>
+    <div class="section">
+      <h2 id="aircon-law">空調工程與法規</h2>
+      <p>標案必須依法行政，違規將可能：</p>
+      <ul>
+        <li>違反《空品法》、《能源法》→ 遭罰</li>
+        <li>驗收不過 → 款項延遲或取消</li>
+        <li>健康爭議、法律責任風險</li>
+      </ul>
+      <div class="highlight-box">
+        ✔ 政府鼓勵「室內空氣品質自主管理標章」，可提高標案得分
+      </div>
+      <h3>PICT 環境淨化器能協助符合：</h3>
+      <ul>
+        <li>《室內空氣品質管理法》</li>
+        <li>《能源管理法》與節能技術</li>
+        <li>LEED / WELL 綠建築標準</li>
+        <li>2623 冷氣適溫法規</li>
+        <li>環保標章 / 空氣品質標章</li>
+      </ul>
+    </div>
+
+    <div class="section">
+  <h2 id="safety">安全濃度控制</h2>
+      <p class="icon-title">🧪 控制在國際標準內</p>
+      <ul>
+        <li>臭氧 O₃ ≤ 50 ppb（安全上限為 100 ppb）</li>
+        <li>過氧化氫 H₂O₂ 維持在 ppb 等級</li>
+      </ul>
+      <p class="icon-title">📉 長效低濃度釋放</p>
+      <p>不像傳統臭氧機，WETOP 以低濃度持續釋放，安全又穩定。</p>
+      <p class="icon-title">📡 均勻分佈設計</p>
+      <p>避免局部濃度過高，減少對人體呼吸道與眼鼻刺激。</p>
+    </div>
+
+    <!-- 理念 -->
+    <section class="section" aria-labelledby="idea">
+  <h2 id="idea">環境醫生理念</h2>
+      <p>藥治病，淨化工程治「病屋」。如同健康食品調理身體，<strong>PICT 主動式光離子催化</strong>以適當濃度維護空間健康。</p>
+      <p>當室內空氣品質出現嚴重問題（霉菌、異味、細菌超標），需<strong>高濃度技術進行「治療」</strong>；恢復健康後，以<strong>低濃度、長效</strong>的 PICT 技術日常維護。</p>
+      <div class="highlight">✔ 治療與保養並行，才是完整的環境防護方案！</div>
+    </section>
+
+    <!-- 安全與效能 -->
+    <section class="section" aria-labelledby="safety">
+  <h2 id="safety-effect">WETOP 如何確保安全與效能</h2>
+      <ul>
+        <li>以適量光離子淨化因子，<strong>長時間抑制病菌</strong>。</li>
+        <li>臭氧濃度 ≤ <strong>50 ppb</strong>，符合國際標準，<strong>人機共存</strong>安全。</li>
+        <li>可與空調/循環系統搭配，提升整體空氣品質。</li>
+        <li>抑制霉菌滋生，避免潮濕重複發霉，<strong>降低二次污染</strong>。</li>
+      </ul>
+    </section>
+
+    <!-- 分類對比 -->
+    <section class="section" aria-labelledby="compare">
+  <h2 id="compare">環境醫療分類與對比</h2>
+      <table class="table" role="table">
+        <thead>
+          <tr>
+            <th scope="col">項目</th>
+            <th scope="col">高濃度「環境治療」技術</th>
+            <th scope="col">WETOP「環境保養」技術</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>使用時機</td>
+            <td>霉菌感染、異味嚴重、細菌超標等「病屋」環境</td>
+            <td>維持日常環境健康，降低長期污染與病毒傳播風險</td>
+          </tr>
+          <tr>
+            <td>技術方式</td>
+            <td>高濃度臭氧、強氧化劑、紫外線（需無人環境）</td>
+            <td>PICT 光離子催化，低濃度、安全長效運作</td>
+          </tr>
+          <tr>
+            <td>對象</td>
+            <td>經環境醫生評估，短期高效處理</td>
+            <td>住宅、學校、辦公室、醫療院所等日常環境</td>
+          </tr>
+          <tr>
+            <td>主要功效</td>
+            <td>快速分解霉菌、細菌與異味</td>
+            <td>24 小時滅活病菌、降低污染、抑制霉菌再生</td>
+          </tr>
+          <tr>
+            <td>人機共存</td>
+            <td>❌ 高濃度處理需無人環境</td>
+            <td>✅ 低濃度控制，確保人機共存安全</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 場域 -->
+    <section class="section" aria-labelledby="places">
+  <h2 id="places">適用場域</h2>
+      <ul>
+        <li>🏠 住宅 / 月子中心 / 醫療院所 — 降低病毒、霉菌與異味風險</li>
+        <li>🏫 學校 / 幼兒園 / 辦公室 — 預防交叉感染，保障安全</li>
+        <li>🏨 餐廳 / 旅館 / 公共空間 — 抑制異味，提升顧客滿意度</li>
+        <li>🛠 空調工程搭配 — 增強空氣循環，保持空間清新</li>
+      </ul>
+      <div class="highlight">✔ WETOP 就是空間的「健康食品」，長效保護你的空氣品質！</div>
+    </section>
+      </ul>
+    </div>
+
+    <div class="section">
+  <h2 id="visual">可視化成效驗證</h2>
+      <h3>📊 環境監測數據</h3>
+      <ul>
+        <li>監測 PM2.5、VOC、CO₂、異味與溫濕度</li>
+        <li>可量化改善前後差異</li>
+      </ul>
+      <div class="example-box">
+        例：PM2.5 從 55µg/m³ 降至 12µg/m³，VOC 從 0.8ppm 降至 0.2ppm
+      </div>
+
+      <h3>❄️ 節能效果</h3>
+      <ul>
+        <li>冷氣設定提高 2~3°C，舒適度不變</li>
+        <li>電費節省 6~12%</li>
+      </ul>
+      <div class="example-box">
+        例：原月電費 10,000 元 → 降至 8,800 元
+      </div>
+
+      <h3>🧫 除臭與抗菌測試</h3>
+      <ul>
+        <li>異味評分從 7.5 降至 2.0（滿分 10）</li>
+        <li>醫療空間落菌量減少 80%</li>
+      </ul>
+            <div class="example-box">
+        ✔ WETOP = 有效淨化 + 實時數據驗證，讓改善效果看得見、驗得出
+      </div>
+    </div>
+  </div>
+</div>
+

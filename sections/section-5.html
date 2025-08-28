@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>環境淨化工程｜WETOP 全方位空氣與表面淨化解決方案</title>
+  <meta name="description" content="WETOP 環境淨化工程：從環境監測、污染診斷、設計規劃、施工導入到驗收，完整解決微生物、異味與裝潢污染；採用 PICT 主動式光離子催化技術，無臭氧副產物，安全高效。" />
+  <meta name="theme-color" content="#0f766e" />
+  
+  <!-- Open Graph / Twitter（依實際上線網址調整） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="環境淨化工程｜WETOP 全方位解決方案" />
+  <meta property="og:description" content="從監測到驗收的一站式環境淨化工程，處理微生物、異味與裝潢污染，PICT 主動式技術，安全高效。" />
+  <meta property="og:image" content="/images/og/environment-purification.jpg" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{--primary:#0f766e;--secondary:#e0f7f6;--background:#f8fafc;--text:#1f2937;--highlight:#fef3c7;--warning:#fef2f2;--success:#f0fdf4;--muted:#475569}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Noto Sans TC',system-ui,-apple-system,Segoe UI,Roboto,'Microsoft JhengHei',sans-serif;background:var(--background);color:var(--text);line-height:1.8}
+    .epe-container{max-width:1200px;margin:0 auto;padding:20px}
+  .header{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;border-radius:16px;padding:56px 24px;text-align:center;box-shadow:0 12px 28px rgba(0,0,0,.08)}
+  /* Hero 標題/副標字級統一改由全域 style.css 的 .header h1 / .header p 控制 */
+  .header p{margin:0;opacity:.95}
+    .section{background:#fff;border-radius:12px;padding:32px 24px;box-shadow:0 8px 24px rgba(0,0,0,.06);margin-top:24px}
+    h2.section-title{color:var(--primary);font-size:28px;margin:0 0 12px;border-left:6px solid var(--primary);padding-left:14px}
+    h3{color:var(--primary);font-size:20px;margin:18px 0 8px}
+    .grid{display:grid;gap:20px}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:18px;transition:.25s}
+    .card:hover{transform:translateY(-3px);border-color:var(--primary)}
+    .bullet{margin:0;padding-left:18px}
+    .bullet li{margin:6px 0}
+    .highlight{background:var(--secondary);border-left:5px solid var(--primary);padding:18px;border-radius:10px}
+    .warning{background:var(--warning);border-left:5px solid #ef4444;padding:18px;border-radius:10px}
+    .success{background:var(--success);border-left:5px solid #22c55e;padding:18px;border-radius:10px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{background:var(--secondary);color:#0f766e;border:1px solid #bfeeee;padding:8px 14px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:.2px;line-height:1.6}
+    .cta{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;text-align:center;border-radius:12px;padding:28px;margin-top:24px}
+    .btn{display:inline-block;background:#fff;color:var(--primary);text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:700;margin:6px;transition:.2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,255,255,.2)}
+    .muted{color:var(--muted)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media (max-width:768px){.grid.cols-2{grid-template-columns:1fr}}
+  /* Carousel (適用場所輪播) */
+  .apply-carousel{position:relative;overflow:hidden;margin-top:20px;border-radius:14px;background:linear-gradient(180deg,#ffffff,#f1f5f9);box-shadow:0 6px 20px -6px rgba(0,0,0,.12);}
+  .apply-carousel:focus-visible{outline:3px solid #0d9488;outline-offset:3px;}
+  .carousel-track{display:flex;transition:transform .55s cubic-bezier(.4,.15,.2,1);will-change:transform;}
+  .carousel-slide{flex:0 0 100%;max-width:100%;box-sizing:border-box;padding:12px 18px 20px;display:flex;flex-direction:column;justify-content:center;}
+  .apply-figure{background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:10px;margin:0;width:100%;box-shadow:0 4px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;}
+  .apply-figure img{width:100%;height:auto;display:block;border-radius:8px;}
+  .apply-figure figcaption{text-align:center;margin-top:8px;font-size:14px;color:#475569;letter-spacing:.4px;}
+  .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:1px solid #dbe3ea;color:#0f766e;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:background .25s,box-shadow .25s;}
+  .carousel-btn:hover:not(:disabled){background:#fff;box-shadow:0 6px 18px -4px rgba(0,0,0,.18);}
+  .carousel-btn:disabled{opacity:.35;cursor:default;}
+  .carousel-btn.prev{left:12px;}
+  .carousel-btn.next{right:12px;}
+  .carousel-dots{display:flex;justify-content:center;gap:10px;padding:14px 10px 18px;flex-wrap:wrap;}
+  .carousel-dots button{background:#e2f5f4;border:1px solid #bfeeee;color:#0f766e;width:14px;height:14px;padding:0;border-radius:50%;cursor:pointer;position:relative;transition:.3s;}
+  .carousel-dots button[aria-selected="true"]{background:#0f766e;border-color:#0d9488;box-shadow:0 0 0 3px rgba(13,148,136,.25);}
+  .carousel-dots button:focus-visible{outline:3px solid #0d9488;outline-offset:2px;}
+  @media (max-width:640px){
+    .carousel-btn{width:40px;height:40px;font-size:1rem;}
+    .carousel-slide{padding:10px 10px 16px;}
+  }
+  </style>
+  <!-- 字體載入 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Typography Override (Section 5) ===== */
+    html {font-size:16px;}
+    @media (min-width:1280px){html{font-size:17px;}}
+    body {font-family:'Noto Sans TC','Segoe UI',system-ui,-apple-system,'Microsoft JhengHei',sans-serif;letter-spacing:.2px;-webkit-font-smoothing:antialiased;}
+    h1,h2,h3 {font-weight:700;line-height:1.25;}
+  .header h1 {font-size:clamp(1.9rem,1.3rem + 1.9vw,2.6rem);letter-spacing:.9px;}
+  h2.section-title {font-size:clamp(1.4rem,1.1rem + 1vw,2rem);letter-spacing:.7px;}
+  h3 {font-size:clamp(1.05rem,.9rem + .55vw,1.35rem);letter-spacing:.55px;}
+    p, .card p, li {font-size:clamp(.95rem,.9rem + .25vw,1.05rem);line-height:1.75;}
+    .card {font-size:inherit;}
+    .card h3 {margin-top:0;margin-bottom:.4rem;}
+    .bullet {padding-left:1.1rem;}
+    .bullet li {position:relative;padding-left:.3rem;}
+    .bullet li + li {margin-top:.4rem;}
+    .chips {margin-top:.75rem;}
+    .chip {font-size:.9rem;letter-spacing:.5px;padding:7px 16px;font-weight:600;}
+    .muted {font-size:.78rem;letter-spacing:.4px;}
+    .highlight,.warning,.success {font-size:.93rem;line-height:1.65;}
+  /* 內文連結（只限制在本區塊，避免覆蓋主導覽） */
+  #section-5 a:not(.btn) {text-decoration:none;color:#0f766e;transition:color .25s;}
+  #section-5 a:not(.btn):hover {color:#0d9488;}
+    /* 按鈕細節 */
+    .btn {font-size:.92rem;letter-spacing:.6px;box-shadow:0 0 0 0 rgba(255,255,255,0);}
+    .btn:hover {box-shadow:0 6px 18px rgba(0,0,0,.18);}
+    .btn:focus-visible {outline:3px solid #0d9488;outline-offset:2px;}
+    /* Section 間距微調 */
+    .section {scroll-margin-top:80px;}
+  </style>
+</head>
+<body>
+  <section id="section-5" class="epe-container section-5" aria-label="Section 5：環境淨化工程">
+    <!-- Hero -->
+    <section class="header" aria-labelledby="hero-title">
+      <h1 id="hero-title">環境淨化工程｜WETOP 環境淨化解決方案</h1>
+      <p>全方位解決室內空氣污染：從環境監測、污染去除到長效防護，確保室內空氣品質符合健康標準。</p>
+    </section>
+
+    <!-- 為何/概覽 -->
+    <section class="section" aria-labelledby="overview-title">
+      <h2 class="section-title" id="overview-title">我們如何幫你解決問題</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>微生物污染</h3>
+          <p>黴菌、細菌、病毒透過空氣與表面傳播，影響健康與過敏風險。</p>
+        </div>
+        <div class="card">
+          <h3>周界異味污染</h3>
+          <p>TVOC、CO、PM2.5 來自工業、車流與菸害，影響舒適與健康。</p>
+        </div>
+        <div class="card">
+          <h3>室內裝潢污染</h3>
+          <p>裝潢材料、黏著劑與傢俱釋放甲醛與 TVOC，長期不易散逸。</p>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:14px">WETOP 由專業空調從業人員執行檢測與施工，提供改善前後對比數據與驗收報告。</div>
+    </section>
+
+    <!-- 完整方案流程 -->
+    <section class="section" aria-labelledby="flow-title">
+      <h2 class="section-title" id="flow-title">從規劃設計到驗收的完整解決方案</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>① 環境監測</h3><ul class="bullet"><li>CO₂、PM2.5、TVOC、甲醛、溫濕度</li><li>異味問卷與官能測試</li><li>落菌/培養皿檢測（視場域）</li></ul></div>
+        <div class="card"><h3>② 設計規劃</h3><ul class="bullet"><li>污染源盤點與風場評估</li><li>PICT 主動式模組選型</li><li>空調/新風整合與點位配置</li></ul></div>
+        <div class="card"><h3>③ 施工導入</h3><ul class="bullet"><li>中央空調/風管/送風機/除濕機安裝</li><li>危害控制（紫外光遮蔽與濃度控管）</li><li>工法與安全驗證</li></ul></div>
+        <div class="card"><h3>④ 驗收驗證</h3><ul class="bullet"><li>前後數據對比與影像紀錄</li><li>異味/霉斑改善評估</li><li>維運建議與保固</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 去異味工程（分工況） -->
+    <section class="section" aria-labelledby="deodor-title">
+      <h2 class="section-title" id="deodor-title">去異味工程</h2>
+      <div class="grid cols-2">
+        <div class="card"><h3>裝潢去異味</h3><p>主動降解甲醛、苯系物與黏著劑殘留 VOC，縮短散逸時間。</p></div>
+        <div class="card"><h3>廁所去異味</h3><p>分解氨、硫化物與尿源細菌代謝物，抑制臭味再生。</p></div>
+        <div class="card"><h3>廚房尾氣去異味</h3><p>分解油煙 VOC 與烹飪氣味，降低附著與回流。</p></div>
+        <div class="card"><h3>周界異味</h3><p>針對外部排放/菸害滲入，主動分解 TVOC，輔以壓差與風場優化。</p></div>
+      </div>
+    </section>
+
+    <!-- 防疫與病菌滅活 -->
+    <section class="section" aria-labelledby="pathogen-title">
+      <h2 class="section-title" id="pathogen-title">防疫與病菌滅活：降低傳播風險</h2>
+      <div class="grid cols-2">
+        <div class="card"><h3>PICT 主動式優勢</h3><ul class="bullet"><li>釋放淨化因子，主動滅活細菌/病毒/黴菌</li><li>空氣與表面同步處理，無清潔死角</li><li>可內嵌於 HVAC 系統抑制內部滋生與擴散</li></ul></div>
+        <div class="card"><h3>安全控管</h3><ul class="bullet"><li>非臭氧機，避免 NO₂/臭氧副產物</li><li>紫外光遮蔽與濃度控制</li><li>長時間運行、低功耗、無耗材</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 室內裝潢污染解法 -->
+    <section class="section" aria-labelledby="renov-title">
+      <h2 class="section-title" id="renov-title">室內裝潢污染：從源頭加速分解</h2>
+      <div class="grid cols-2">
+  <div class="card"><h3>健康風險</h3><p style="margin-top:46px">甲醛與 VOC 造成刺激與頭痛，長期暴露具致癌風險。</p></div>
+        <div class="card"><h3>WETOP 的作法</h3><ul class="bullet"><li>比被動濾網更快降解甲醛</li><li>滲透表面，加速釋放與分解</li><li>與空調維護/新風系統整合</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 傳統方案局限 -->
+    <section class="section" aria-labelledby="limits-title">
+      <h2 class="section-title" id="limits-title">傳統解決方案的局限</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>換氣不足</h3><p>僅稀釋濃度，無法有效去除黴菌、TVOC、PM2.5。</p></div>
+        <div class="card"><h3>臭氧副產物</h3><p>臭氧機易產生 NO₂ 等副產物，反增環境風險。</p></div>
+        <div class="card"><h3>HEPA 侷限</h3><p>只能過濾、無法分解；更換頻繁、維護成本高。</p></div>
+      </div>
+    </section>
+
+    <!-- WETOP 優勢 -->
+    <section class="section" aria-labelledby="adv-title">
+      <h2 class="section-title" id="adv-title">WETOP 獨家優勢</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>全方位</h3><p>同時解決微生物、異味與裝潢污染，空氣＋表面雙向處理。</p></div>
+        <div class="card"><h3>主動淨化</h3><p>釋放淨化因子，無死角，效果覆蓋 HVAC 系統。</p></div>
+        <div class="card"><h3>安全高效</h3><p>非臭氧機、無副產物，長開低功耗、無耗材。</p></div>
+      </div>
+    </section>
+
+    <!-- 適用場所 (Carousel) -->
+    <section class="section" aria-labelledby="apply-title">
+      <h2 class="section-title" id="apply-title">適用場所與應用</h2>
+      <div class="chips" role="list">
+        <span class="chip" role="listitem">醫療機構</span>
+        <span class="chip" role="listitem">教育機構</span>
+        <span class="chip" role="listitem">辦公商辦</span>
+        <span class="chip" role="listitem">餐飲飯店</span>
+        <span class="chip" role="listitem">食品廠</span>
+        <span class="chip" role="listitem">住宅與集合式住宅</span>
+      </div>
+      <p class="muted" style="margin-top:10px">* 可安裝於：中央空調風管、送風機、冷熱交換機、除濕機等。</p>
+      <div class="apply-carousel" id="apply-carousel" role="region" aria-roledescription="carousel" aria-label="適用場所圖片集" tabindex="0">
+        <div class="carousel-track" id="carousel-track" aria-live="polite">
+          <figure class="apply-figure carousel-slide" id="carousel-slide-0" role="group" aria-roledescription="slide" aria-label="1 / 6">
+            <img src="images/S5/醫療-127.jpg" alt="醫療機構空調風管內嵌安裝示意" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="apply-figure carousel-slide" id="carousel-slide-1" role="group" aria-roledescription="slide" aria-label="2 / 6">
+            <img src="images/S5/教育機構.jpg" alt="教育機構教室與實驗室的淨化佈署" loading="lazy" decoding="async" />
+            </figure>
+          <figure class="apply-figure carousel-slide" id="carousel-slide-2" role="group" aria-roledescription="slide" aria-label="3 / 6">
+            <img src="images/S5/商辦.jpg" alt="辦公商辦公共區與會議室的案例" loading="lazy" decoding="async" />
+            </figure>
+          <figure class="apply-figure carousel-slide" id="carousel-slide-3" role="group" aria-roledescription="slide" aria-label="4 / 6">
+            <img src="images/S5/飯店除味.jpg" alt="餐飲飯店廚下/排油煙系統去味配置" loading="lazy" decoding="async" />
+            </figure>
+          <figure class="apply-figure carousel-slide" id="carousel-slide-4" role="group" aria-roledescription="slide" aria-label="5 / 6">
+            <img src="images/S5/研華.jpg" alt="食品廠產線與冷藏庫的異味與微生物控制" loading="lazy" decoding="async" />
+            </figure>
+          <figure class="apply-figure carousel-slide" id="carousel-slide-5" role="group" aria-roledescription="slide" aria-label="6 / 6">
+            <img src="images/S5/廁所.jpg" alt="住宅衛浴與寢室的長期維護案例" loading="lazy" decoding="async" />
+            </figure>
+        </div>
+        <button class="carousel-btn prev" id="carousel-prev" aria-label="上一張" disabled>‹</button>
+        <button class="carousel-btn next" id="carousel-next" aria-label="下一張">›</button>
+        <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="輪播圖片選擇">
+          <button role="tab" aria-selected="true" aria-controls="carousel-slide-0" id="carousel-dot-0" tabindex="0"></button>
+          <button role="tab" aria-selected="false" aria-controls="carousel-slide-1" id="carousel-dot-1" tabindex="-1"></button>
+          <button role="tab" aria-selected="false" aria-controls="carousel-slide-2" id="carousel-dot-2" tabindex="-1"></button>
+          <button role="tab" aria-selected="false" aria-controls="carousel-slide-3" id="carousel-dot-3" tabindex="-1"></button>
+          <button role="tab" aria-selected="false" aria-controls="carousel-slide-4" id="carousel-dot-4" tabindex="-1"></button>
+          <button role="tab" aria-selected="false" aria-controls="carousel-slide-5" id="carousel-dot-5" tabindex="-1"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">需要專人評估你的場域嗎？</h2>
+      <p>提供現場檢測、規劃與導入建議，並附改善前後數據。</p>
+  <a class="btn" href="sections/section-6.html" onclick="if(window.loadContent){loadContent('sections/section-6.html');return false;}" aria-label="前往聯絡我們">預約環境檢測</a>
+    </section>
+  </section>
+
+  <!-- JSON-LD：Service -->
+  <script>
+  (function(){
+    const track=document.getElementById('carousel-track');
+    if(!track) return;
+    const slides=[...track.querySelectorAll('.carousel-slide')];
+    const prevBtn=document.getElementById('carousel-prev');
+    const nextBtn=document.getElementById('carousel-next');
+    const dotsWrap=document.getElementById('carousel-dots');
+    const dots=[...dotsWrap.querySelectorAll('button[role="tab"]')];
+    const REGION=document.getElementById('apply-carousel');
+    let index=0; let animating=false; let touchStartX=null; let touchDelta=0; let timer=null; let autoplay=true;
+    const INTERVAL=4800; // ms
+    function update(){
+      animating=true;
+      // 無障礙：更新 aria-label 編號
+      slides.forEach((s,i)=>{ s.setAttribute('aria-label', `${i+1} / ${slides.length}`); });
+      track.style.transform=`translateX(-${index*100}%)`;
+      slides.forEach((s,i)=>{s.setAttribute('aria-hidden', i===index? 'false':'true');});
+      dots.forEach((d,i)=>{const sel=i===index; d.setAttribute('aria-selected', sel); d.tabIndex= sel?0:-1;});
+      // 循環模式：不禁用按鈕
+      prevBtn.disabled=false; nextBtn.disabled=false;
+      setTimeout(()=>{animating=false;},560);
+    }
+    function go(i){
+      if(animating) return; // 避免過度點擊
+      // 循環索引
+      if(i<0) i=slides.length-1; else if(i>=slides.length) i=0;
+      if(i===index) return; index=i; update(); restartAutoplay();
+    }
+    function next(){ go(index+1); }
+    function prev(){ go(index-1); }
+    // Autoplay 控制
+    function startAutoplay(){ if(!autoplay) return; clearTimeout(timer); timer=setTimeout(()=>{ next(); }, INTERVAL); }
+    function stopAutoplay(){ clearTimeout(timer); timer=null; }
+    function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
+    // 互動時暫停：滑鼠 / 觸控 / 聚焦
+    REGION.addEventListener('mouseenter', stopAutoplay);
+    REGION.addEventListener('mouseleave', startAutoplay);
+    REGION.addEventListener('focusin', stopAutoplay);
+    REGION.addEventListener('focusout', startAutoplay);
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+    dots.forEach((d,i)=> d.addEventListener('click',()=>go(i)) );
+    // Keyboard
+    REGION.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight'){ e.preventDefault(); next(); }
+      else if(e.key==='ArrowLeft'){ e.preventDefault(); prev(); }
+      else if(e.key==='Home'){ e.preventDefault(); go(0); }
+      else if(e.key==='End'){ e.preventDefault(); go(slides.length-1); }
+  // 移除空白鍵暫停功能
+    });
+    // Swipe
+    track.addEventListener('pointerdown',e=>{touchStartX=e.clientX; touchDelta=0; track.style.cursor='grabbing'; stopAutoplay(); });
+    window.addEventListener('pointermove',e=>{ if(touchStartX!==null){ touchDelta=e.clientX-touchStartX; }});
+    window.addEventListener('pointerup',()=>{ if(touchStartX!==null){ if(Math.abs(touchDelta)>50){ if(touchDelta<0) next(); else prev(); } restartAutoplay(); } touchStartX=null; track.style.cursor=''; });
+    // Init
+    slides.forEach((s,i)=>{ if(i!==0) s.setAttribute('aria-hidden','true'); });
+    update(); startAutoplay();
+  })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"環境淨化工程服務",
+    "provider":{"@type":"Organization","name":"WETOP"},
+    "serviceType":"空氣與表面淨化整合工程",
+    "areaServed":"Taiwan",
+    "description":"從環境監測、污染診斷、設計規劃、施工導入到驗收的完整環境淨化工程；PICT 主動式光離子催化技術，非臭氧、無副產物。",
+    "audience":{"@type":"Audience","audienceType":["醫療機構","教育機構","商業空間","住宅"]}
+  }
+  </script>
+</body>
+</html>

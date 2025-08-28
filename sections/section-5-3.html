@@ -1,0 +1,284 @@
+
+<!-- 去異味工程｜原理與解法（固定設計版） -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+
+  .image-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto 24px auto;
+    max-width: 1100px;
+  }
+  .image-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .image-block figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #475569;
+    text-align: center;
+  }
+  
+  :root {
+    --primary: #0f766e;
+    --secondary: #e0f7f6;
+    --background: #f8fafc;
+    --text: #1f2937;
+    --highlight: #fef3c7;
+    --warning: #fef2f2;
+    --success: #f0fdf4;
+    --info: #eff6ff;
+    --white: #ffffff;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  body, html {
+    font-family: 'Noto Sans TC', 'Segoe UI', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+  }
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0f766e;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 6px solid #0f766e;
+    padding-left: 16px;
+    letter-spacing: 0.5px;
+    background: none;
+    text-align: left;
+  }
+  .section-subtitle {
+    margin: 0;
+    opacity: .97;
+    font-size: clamp(1.08rem, 1rem + .6vw, 1.32rem);
+    line-height: 1.5;
+    letter-spacing: .5px;
+    font-weight: 600;
+    color: #0d9488;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(15,118,110,0.10);
+    margin-bottom: 2px;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .header p, .section-5-3-hero p {
+    font-size: clamp(1.08rem, 1rem + .6vw, 1.32rem) !important;
+    font-weight: 600;
+    opacity: .97;
+    color: #0d9488;
+    text-align: center;
+    margin-bottom: 2px;
+    letter-spacing: .5px;
+    background: none;
+    border: none;
+    padding: 0;
+    text-shadow: 0 2px 8px rgba(15,118,110,0.10);
+  }
+  .muted {
+    color: #64748b;
+    font-size: 1rem;
+  }
+  .grid {
+    display: grid;
+    gap: 24px;
+  }
+  .cols-2 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 28px 22px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+  .card.warning {
+    border-left: 6px solid #f59e0b;
+    background: linear-gradient(135deg, #fef3c7 60%, #fff8f5 100%);
+  }
+  .card.success {
+    border-left: 6px solid #10b981;
+    background: linear-gradient(135deg, #f0fdf4 60%, #dcfce7 100%);
+  }
+  .highlight {
+    background: var(--highlight);
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #b45309;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .bullet {
+    list-style: disc inside;
+    margin: 0 0 0 8px;
+    padding: 0;
+  }
+  .section-5-3-hero {
+    max-width: 1100px;
+    margin: 0 auto 44px auto;
+    background: linear-gradient(135deg,#0f766e,#0d9488);
+    color: #fff;
+    border-radius: 16px;
+    padding: 56px 24px 38px 24px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  }
+  .section-5-3-hero h1,
+  .section-5-3-hero p {
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: none;
+    color: inherit;
+    letter-spacing: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    box-shadow: none;
+  }
+  .section-5-3-hero h1 {
+    margin: 0 0 16px;
+    font-size: clamp(28px,4.2vw,44px);
+    line-height: 1.15;
+    letter-spacing: .4px;
+    font-weight: 800;
+  }
+  .section-5-3-hero-sub {
+    margin: 0;
+    opacity: .98;
+    font-size: clamp(18px,2vw,26px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(15,118,110,0.10);
+  }
+  .section-5-3-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #0001;
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 32px;
+    width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .section-5-3-card-title {
+    color: #0f766e;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0 0 18px 0;
+    letter-spacing: 1px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .icon-nose { font-size: 1.5em; vertical-align: -2px; }
+  .section-5-3-card-block { font-size: 1.08rem; color: #234; }
+  .section-5-3-card-lead { margin: 0 0 16px 0; font-weight: 600; }
+  .section-5-3-card-section { margin-bottom: 14px; }
+  .section-5-3-card-section h3 {
+    color: #0d9488;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    letter-spacing: .5px;
+  }
+  .section-5-3-card-section ul {
+    margin: 0 0 0 1.2em;
+    padding: 0 0 0 0.5em;
+    line-height: 1.8;
+  }
+  .section-5-3-card-section li { margin-bottom: 4px; }
+  .section-5-3-card-section.highlight {
+    background: linear-gradient(90deg,#e0f7f6 60%,#f0fdf4 100%);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #0f766e;
+    font-weight: 700;
+    font-size: 1.08rem;
+    margin-bottom: 0;
+  }
+  @media (max-width: 768px) {
+    .grid.cols-2 { grid-template-columns: 1fr; }
+    .card { padding: 18px 8px; }
+    .section-5-3-hero { padding: 32px 6vw 24px 6vw; }
+    .section-5-3-hero h1 { font-size: 1.5rem; }
+    .section-5-3-hero-sub { font-size: 1.1rem; }
+    .section-5-3-card { padding: 18px 6vw 16px 6vw; }
+    .section-5-3-card-title { font-size: 1.08rem; }
+  }
+</style>
+<div class="section-5-3-hero">
+  <h1>去異味工程｜為什麼需要「主動分解」</h1>
+  <p class="section-5-3-hero-sub">長效清新，不只除味更「除源」</p>
+</div>
+<div class="section-5-3-card">
+  <h2 class="section-title"><span class="icon-nose">🌬️</span> 去異味工程的核心挑戰與 WETOP 解法</h2>
+  <div class="section-5-3-card-block">
+    <p class="section-5-3-card-lead"><b>異味來自多種污染源（化學、生物、燃燒殘留）</b>，一般空氣清淨機多為<strong>被動過濾懸浮顆粒</strong>，對 VOCs、煙味與潮濕環境的霉味等<strong>氣味分子</strong>，往往無法有效分解，因而「除不乾淨又容易復發」。</p>
+    <div class="section-5-3-card-section">
+      <h3>常見異味來源</h3>
+      <ul>
+        <li><b>VOCs（揮發性有機化合物）</b>：油漆、黏著劑、建材釋放的甲醛、苯、甲苯等。</li>
+        <li><b>煙味與燃燒殘留</b>：二手菸、火災後焦油與碳氫化合物。</li>
+        <li><b>廚房油煙/食品氣味</b>：餐廳、食品加工場之油煙與烹調氣味。</li>
+        <li><b>生物異味</b>：垃圾、寵物、汗味、潮濕霉味等。</li>
+      </ul>
+    </div>
+    <div class="section-5-3-card-section">
+      <h3>傳統除味方式的侷限</h3>
+      <ul>
+        <li>臭氧機多為短暫壓制氣味，非真正分解異味分子，且可能產生二次污染。</li>
+        <li>濾網型清淨機無法處理氣體分子，對表面污染與再生無效。</li>
+      </ul>
+    </div>
+    <div class="section-5-3-card-section highlight">
+      <b>WETOP 主動分解方案</b>：以 PICT 光離子催化，主動釋放淨化因子，分解 VOCs、煙味、霉味，並針對源頭攔截，帶來長效清新空氣。
+    </div>
+  </div>
+</div>
+
+<figure class="image-block">
+  <img
+    src="/images/S5/001.jpg"
+    alt="WETOP 環境淨化整體介紹長圖：包含技術原理（UV/光觸媒/AOP）、安全與法規、濕度與防霉策略、除味與抑菌測試數據、各場域安裝與實作案例（住家、餐飲、商辦、學校、飯店）、前後對比實證與培養皿檢測成果。"
+    title="WETOP 環境淨化器｜PICT 主動式淨化技術與防霉除味成效實證"
+    loading="lazy"
+    decoding="async"
+    sizes="(max-width: 768px) 100vw, 1200px"
+    fetchpriority="low"
+    onerror="this.onerror=null;this.src='/images/S5/pict_case_179.jpg';this.alt='主圖載入失敗，顯示備用案例圖';"
+  />
+</figure>
+
+<!-- 底部 CTA：聯絡我們 -->
+  <div class="contact-cta" style="margin-top:40px;text-align:center;">
+    <p style="margin:0 0 14px;font-size:1.05rem;font-weight:600;letter-spacing:.5px;color:#0f766e;">想取得更多防霉 / 除味 / 抑菌工程資訊？</p>
+    <a href="javascript:void(0)" onclick="loadContent('sections/section-6.html')" class="consult-btn bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-base font-semibold inline-flex items-center gap-1 shadow transition" data-ga-category="CTA" data-ga-action="click" data-ga-label="contact_section_5_5">
+      聯絡我們
+      <span aria-hidden="true" style="display:inline-block;transform:translateY(1px);">→</span>
+    </a>
+
+<!-- 內文補充（有助 SEO，可保留關鍵摘要文字） -->
+<div class="sr-only">
+  <h3>內容摘要</h3>
+  <p>此圖像彙整 WETOP 環境淨化器之核心技術（PICT 光離子催化）、與紫外光/光觸媒/高級氧化處理的組合機制，並展示防霉抑菌、除味與降低 TVOC/甲醛等污染物的實測結果與法規對應。收錄居家與商業空間安裝實例、前後對比與培養皿檢測成果。</p>
+</div>
+</section>
+
